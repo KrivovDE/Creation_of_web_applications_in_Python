@@ -1,0 +1,27 @@
+    * {
+        background-color: WhiteSmoke;
+        color: #ede8e8;
+    }
+
+    ol {
+        background: lightpink;
+        width: 440px;
+        padding: 20px;
+        list-style-position: inside;
+    }
+
+    li {
+        margin: 0px 0px 10px;
+        padding: 5px 5px 5px 10px;
+        background-color: #c66376;
+    }
+
+    span {
+        margin-left: 8px;
+        padding: 5px 15px;
+        background-color: #9e354a;
+    }
+
+    li:last-child {
+        margin-bottom: 0px;
+    }

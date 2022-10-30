@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+     /* внешние границы всей таблицы */
+     table {border: 5px solid black;
+            border-collapse: collapse; /*Между ячейками таблицы имеются промежутки, которые можно убрать*/
+     }
+     /* границы ячеек заголовков столбцов */
+     th {border: 1px solid red;}
+     /* границы ячеек основной части */
+     td {border: 1px solid blue;}
+
+     /*определим высоту и ширину и выравнивание по правому нижнему краю*/
+     #uniq{
+         width: 300px;
+         height: 200px;
+         text-align: right;
+         vertical-align: bottom;
+     }
+
+    </style>
+</head>
+<body>
+
+<table> <!--- вся таблица-->
+    <tr> <!--- одна строка таблица-->
+        <th>Column 1</th>
+        <th>Column 2</th> <!--- конкреная ячейка в первой строке-->
+        <th>Column 3</th>
+    </tr>
+
+     <tr>
+        <td>Lorem ipsum dolor.</td>
+        <td id="uniq">Lorem ipsum dolor.</td>
+        <td>Lorem ipsum dolor.</td>
+    </tr>
+
+     <tr>
+         <td>Lorem.</td>
+         <td>Lorem.</td>
+         <td>Lorem.</td>
+     </tr>
+</table>
+
+<!--Ячейки таблицы делятся на два типа: ячейки заголов- ков столбца или строки (тег <th>),
+а также ячейки для отображения данных таблицы (тег <td>).-->
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+             border-collapse: collapse;
+             empty-cells: hide;
+         }
+         td {
+             border: 1px solid black;
+             width: 50px;
+             height: 20px;
+         }
+    </style>
+</head>
+<body>
+<table>
+        <tr>
+             <td>1</td>
+             <td colspan = '2'> 2</td>
+             <td></td>
+<!--             <td>4</td>-->
+        </tr>
+         <tr>
+             <td rowspan="3">5</td>
+             <td>6</td>
+             <td>7</td>
+             <td>8</td>
+        </tr>
+         <tr>
+             <td>9</td>
+             <td colspan="2" rowspan="2">10</td>
+<!--             <td>11</td>-->
+<!--             <td>12</td>-->
+         </tr>
+         <tr>
+             <td>13</td>
+<!--             <td>14</td>-->
+<!--             <td>15</td>-->
+<!--             <td>16</td>-->
+         </tr>
+
+<!--    Для того, чтобы объединить ячейку по горизонтали используется атрибут colspan.-->
+<!--    В качестве значения атрибута colspan устанавливается целое число равное количеству-->
+<!--    объединяемых ячеек по горизонтали в од- ной строке&#45;&#45;
+Для того, чтобы объединить ячейку по вертикали ис- пользуется атрибут rowspan.
+В качестве значения атрибу- та rowspan устанавливается целое число равное количеству
+объединяемых ячеек по вертикали в одном столбце.
+<td colspan = '2'> 2</td>
+<td rowspan="3">5</td>
+<td colspan="2" rowspan="2">11</td>
+ >-->
+
+
+ </table>
+
+
+</body>
+</html>

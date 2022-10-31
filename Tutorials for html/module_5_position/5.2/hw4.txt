@@ -1,0 +1,24 @@
+﻿Задание:
+
+Использовать текст ниже для создания 4-х блоков.
+Подберите ширину блоков таким образом, чтобы в браузере, открытом на всю ширину экрана, они располагались бы в одну линию, а при уменьшении размера браузера примерно до половины ширины экрана, располагались бы в 2 линии друг под другом.
+Масти рядом с заголовком нужно записать в виде мнемокода (html-entities, или символьные подстановки типа &spades;)
+
+Обратите внимание на семейство шрифта и цвет основного текста и заголовков, а также на наличие внешних и внутренних отступов и рамок.
+
+
+♠Photography
+qui officia deserunt
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. production
+♣
+Production
+Quis autem vel eum iure
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore. Montage
+♥
+Montage
+Et harum quidem
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Staging Light
+♦
+Staging Light
+Occaecat cupidatat non
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. more info

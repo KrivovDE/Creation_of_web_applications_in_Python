@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+ <head>
+ </head>
+ <body>
+  <script>
+	var fund = +prompt("Initial deposit:");
+    var years = 0;
+	while(fund < 1e6){
+		years++;
+		fund += fund * 0.1; // 0.1 = 10%
+	}
+	alert("You'll become millionaire after "+years+" years");
+  </script>
+ </body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+ <head>
+ </head>
+ <body>
+ <p id="Log"></p>
+  <script>
+	function incAndLog() {
+	   x = x+1;
+	   alert("inc x = " + x);
+	   Log.innerHTML += "<br>inc x = " + x;
+	}
+	x = 2;
+	Log.innerHTML = "x = " + x;
+	incAndLog(x);
+	Log.innerHTML += "<br>x = " + x;
+  </script>
+ </body>
+</html>

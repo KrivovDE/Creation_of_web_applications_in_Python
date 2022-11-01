@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #name{
+            background-color: red;
+        }
+        #name1{
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+             <label>
+                 <span id="name1">Name:</span>
+                 <input class="cg" type="text" id="name" name="userName" />
+             </label>
+         </div>
+        <div>
+             <label>
+                 <span>Birthday:</span>
+                 <input type="date" name="birthday" id="userBirthday">
+             </label>
+         </div>
+        <div>
+             <label>
+                 <span>Email:</span>
+                 <input type="email" id="email" name="userEmail" />
+             </label>
+        </div>
+         <div>
+             <label>
+                 <span>Blog:</span>
+                 <input type="url" id="url" name="userUrl">
+             </label>
+         </div>
+        <div>
+             <label>
+                 <span>Genre:</span>
+                 <input type="text" name="genre" id="userGenre" list="genreSuggestions">
+                 <datalist id="genreSuggestions">
+                 <option>Comedy</option>
+                 <option>Horror</option>
+                 <option>Drama</option>
+                 <option>Thriller</option>
+                 <option>Science Fiction</option>
+                 <option>Fantasy</option>
+                 </datalist>
+             </label>
+         </div>
+        <div>
+             <label>
+                 <span>How you rate yourself:</span>
+                 <input type="number" name="userRating" id="rating" min="-10" max="12" step="2">
+             </label>
+         </div>
+        <div>
+         <button type="submit">Send my data</button>
+        </div>
+    </form>
+<iframe src="banner.html" width="468" height="60" align="left">
+    Ваш браузер не поддерживает плавающие фреймы!
+ </iframe>
+
+
+</body>
+</html>

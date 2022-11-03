@@ -1,21 +1,26 @@
 'use strict';
 
-// alert('Академия ШАГ')
 
+
+// alert('Академия ШАГ')
+//
 // let age = prompt('Возраст', 18);
 // console.log(age)
-
+// //
 // let is_car = confirm('Продолжить?');
 // console.log(is_car)
 
 // let z = '5',
 //     v = 7;
-//  console.log(typeof (z+v))
-//  console.log(+z + +v)
+
+ //
+ // console.log(typeof (+z))
+ //
+ // console.log(+z + +v)
 
 // console.log(4**(1/2))
 
-// let x = -5;
+// let x = 5.7;
 //
 // if (x < 0)
 //    console.log('отрицательное');
@@ -29,8 +34,8 @@
 // который имеет такой синтаксис:
 // let result = условие ? значение1 : значение2;
 
-// let age = 19;
-// let access = (age > 18) ? true : false;  // можно упростить до let access = age > 18;
+// let age = 18;
+// let access = (age >= 18) ? true : false;  // можно упростить до let access = age > 18;
 // console.log(access);
 
 
@@ -57,7 +62,7 @@
 //     default: console.log('иное значение');
 // }
 
-
+ //
  // let x = +prompt("Input x=");
  //             var str = "";
  //             switch(x){
@@ -81,7 +86,7 @@
 // после скобок — инструкция для выполнения (тело цикла).
 
 // let i = 1;
-// while(i < 11)
+// while(i < 3)
 //     {
 // console.log(i);
 // i++; //сломать
@@ -118,13 +123,18 @@
  //    Второй и третий блоки выполняются на каждой итерации цикла.
 //
 // let i = 0
-// for(i; i<5; i++)
+// for(i; i<99; i++)
 //      console.log(i);
 
-// For in, for of
 
+
+
+// For in, for of
+//
 // let arr=[1,4, true,3,7,55,888,34,0, 'hello']
-// for(let i in arr) console.log(i)
+//
+// // for(let i in arr) console.log(i)
+//
 // for(let i of arr) console.log(i)
 
 
@@ -134,11 +144,6 @@
 // Например: ввод 10, вывод 2 4 6 8 10; ввод 7, вывод 2 4 6.
 
 
-// a = int(input('ff'))
-//
-// for i in range(1, a+1):
-//     if i % 2 == 0:
-//         print(i)
 
 //
 // let N = 10
@@ -149,12 +154,17 @@
 //       Z++;
 //     }
 
-// let Z = 1
-// let userNumber = +prompt('Введите число')
-//
-// while(Z < userNumber)
-//
-//     { if (Z % 2 === 0) console.log(Z);
-//       Z++;
-//     }
 
+
+function n_1 () {
+    let Z = +prompt("Input x=");
+    let userNumber = +prompt('Введите число')
+
+    while (Z < userNumber) {
+        if (Z % 2 === 0)
+            console.log(Z);
+        Z++;
+    }
+}
+
+n_1()

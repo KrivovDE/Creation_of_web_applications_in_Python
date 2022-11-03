@@ -9,20 +9,20 @@
 //     console.log(msg);
 // }
 // out_log('1 вызов');
-// out_log( )
-// // //
+// out_log(5)
+// //
 // function showMessage(from, text) {
-//          let msg = from + ": " + text;
+//          let msg = from + ":" + text;
 //          console.log(msg);
 // }
 // showMessage("Аня", "Привет!");
 // showMessage("Аня", "Как дела?");
-
+//
 // function abs(x) {
 //          if(x < 0) x = -x;
 //          return x;
 // }
-// let res = abs(-7);
+// let res = abs(-8);
 // console.log(res);
 
 //Function Expression, анонимные и callback-функции
@@ -34,12 +34,13 @@
 // showMsg();
 
 
+
 //
 // function agreeCookies(question, yes, no) {
 //   if (confirm(question)) yes();
 //   else no();
 // }
-//
+// //
 // function agreeYes() {
 //    console.log("Вы приняли соглашение о cookies");
 // }
@@ -48,8 +49,8 @@
 //    console.log("Вы отказались от использования cookies");
 // }
 //
-// agreeCookies("Наш сайт использует cookies. Нам нужно ваше согласие", agreeYes, agreeNo);
-
+// agreeCookies ("Наш сайт использует cookies. Нам нужно ваше согласие", agreeYes, agreeNo);
+//
 
 // анoнимный вариант
 //
@@ -57,11 +58,12 @@
 //   if (confirm(question)) yes();
 //   else no();
 // }
+//
 // agreeCookies(
 //     "Наш сайт использует cookies. Нам нужно ваше согласие",
 //     function () { console.log("Вы приняли соглашение о cookies");},
 //     function () { console.log("Вы отказались от использования cookies");})
-//
+
 
 
 // function cube(x) {return x*x*x;}
@@ -114,4 +116,4 @@
 //   return (n != 1) ? n * factorial(n - 1) : 1;
 // }
 //
-// alert( factorial(5) ); // 120
+// alert( factorial(120) ); // 120

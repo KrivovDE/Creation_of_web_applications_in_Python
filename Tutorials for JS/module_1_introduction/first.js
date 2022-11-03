@@ -155,16 +155,16 @@
 //     }
 
 
-
-function n_1 () {
-    let Z = +prompt("Input x=");
-    let userNumber = +prompt('Введите число')
-
-    while (Z < userNumber) {
-        if (Z % 2 === 0)
-            console.log(Z);
-        Z++;
-    }
-}
-
-n_1()
+//
+// function n_1 () {
+//     let Z = +prompt("Input x=");
+//     let userNumber = +prompt('Введите число')
+//
+//     while (Z < userNumber) {
+//         if (Z % 2 === 0)
+//             console.log(Z);
+//         Z++;
+//     }
+// }
+//
+// n_1()

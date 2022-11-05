@@ -27,11 +27,16 @@
 // console.log(ch1, ch2);
 // console.log(typeof ch1);
 
-let str = 'Hello!';
-let low = str.toLowerCase();
-let hi = "string".toUpperCase();
+// let str = 'Hello!';
+// let low = str.toLowerCase();
+// let hi = "string".toUpperCase();
+// console.log(low, hi);
 
+// let str = "   string   "; //убирает пробелы в начале и конце строки
+// console.log( str.trim() );
 
+let str = "";
+console.log( str.repeat(5) ); //для повторения строки n раз:
 
 
 

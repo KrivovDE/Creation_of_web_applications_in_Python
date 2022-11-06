@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+        display: flex;
+        justify-content: center;
+        }
+        #main{
+        position: relative;
+        display: inline-block;
+        height: 290px;
+        border: 1px solid #D3D3D3;
+        box-shadow: 0px 0px 6px 7px #DCDCDC;
+        padding: 20px 5px 15px 25px;
+        }
+        .headers{
+        font-size: 15px;
+        font-family: arial, san-serif;
+        }
+        #registration{
+        float: left;
+        }
+        img{
+        height: 19px;
+        width: 19px;
+        }
+        #details{
+        float: left;
+        }
+        #agrees{
+        clear: both;
+        }
+        .agrees{
+        font-size: 12px;
+        }
+        input, select{
+        border: none;
+        border-bottom: 1px solid #446c70;
+        margin: 25px 10px 0 0;
+        font-size: 11px;
+        padding-left: 10px;
+        }
+        #mews_offers, #terms_conditions{
+        margin: 25px 1px 0 0;
+        height: 8px;
+        width: 8px;
+        }
+        #terms_conditions{
+        margin-top: 2px;
+        }
+        #username, #email{
+        width: 82%;
+        }
+        #password, #confirm{
+        width: 37%;
+        }
+        #first, #last{
+        width: 42%;
+        }
+        #list{
+        width: 45.5%;
+        }
+        #date{
+        width: 42.5%;
+        }
+        #date::-webkit-calendar-picker-indicator{
+        display: none;
+        }
+        hr{
+        margin: 25px -8px 0 -25px;
+        height: 1px;
+        border: none;
+        border-bottom: 1px solid #DCDCDC;
+        }
+        #SUBMIT{
+        background: #008c8c;
+        border: none;
+        border-radius: 2px;
+        font-size: 8px;
+        letter-spacing: 1px;
+        color: #FFFFFF;
+        height: 30px;
+        width: 135px;
+        box-shadow: 1px 1px 3px 1px #A9A9A9;
+        position: absolute;
+        bottom: 6%;
+        right: 2%;
+        }
+        @media (max-width: 899px){
+            #registration, #details{
+            float: none;
+            }
+            #main{
+            width: 500px;
+            height: 450px;
+            }
+            #details{
+            margin-top: 50px;
+            }
+            #username, #email{
+            width: 90%;
+            }
+            #password, #confirm{
+            width: 42.5%;
+            }
+            #first, #last{
+            width: 45%;
+            }
+            #list{
+            width: 47.5%;
+            }
+            #date{
+            width: 45.5%;
+            }
+            #SUBMIT{
+            right: 3%;
+            }
+        }
+        @media (max-width: 599px){
+            #main{
+            width: 250px;
+            height: 565px;
+            }
+            #username, #email{
+            width: 77%;
+            }
+            #password, #confirm{
+            width: 77%;
+            }
+            #confirm{
+            margin-left: 26px;
+            }
+            #first, #last{
+            width: 88%;
+            }
+            #list{
+            width: 92.5%;
+            }
+            #date{
+            width: 88.5%;
+            }
+            #SUBMIT{
+            right: 6%;
+            bottom: 5%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <form>
+            <div id="registration">
+               <label>
+                   <span class="headers">Registration form</span><br>
+                   <img src="/Korotky_DZ_ HTML_Mod_8_Forms/img/username.png/"
+                        alt="User name">
+                   <input type="text" id="username" name="username"
+                          placeholder="Username"><br>
+                   <img src="/Korotky_DZ_ HTML_Mod_8_Forms/img/email.png/"
+                        alt="User name">
+                   <input type="email" id="email" name="email"
+                          placeholder="Email address"><br>
+                   <img src="/Korotky_DZ_ HTML_Mod_8_Forms/img/pswd.png/"
+                        alt="User name">
+                   <input type="password" id="password" name="password"
+                          placeholder="Password">
+                   <input type="password" id="confirm" name="confirm"
+                          placeholder="Confirm password">
+               </label>
+            </div>
+            <div id="details">
+               <label>
+                    <span class="headers">Personal details</span><br>
+                    <input type="text" id="first" name="first_name"
+                          placeholder="First name">
+                    <input type="text" id="last" name="last_name"
+                          placeholder="Last name"><br>
+                    <select id="list" name="list1">
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                   </select>
+                   <input type="date" id="date" name="date"><br>
+               </label>
+            </div>
+            <div id="agrees">
+               <label>
+                   <input type="checkbox" id="mews_offers" name="want_mews_offers">
+                   <span class="agrees">I want to receive mews and special
+                       offers</span><br>
+                   <input type="checkbox" id="terms_conditions"
+                          name="agree_terms_conditions">
+                   <span class="agrees">I agree with the Terms and Conditions</span><br>
+               </label>
+            </div>
+            <hr>
+            <div>
+                <label>
+                   <input type="button" id="SUBMIT" name="SUBMIT"
+                          value="SUBMIT">
+               </label>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

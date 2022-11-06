@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+    box-sizing: border-box;
+    }
+    #main{
+    background: #a0cece;
+    background-image: url("/Korotky_DZ_ HTML_Mod_8_Forms/img/moon_flag.png/");
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    background-position: 122% 122%;
+    height: 330px;
+    width: 450px;
+    border-radius: 3%;
+    padding: 120px 0 0 20px;
+    margin: 30px 0 0 -1px;
+    position: relative;
+    }
+    #flag{
+    font-size: 12px;
+    position: absolute;
+    height: 35px;
+    width: 350px;
+    padding: 11px 0 0 30px;
+    background: #dc641e;
+    color: #FFFFFF;
+    top: 13%;
+    left: 0%;
+    }
+    img{
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    object-fit: cover;
+    }
+    #date{
+    float:left;
+    margin-right: 14px;
+    }
+    input{
+    margin-top: 4px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    background: #aad3d3;
+    border: none;
+    border-bottom: 2px solid #446c70;
+    padding-left: 10px;
+    }
+    span{
+    font-size: 11px;
+    color: #446c70;
+    font-weight: 600;
+    }
+    #date_month{
+    height: 30px;
+    width: 70px;
+    }
+    #date_year{
+    height: 30px;
+    width: 70px;
+    margin-left: 10px;
+    }
+    #CVV_CVN{
+    height: 30px;
+    width: 70px;
+    }
+    #number{
+    height: 30px;
+    width: 240px;
+    }
+    #name{
+    height: 30px;
+    width: 240px;
+    }
+  </style>
+</head>
+<body>
+    <div id="main">
+      <form>
+        <div>
+          <label>
+            <span>Card Number</span><br>
+            <input type="text" maxlength="19" id="number" name="number_card" placeholder="1234 5578 9012 3456"><br>
+          </label>
+        </div>
+        <div>
+        <label>
+          <span>Name On Card</span><br>
+          <input type="text" id="name" name="name_card" placeholder="Name Surname"><br>
+        </label>
+        </div>
+        <div id="date">
+          <label>
+            <span>Expiry Date</span><br>
+            <input type="number" maxlength="2" id="date_month" name="date_card" placeholder="02">
+            <input type="number" maxlength="4" id="date_year" name="date_card" placeholder="2017">
+          </label>
+        </div>
+        <div id="CVV">
+          <label>
+            <span>CVV/CVN</span><br>
+            <input type="password" maxlength="3" id="CVV_CVN" name="CVV/CVN" placeholder="***">
+          </label>
+        </div>
+      </form>
+    </div>
+    <div id="flag">CREDIT CARD DETAILS</div>
+</body>
+</html>

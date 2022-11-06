@@ -1,3 +1,4 @@
+'use strict';
 // let str1 = "Hello World!";
 // let str2 = 'Hello World!';
 // let str3 = `Hello World!`;
@@ -35,8 +36,41 @@
 // let str = "   string   "; //убирает пробелы в начале и конце строки
 // console.log( str.trim() );
 
-let str = "";
-console.log( str.repeat(5) ); //для повторения строки n раз:
+// let str = "";
+// console.log( str.repeat(5) ); //для повторения строки n раз:
+
+
+// Set
+// Коллекция Set формируется из уникальных данных (без ключей – только данные).
+// Уникальность означает, что одно и то же значение не может быть добавлено дважды – оно просто проигнорируется.
+//
+// Данный объект имеет следующие методы и свойства:
+//
+// new Set(iterable) – создаёт Set, если в качестве аргумента был предоставлен итерируемый объект (обычно это массив), то копирует его значения в Set;
+// set.add(value) – добавляет значение (если оно уже есть, то ничего не происходит), возвращает тот же объект set;
+// set.delete(value) – удаляет значение, возвращает true если value было найдено и удалено, иначе false;
+// set.has(value) – возвращает true, если значение присутствует в коллекции, иначе false;
+// set.clear() – удаляет все значения из набора;
+// set.size – возвращает количество элементов в наборе.
+
+// let guests = new Set();
+//
+// let alex = { name: "Alexey", old: 25 };
+// let oleg = { name: "Oleg", old: 32 };
+// let masha = { name: "Masha", old: 18 };
+// // var masha = { name: "Masha", old: 19 }; // let vs var
+//
+// guests.add(alex);
+// guests.add(oleg);
+// guests.add(masha);
+// guests.add(alex);
+// guests.add(masha);
+//
+// // Выведем в консоль получившийся набор:
+//
+// for (let guest of guests) {
+//     console.log(guest.name + ': ' + guest.old);
+// }
 
 
 

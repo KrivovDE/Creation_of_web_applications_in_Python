@@ -145,14 +145,40 @@
 
 
 
+// let Z = 0;
+// let A = 60;
+// let B = 10;
 //
-// let N = 10
 //
-// while(Z < N)
+// while(A === 0 || B === 0)
 //
 //     { if (Z % 2 === 0) console.log(Z);
 //       Z++;
+//       A--;
+//       B--;
 //     }
+
+// let Z = 0;
+// let A = 60;
+// let B = 10;
+//
+//
+// while(Z == A)
+//
+//     { if (Z % 2 === 0) console.log(Z);
+//       Z++;
+//       A--;
+//
+//     }
+
+let S=0, i=1;
+while(i <= 1000) {
+         S += 1/i;
+         ++i;
+}
+console.log(S);
+
+
 
 
 //

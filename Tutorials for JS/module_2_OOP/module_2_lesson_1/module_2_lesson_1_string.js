@@ -3,9 +3,10 @@
 // let str2 = 'Hello World!';
 // let str3 = `Hello World!`;
 //
-// let name = "Java", age = 18;
+// let name = `Java`, age = 18;
 // let str = `Меня зовут ${name}, мне ${age} лет`;
-// console.log( str );
+// let strq = "Меня зовут " + name;
+// console.log( strq );
 
 //
 // •	\n – спецсимвол перевода на новую строку;
@@ -16,27 +17,29 @@
 // •	\\ - символ обратного слеша.
 //
 // let str = 'Hello!\nI\'m Javascript.\nВот мой символ \t табуляции, обратный слеш \\ и символ \u00A9 копирайта';
-//
+// //
 // console.log( str );
 
 
 // let str = 'Hello!\nI\'m Javascript.';
-// console.log( str.length );
-//
+
+
+// // console.log( str.length );
 // let ch1 = str[0];
 // let ch2 = str[7];
 // console.log(ch1, ch2);
 // console.log(typeof ch1);
 
-// let str = 'Hello!';
+// let str = 'HelLo!';
 // let low = str.toLowerCase();
+//
 // let hi = "string".toUpperCase();
 // console.log(low, hi);
 
 // let str = "   string   "; //убирает пробелы в начале и конце строки
 // console.log( str.trim() );
 
-// let str = "";
+// let str = "-/-";
 // console.log( str.repeat(5) ); //для повторения строки n раз:
 
 
@@ -57,20 +60,23 @@
 //
 // let alex = { name: "Alexey", old: 25 };
 // let oleg = { name: "Oleg", old: 32 };
-// let masha = { name: "Masha", old: 18 };
-// // var masha = { name: "Masha", old: 19 }; // let vs var
+// var masha = { name: "Masha", old: 18 };
+// var masha = { name: "Masha", old: 19 };
 //
 // guests.add(alex);
 // guests.add(oleg);
 // guests.add(masha);
 // guests.add(alex);
 // guests.add(masha);
-//
+
 // // Выведем в консоль получившийся набор:
 //
-// for (let guest of guests) {
-//     console.log(guest.name + ': ' + guest.old);
-// }
+let a = [1,1,2,2,3,3,4,4,5,5,6,6,6,6,6,6,]
+let guests = new Set(a);
+
+for (let guest of guests) {
+    console.log(guests);
+}
 
 
 

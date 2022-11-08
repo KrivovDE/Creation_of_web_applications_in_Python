@@ -7,7 +7,7 @@
 //     console.log(msg);
 // }
 //
-// // setTimeout(createMsg, 2000);
+// setTimeout(createMsg, 2000);
 // ////////////////////////////////
 // function createMsg(msg) {
 //     console.log(msg);
@@ -25,7 +25,7 @@
 //          console.log("Данные загружены");
 //     }, 2000);     //задержка: имитация загрузки с сервера
 // }
-//
+
 // downloadMsg();
 // ////////////////////////////////
 
@@ -39,12 +39,12 @@
 // }
 //
 // let clock = createClock(0);
-// setInterval(clock, 1000);
-//
-// // let idClock = setInterval(clock, 1000);
-// // setTimeout(function() {
-// //     clearInterval(idClock)
-// // }, 10000);
+// setInterval(clock, 2000);
+
+// let idClock = setInterval(clock, 1000);
+// setTimeout(function() {
+//     clearInterval(idClock)
+// }, 10000);
 // ////////////////////////////////
 
 // alert(Math.PI);

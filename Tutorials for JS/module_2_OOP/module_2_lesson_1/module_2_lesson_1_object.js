@@ -1,29 +1,29 @@
 'use strict';
-
+//
 // let book = {
-//     title: "название",
-//     author: "автор",
+//     title: "Три мушкитера",
+//     author: "АЛ Дюма",
 //     nPages: 0,
-//     price: 0
+//     price: 12
 // };
 //
-// // console.log(book)
+// console.log(book)
 // //
-// // console.log(book.title);
-// // console.log(book.price);
+// console.log(book.title);
+// console.log(book.price);
 //
 // book.isSelled = false;
-//
+// //
 // delete book.nPages;
-//
-// console.log("nPages" in book); //вернет false
-// if(book.nPages === undefined) console.log("nPages не существует");
+// // console.log(book)
+// console.log("nPages" in book);
+// // if(book.nPages === undefined) console.log("nPages не существует");
 
 
 // let book = {};
 // let book = new Object();
+// //
 //
-
 // let book = {
 //     title: "название",
 //     author: "автор",
@@ -32,9 +32,9 @@
 // };
 //
 // book["size book"] = {height: 100, width: 50};
-// console.log(book["size book"]);
+// // console.log(book["size book"]);
 //
-// delete book["size book"];
+// // delete book["size book"];
 //
 // let keyName = "size book";
 // console.log(book[keyName]);
@@ -55,7 +55,7 @@
 // console.log(car[newKey]);
 
 // // пример создания объекта внутри функции:
-//
+// //
 // function createCar(model, color) {
 //     return {
 //        model: model,
@@ -64,7 +64,7 @@
 // }
 // let car = createCar("toyota", "black");
 //
-// console.log(car.model);
+// console.log(car.color);
 
 // // упрощенный синтаксис:
 // function createCar(model, color) {
@@ -73,19 +73,19 @@
 //        color //то же самое, что и color:color
 //     };
 // }
-
+// console.log(car.color);
 // let book = {
 //     title: "Муму",
 //     author: "Тургенев",
 //     price: 100,
 //     nPages: 282
 // };
+// //
+// // for(let key in book) {
+// //     console.log(key+": "+book[key]);
+// // }
 //
-// for(let key in book) {
-//     console.log(key+": "+book[key]);
-// }
-
-
+// let lib = book
 
 
 

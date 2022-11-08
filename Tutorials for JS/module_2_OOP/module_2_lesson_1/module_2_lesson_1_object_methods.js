@@ -1,20 +1,20 @@
 'use strict';
 
-//
+
 // let car = {
 //     model: "toyota",
 //     color: "black",
-//     go: function() {
-//           console.log("машина едет");
-//     }
+//     go: function() {console.log("машина едет");},
+//     stop: function () {console.log("машина остановлена")},
+//
 // };
 // car.go();
 //
-// car.stop = function () {
-//     console.log("машина остановлена");
-// }
+// // car.stop = function () {
+// //     console.log("машина остановлена");
+// // }
 // car.stop()
-
+// //
 // let car = {
 //     model: "toyota",
 //     color: "black",
@@ -25,7 +25,7 @@
 //           console.log("машина остановлена");
 //     }
 // };
-// car.go("Глеб");
+// car.go("Dmitrii");
 
 // //ES6
 // let car = {
@@ -43,7 +43,8 @@
 //
 // };
 // console.log(car.getModel())
-//
+
+
 // function getModel() {
 //     return this.model;
 // }
@@ -57,7 +58,7 @@
 // console.log( car1.getModel() );
 // console.log( car2.getModel() );
 //
-//
+// //
 // let car = {
 //     model: "toyota",
 //     getModel() {

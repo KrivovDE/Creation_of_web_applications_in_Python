@@ -50,5 +50,41 @@
 // console.log( u2.constructor == Users);
 
 ///////////////////////////////////////////////////////
+// Создать класс User с полями имя и #пароль
+// метод логи принимающий эти данные и прорверяющий их
+// на соответствие с переданными данными при инициализации объекта
+// выводит в консоль Вход выполнен если ОК, а если не ОК то сорян
+// и приватные метод измененя пароля
+// И продемонстрировать работоспособность))
+
+// class User {
+// 	#password;
+// 	constructor(name, password) {
+// 		this.name = name;
+// 		this.#password = password;
+// 	}
+// 	login(name, password) {
+// 		if (name === this.name && password === this.#password) {
+// 			console.log('Вход выполнен');
+// 		} else {
+// 			console.log('Сорян!!');
+// 		}
+// 	}
+//
+// 	setPassword(newPassword) {
+// 		this.#password = newPassword;
+// 	}
+// }
+//
+// let user = new User('Test testov','password:)');
+// user.login('Test testov', 'password:)');
+//
+// // console.log(user.name);
+// // console.log(user.password);
+// // console.log(user.#password);
+// //
+// user.setPassword('new_password:)');
+//
+// user.login('Test testov', 'new_password:)');
 
 ///////////////////////////////////////////////////////

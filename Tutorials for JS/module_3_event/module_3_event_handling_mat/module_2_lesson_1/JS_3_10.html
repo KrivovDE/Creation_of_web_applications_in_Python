@@ -1,5 +1,5 @@
-<!doctype html />
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>Keyboard events</title>
@@ -60,7 +60,7 @@
 	  }
 	}
 	function keyHandler(e){
-	  if(e.code == "Space" && !onFly) {
+	  if(e.code === "Space" && !onFly) {
 	    onFly = true;
 		moveBullet();
 	  }

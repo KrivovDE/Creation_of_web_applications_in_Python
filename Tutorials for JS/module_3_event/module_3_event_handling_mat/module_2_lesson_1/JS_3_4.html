@@ -1,18 +1,20 @@
-<!doctype html />
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>Events</title>
   <style>
     div {
-      background: navy;
+      background: green;
       height: 50px;
       width:  100px;
     }
   </style>
 </head>
-<body onclick = "out.innerText = 'Click detected over: ' + event.target.nodeName; console.log(event)">
+<body onclick = "out.innerText = 'Щелкнули по: ' + event.target.nodeName; console.log(event)">
+
   <div></div>
+
   <p id="out"></p>
 </body>
 </html>

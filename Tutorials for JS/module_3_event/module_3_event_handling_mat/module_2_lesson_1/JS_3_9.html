@@ -1,16 +1,16 @@
-<!doctype html />
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>Bubbling basics</title>
   <style>
     #d1 {
-	  border:1px solid navy;
+	  border:5px solid darkturquoise;
       height: 200px;
       width:  200px;
     }
 	#d2 {
-	  background: skyblue;
+	  background: deeppink;
 	  height: 100px;
 	  margin: 50px;
 	  width:  100px;
@@ -19,26 +19,31 @@
 </head>
 <body>
   <h1>Mouse enter / Mouse over</h1>
+
   <div id="d1">
     <div id="d2"></div>
   </div>
-  <p>Mouse enter <span id="s1"></span></div>
-  <p>Mouse over <span id="s2"></span></div>
+<br>
+
+  <span>Mouse enter</span> <span id="s1"></span> <br>
+  <br>
+  <span>Mouse over</span> <span id="s2"></span>
+
   <script>
     d1.onmouseenter = function(){
-	  s1.innerText = "d1"
+	  s1.innerText = "Рамка"
 	  console.log("d1.onmouseenter")
 	}
 	d1.onmouseover = function(){
-	  s2.innerText = "d1"
+	  s2.innerText = "Рамка"
 	  console.log("d1.onmouseover")
 	}
 	d2.onmouseenter = function(){
-	  s1.innerText = "d2"
+	  s1.innerText = "Кубик"
 	  console.log("d2.onmouseenter")
 	}
 	d2.onmouseover = function(){
-	  s2.innerText = "d2"
+	  s2.innerText = "Кубик"
 	  console.log("d2.onmouseover")
 	}
   </script>

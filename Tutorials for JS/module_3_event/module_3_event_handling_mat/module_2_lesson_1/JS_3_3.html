@@ -1,11 +1,11 @@
-<!doctype html />
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <title>Events</title>
   <style>
     div {
-      background: navy;
+      background: yellow;
       height: 50px;
       width:  100px;
     }
@@ -14,9 +14,7 @@
 <body>
   <div id="clickableDiv"></div>
   <script>
-      clickableDiv.onclick=function(){
-	    alert('DIV have been clicked')
-      }
+      clickableDiv.addEventListener("click", function(){alert('Жёлтый DIV have been clicked')})
   </script>
 </body>
 </html>

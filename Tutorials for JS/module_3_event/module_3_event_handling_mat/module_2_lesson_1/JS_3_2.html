@@ -5,7 +5,7 @@
   <title>Events</title>
   <style>
     div {
-      background: navy;
+      background: red;
       height: 50px;
       width:  100px;
     }
@@ -14,10 +14,9 @@
 <body>
   <div id="clickableDiv"></div>
   <script>
-      clickableDiv.addEventListener("click",
-	  function(){
-	    alert('DIV have been clicked')
-      })
+      clickableDiv.onclick=function(){
+	    alert('Красный DIV был нажат')
+      }
   </script>
 </body>
 </html>

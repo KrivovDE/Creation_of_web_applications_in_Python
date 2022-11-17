@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	    <title>JS</title>
+<style>
+img {
+	height: auto;
+	width:  100px;
+}
+</style>
+</head>
+<body>
+<img src="step.jpg"
+	 alt="****"
+	 onload="addMessage('1 - load OK')"
+	 onerror="addMessage('1 - load error')"/>
+
+<img src="step2.jpg"
+	 alt="****"
+	 onload="addMessage('2- load OK')"
+	 onerror="addMessage('2 - load error ')"/>
+
+<p id="txt"></p>
+
+<script>
+	function addMessage(msg) {
+	  window.txt.innerHTML += msg + "<br/>"
+	}
+</script>
+</body>
+</html>

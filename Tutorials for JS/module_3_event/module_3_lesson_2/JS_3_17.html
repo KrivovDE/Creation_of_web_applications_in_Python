@@ -1,18 +1,19 @@
-<!doctype html />
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <title>Defaults</title>
 </head>
 <body>
-<h1>Click on page and press a key</h1>
+<h1>Нажмите на  клавишу</h1>
 <h2 id="out"></h2>
 <script>
 document.body.onkeydown = function(e) {
-  var txt = "" ;
-  if(e.ctrlKey)  txt += "Ctrl - " ;
-  if(e.altKey)   txt += "Alt - " ;
-  if(e.shiftKey) txt += "Shift - " ;
+  let txt = "" ;
+  if(e.ctrlKey)  txt += "Нажали Ctrl - " ;
+  if(e.altKey)   txt += "Нажали Alt - " ;
+  if(e.shiftKey) txt += "Нажали Shift - " ;
+  if(e.metaKey) txt += "Нажали Command - " ;
   txt += e.key ;
   out.innerText = txt ;
 }

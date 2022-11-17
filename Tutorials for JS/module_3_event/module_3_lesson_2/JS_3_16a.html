@@ -1,21 +1,33 @@
-<!doctype html />
-<html>
+<!DOCTYPE html>
+<html lang="en" id="d4">
 <head>
 <meta charset="utf-8" />
 <title>Defaults</title>
 <style>
-#d1 {
-	border: 2px solid gray;
-	height: 200px;
-	width:  200px;
-}
+    body{
+        background: #999999;
+    }
+    .d {
+        border: 2px solid violet;
+        height: 200px;
+        width:  200px;
+        margin-top: 5px;
+    }
+    /*#d1{*/
+    /*    background: salmon;*/
+    /*}*/
+
 </style>
 </head>
-<body>
-<div id="d1"></div>
+<body id="d3">
+<div class="d" id="d1"></div>
+<div class="d"></div>
+<div class="d"></div>
+<div class="d"></div>
+
 <script>
 window.d1.onmousedown = function(e) {
-  var bgColor;
+  let bgColor;
   switch( e.which ) {
 	case 1:
 	  bgColor = "lime" ;
@@ -30,7 +42,7 @@ window.d1.onmousedown = function(e) {
   window.d1.style.backgroundColor = bgColor ;
 }
 
-window.d1.oncontextmenu = function() { return false }
+window.d4.oncontextmenu = function() { return false }
 
 </script>
 </body>

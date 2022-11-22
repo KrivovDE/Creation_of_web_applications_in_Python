@@ -1,10 +1,10 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <title>Frames object</title>
   <style>
     iframe{
-      border:1px solid navy;
+      border:1px solid orangered;
       height:300px;
       margin:30px;
       width:300px;
@@ -18,8 +18,9 @@
   <iframe src="about:blank"></iframe>
   <iframe src="about:blank"></iframe>
   <iframe src="about:blank" name="frame3"></iframe>
+
   <button onclick="window.frames[0].location='https://itstep.org'">IT Step</button>
-  <button onclick="window.frames[1].location='https://mystat.itstep.org'">Mystat</button>
-  <button onclick="window.frames.frame3.location='https://quiz.itstep.org'">Quizes</button>
+  <button onclick="window.frames[1].location='https://pyneng.readthedocs.io/'">Python</button>
+  <button onclick="window.frames.frame3.location='https://hashsum.ru/'">hashsum</button>
 </body>
 </html>

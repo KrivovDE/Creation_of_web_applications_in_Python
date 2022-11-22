@@ -19,11 +19,9 @@
 window.onbeforeunload =
 	function(e) {
 		if(text.value.length > 0) {
-		let msg = 'Text not saved';
-		e.returnValue = msg;
-		return msg;
+            console.log(e)
+		return e.returnValue;
 		}
-		return null;
 	}
 </script>
 </body>

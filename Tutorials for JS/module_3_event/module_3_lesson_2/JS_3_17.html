@@ -10,6 +10,7 @@
 <script>
 document.body.onkeydown = function(e) {
   let txt = "" ;
+  console.log(e)
   if(e.ctrlKey)  txt += "Нажали Ctrl - " ;
   if(e.altKey)   txt += "Нажали Alt - " ;
   if(e.shiftKey) txt += "Нажали Shift - " ;

@@ -1,6 +1,7 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <title>HTML DOM structure</title>
   <style>
     body{
 	  position: relative;
@@ -21,13 +22,14 @@
   <li class='item' style='background-color:green'></li>
   <li class='item' style='background-color:blue' ></li>
   </ol>
+
   <script>
-    var draggedElement = false;
-	var phantomElement = false;
+    let draggedElement = false;
+	let phantomElement = false;
 	
     document.onmousedown = function(e){
 		e.preventDefault();
-        var clickedElement = document.elementFromPoint(e.clientX,e.clientY);
+        let clickedElement = document.elementFromPoint(e.clientX,e.clientY);
         if(clickedElement.className.indexOf('item') > -1){
             clickedElement.style.opacity = '0.5';
             draggedElement  =  clickedElement;

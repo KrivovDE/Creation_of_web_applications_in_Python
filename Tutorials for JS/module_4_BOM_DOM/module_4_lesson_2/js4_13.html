@@ -1,29 +1,56 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <title>HTML DOM structure</title>
+  <meta charset="utf-8" />
 </head>
 <body>
   <ul id='list'>
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Item 3</li>
-  <li>Item 4</li>
+  <li>Первое 1</li>
+  <li>Второе 2</li>
+  <li>Третье 3</li>
+  <li>И так далее 4</li>
   </ul>
   <button onclick="addItem()">Add item</button>
   <button onclick="insertItem()">Insert item</button>
+
+  <button onclick="removeItem()">Remove second item</button>
+
   <script>
     function addItem(){
-	  var newItem = document.createElement('li');
-	  newItem.innerText = "New item";
+	  let newItem = document.createElement('li');
+	  newItem.innerText = "Это мы добавили сами";
 	  list.appendChild(newItem);       
     }
 	
 	function insertItem(){
-	  var firstItem = list.childNodes[0];
-	  var newItem = document.createElement('li');
-	  newItem.innerText = "New item";
+	  let firstItem = list.childNodes[0];
+	  let newItem = document.createElement('li');
+	  newItem.innerText = "Теперь в самое начало";
 	  list.insertBefore(newItem, firstItem);
 	}
+
+    function removeItem(){
+	  let n = 0;
+	  let element2 = false;
+	  for(let element of list.childNodes){
+	    if(element.tagName === "LI") n++;
+		if(n===2) {
+		  element2 = element;
+		  break;
+		}
+	  }
+	  if(element2) list.removeChild(element2);
+
+	}
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>

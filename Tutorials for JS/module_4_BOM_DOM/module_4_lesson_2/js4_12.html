@@ -8,8 +8,8 @@
 	    position: relative;
 	  }
 	  #div1 {
-		background-color: tomato;
-		border: 1px solid red;
+		background-color: darkturquoise;
+		border: 3px solid darkblue;
 		border-radius: 50%;
 		height: 100px;
 		width: 100px;
@@ -20,7 +20,7 @@
 <body>
   <div id="div1"></div>
   <script>
-    var isDrag = false;
+    let isDrag = false;
     div1.addEventListener("mousedown",function(){ isDrag = true })
     document.addEventListener("mouseup",function(){ isDrag = false })
     document.addEventListener("mousemove",function(e){ 

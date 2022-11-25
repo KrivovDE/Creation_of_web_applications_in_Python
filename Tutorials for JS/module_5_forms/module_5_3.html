@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок по JS</title>
+</head>
+<body>
+    <form name="reg">
+        <p><input name="user" value="" />
+        <p><input name="sex" type="radio" checked />М
+        <input name="sex" type="radio" />Ж
+        <p>Город:
+        <select name="city">
+            <option>Москва</option>
+            <option>Санкт-Петербург</option>
+            <option>Тверь</option>
+        </select>
+        <p>Согласие <input name="agree" type="checkbox" />
+        <p><textarea name="about" rows="10" cols="30">О себе</textarea>
+        <p><input type="submit" name="submit">
+    </form>
+    <p onclick="sendForm()">Отправить форму</p>
+<script>
+let frm = document.forms[0];
+
+// frm.user.onchange = function() {
+//             console.log(frm.user.value);
+// }
+// frm.sex[0].onchange = function() {
+//             console.log("sex 0: "+frm.sex[0].checked);
+// }
+//
+// frm.sex[1].onchange = function() {
+//             console.log("sex 1: "+frm.sex[1].checked);
+// }
+//
+// frm.agree.onchange = function() {
+//             console.log("agree: "+frm.agree.checked);
+// }
+//
+// frm.city.onchange = function() {
+//             console.log(frm.city.selectedIndex);
+// }
+/////////////////////////////////////////////////////////////
+// frm.user.oninput = function() {
+//          console.log(frm.user.value);
+// }
+/////////////////////////////////////////////////////////////
+// frm.user.oncut = function(e) {
+//             console.log("cut");
+// }
+//
+// frm.user.oncopy = function(e) {
+//             console.log("copy");
+// }
+//
+// frm.user.onpaste = function(e) {
+//             console.log("paste");
+// }
+/////////////////////////////////////////////////////////////
+// frm.onsubmit = function(e) {
+//             alert("отправка формы");
+// }
+//
+// frm.onsubmit = function(event) {
+//      if(frm.user.value)
+//           alert("отправка формы");
+//      else
+//           event.preventDefault();
+//           console.log("поле user пустое");
+// }
+
+//
+// function sendForm() {
+//     let form = document.createElement('form');
+//     form.method = 'GET';
+//     form.innerHTML = '<input name="q" value="test">';
+//     document.body.append(form);
+//     form.submit();
+}
+</script>
+</body>
+</html>

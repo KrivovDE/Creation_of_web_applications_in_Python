@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .error { background: red; }
+    </style>
+
+</head>
+<body>
+<div id="block"  style="height:50px; background: #777"></div>
+      <form name="reg">
+            <p><input name="user" value="" />
+            <p><input name="sex" type="radio" checked />М
+            <input name="sex" type="radio" />Ж
+            <p>Город:
+            <select name="city">
+                <option>Москва</option>
+                <option>Санкт-Петербург</option>
+                <option>Тверь</option>
+            </select>
+            <p>Согласие <input name="agree" type="checkbox" />
+            <p><textarea name="about" rows="10" cols="30">О себе</textarea>
+            <p><input type="submit" name="submit">
+      </form>
+
+<script>
+    let frm = document.forms[0];
+
+    // frm.user.onfocus = function(e) {
+    // console.log("получение фокуса");
+    // };
+    //
+    // frm.user.onblur = function(e) {
+    // console.log("потеря фокуса");
+    // };
+
+    // frm.user.onblur = function(e) {
+    //   if(frm.user.value.includes('#'))
+    //     frm.user.classList.add('error');
+    //   else frm.user.classList.remove('error');
+    // };
+////////////////////////////////////////////////
+// frm.addEventListener("focus", function() {
+//          console.log("form: focus");
+// }, true);
+//
+// frm.addEventListener("focusin", function() {
+//             console.log("form: focusin");
+// });
+////////////////////////////////////////////////
+// block.onfocus = function(e) {
+//       console.log("focus");
+// };
+//
+// block.onblur = function(e) {
+//       console.log("blur");
+// };
+
+
+////////////////////////////////////////////////
+
+</script>
+</body>
+</html>
+

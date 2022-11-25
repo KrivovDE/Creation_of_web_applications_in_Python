@@ -10,17 +10,49 @@
         <p><input name="sex" type="radio" checked />М
         <input name="sex" type="radio" />Ж
         <p>Город:
-        <select name="city">
-        <option>Воронеж</option>
-        <option>Борисоглебск</option>
-        <option>Поворино</option>
+        <select name="city" multiple>
+            <option>Воронеж</option>
+            <option>Борисоглебск</option>
+            <option>Поворино</option>
         </select>
-        <p>Согласие <input name="agree" type="checkbox" />
-        <p><textarea name="about" rows="10" cols="30"></textarea>
-        <p><input type="submit" name="submit">
+        <fieldset name="info">
+            <p>Согласие <input name="agree" type="checkbox" />
+            <p><textarea name="about" rows="10" cols="30"></textarea>
+            <p><input type="submit" name="submit">
+        </fieldset>
     </form>
 
 <script>
+    let frm = document.forms[0];
+    // let user = frm.user;
+    // let sex = frm.sex;
+    // let about = frm.about;
+    // console.log(user.value, sex[0].checked, about.value);
+
+    // let city = frm.city
+    // console.dir(city.options);
+    // console.log(city.value);
+    // console.log(city.selectedIndex);
+    //
+    //
+    // city.options[1].selected = true;
+    // city.options[2].selected = true;
+    //
+    // let selected = Array.from(city.options)
+    //       .filter(option => option.selected)
+    //
+    //     for(let c of selected)
+    //           console.log(c);
+    //
+    //
+    // let selected = Array.from(city.options)
+    // .filter(option => option.selected)
+    // .map(option => option.value);
+    //
+    //     for(let c of selected)
+    //         console.log(c);
+
+
 </script>
 </body>
 </html>

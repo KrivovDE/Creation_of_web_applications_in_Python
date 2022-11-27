@@ -6,6 +6,18 @@
  document.cookie = "registered=User; expires=Thu, 27 Nov 2022 06:00:00 GMT; path=/";
  document.cookie = "organization=Step; expires=Thu, 27 Nov 2022 06:00:00 GMT; path=/";
  window.out.innerHTML = document.cookie;
+
+let x = document.cookie;
+let s = x.split('; ');
+let cookieObject = {};
+let c;
+for(let i=0; i < s.length; i++){
+ c = s[i].split('=');
+ cookieObject[c[0]] = c[1];
+}
+for(let co in cookieObject)
+ window.out.innerHTML += co + " = " +
+ cookieObject[co] + "<br/>";
  </script>
 </body>
 </html>

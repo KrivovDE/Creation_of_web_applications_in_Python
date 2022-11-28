@@ -6,11 +6,20 @@
 </head>
 <body>
   <ul id='list'>
-  <li>Первое 1</li>
-  <li>Второе 2</li>
-  <li>Третье 3</li>
-  <li>И так далее 4</li>
+    <li>Первое 1</li>
+    <li>Второе 2</li>
+    <li>Третье 3</li>
+    <li>И так далее 4</li>
   </ul>
+
+    <ul id='list1'>
+    <li> 1</li>
+    <li> 2</li>
+    <li> 3</li>
+    <li> 4</li>
+  </ul>
+
+
   <button onclick="addItem()">Add item</button>
   <button onclick="insertItem()">Insert item</button>
 
@@ -20,14 +29,16 @@
     function addItem(){
 	  let newItem = document.createElement('li');
 	  newItem.innerText = "Это мы добавили сами";
-	  list.appendChild(newItem);       
+	  list1.appendChild(newItem);
     }
 	
 	function insertItem(){
-	  let firstItem = list.childNodes[0];
+	  let firstItem = list.childNodes[5];
 	  let newItem = document.createElement('li');
 	  newItem.innerText = "Теперь в самое начало";
-	  list.insertBefore(newItem, firstItem);
+	        console.log(firstItem)
+
+      list.insertBefore(newItem, firstItem);
 	}
 
     function removeItem(){
@@ -35,7 +46,7 @@
 	  let element2 = false;
 	  for(let element of list.childNodes){
 	    if(element.tagName === "LI") n++;
-		if(n===2) {
+		if(n===3) {
 		  element2 = element;
 		  break;
 		}
@@ -43,7 +54,6 @@
 	  if(element2) list.removeChild(element2);
 
 	}
-
 
 
 

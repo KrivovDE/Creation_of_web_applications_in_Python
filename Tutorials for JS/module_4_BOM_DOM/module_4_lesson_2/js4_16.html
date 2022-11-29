@@ -35,13 +35,13 @@
 
   <script>
     function selD1() {
-	  let elem = document.getElementById("d1");
-	  elem.style.backgroundColor = "#cfc";
+	  let elems = document.getElementById("p2");
+	  elems.style.backgroundColor = "#cfc";
 	}
 	function selC1() {
 	  let elems = document.getElementsByClassName("c1");
-	  for(elem of elems)
-	    elem.style.backgroundColor = "#fcc";
+	  for(let elem of elems)
+        elem.style.backgroundColor = "#fcc";
 	}
 	function selP() {
 	  let elems = document.getElementsByTagName("p");
@@ -58,6 +58,7 @@
 	  for(elem of elems)
 	    elem.style.backgroundColor = "#eee";
 	}
+
   </script>
 </body>
 </html>

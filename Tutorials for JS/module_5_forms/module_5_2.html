@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<div id="block"  style="height:50px; background: #777"></div>
+<div id="block"  style="height:50px; background: #777" tabindex="-1"></div>
       <form name="reg">
             <p><input name="user" value="" />
             <p><input name="sex" type="radio" checked />М
@@ -27,6 +27,8 @@
 
 <script>
     let frm = document.forms[0];
+    let h = frm.activeElement
+    console.log(h)
 
     // frm.user.onfocus = function(e) {
     // console.log("получение фокуса");

@@ -6,35 +6,30 @@
 </head>
 <body>
     <form name="reg">
-        <p><input name="user" value="" />
-        <p><input name="sex" type="radio" checked />М
-        <input name="sex" type="radio" />Ж
-        <p>Город:
-        <select name="city" multiple>
-            <option>Воронеж</option>
-            <option>Борисоглебск</option>
-            <option>Поворино</option>
-        </select>
-        <fieldset name="info">
-            <p>Согласие <input name="agree" type="checkbox" />
-            <p><textarea name="about" rows="10" cols="30"></textarea>
-            <p><input type="submit" name="submit">
-        </fieldset>
+        <p><input name="user1" value="">
+        <p><input name="user2" value="">
+        <p>Согласие <input name="agree" type="checkbox" />
+        <p><input type="submit" id="submit1" >
+
     </form>
 
 <script>
     let frm = document.forms[0];
-    // let user = frm.user;
-    // let sex = frm.sex;
-    // let about = frm.about;
-    // console.log(user.value, sex[0].checked, about.value);
+    let user1 = frm.user1
+    let user2 = frm.user2
+    // let submit1 = frm.submit1
+    submit1.addEventListener('click', function (){
+    alert(user1.value + user2.value)
+    })
 
+
+    //
     // let city = frm.city
-    // console.dir(city.options);
-    // console.log(city.value);
-    // console.log(city.selectedIndex);
-    //
-    //
+    // // console.dir(city.options);
+    // // console.log(city.value);
+    // // console.log(city.selectedIndex);
+    // //
+    // // //
     // city.options[1].selected = true;
     // city.options[2].selected = true;
     //
@@ -44,12 +39,12 @@
     //     for(let c of selected)
     //           console.log(c);
     //
-    //
-    // let selected = Array.from(city.options)
-    // .filter(option => option.selected)
-    // .map(option => option.value);
-    //
-    //     for(let c of selected)
+    // //
+    // // let selected = Array.from(city.options)
+    // // .filter(option => option.selected)
+    // // .map(option => option.value);
+    // //
+    // //     for(let c of selected)
     //         console.log(c);
 
 

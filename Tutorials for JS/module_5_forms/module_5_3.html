@@ -19,9 +19,17 @@
         <p><textarea name="about" rows="10" cols="30">О себе</textarea>
         <p><input type="submit" name="submit">
     </form>
-    <p onclick="sendForm()">Отправить форму</p>
 <script>
 let frm = document.forms[0];
+
+frm.onsubmit = function(event) {
+     if(frm.user.value)
+          alert("отправка формы");
+     else
+          event.preventDefault();
+          console.log("поле user пустое");
+}
+
 
 // frm.user.onchange = function() {
 //             console.log(frm.user.value);
@@ -63,13 +71,7 @@ let frm = document.forms[0];
 //             alert("отправка формы");
 // }
 
-// frm.onsubmit = function(event) {
-//      if(frm.user.value)
-//           alert("отправка формы");
-//      else
-//           event.preventDefault();
-//           console.log("поле user пустое");
-// }
+
 
 //
 // function sendForm() {

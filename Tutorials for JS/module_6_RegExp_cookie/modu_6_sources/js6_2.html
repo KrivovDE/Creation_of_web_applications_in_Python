@@ -15,7 +15,7 @@
 	</style>
 </head>
 <body>
-	<form method="GET" id="regForm" onsubmit="return checkForm()" >
+	<form method="POST" id="regForm" onsubmit="return checkForm()" >
 		<b>First name:</b>  <input type="text" id="name1" name="name1" required /><br/>
 		<b>Last name:</b> <input type="text" id="name2" name="name2" required /><br/>
 		<b>Login:</b> <input type="text" id="login" name="login" required /><br/>
@@ -88,6 +88,8 @@ function checkForm(){
 	}
 	return true;
 }
+// http://localhost:63342/Course%20creating%20web%20applications%20with%20Python/Tutorials%20for%20JS/module_6_RegExp_cookie/modu_6_sources/js6_2.html?
+// name1=Dm&name2=Kr&login=DK&pass=1Qw&email=1%40m.e&phone=123456&code=1&accept=on
 </script>
 </body>
 </html>

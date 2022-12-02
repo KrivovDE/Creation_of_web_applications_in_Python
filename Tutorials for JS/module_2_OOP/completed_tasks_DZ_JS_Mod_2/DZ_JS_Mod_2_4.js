@@ -13,46 +13,46 @@
 // унаследовав его от простого маркера и добавив метод для заправки
 // маркера.
 // Продемонстрировать работу написанных методов.
-
-class Marker {
-    constructor(color, inkLevel) {
-        this.color = color;
-        this.inkLevel = inkLevel;
-    }
-    print() {
-
-        let i=0;
-        let newStr ='';
-        while (this.inkLevel>=0.5 && str[i]!==undefined) {
-            newStr +=str[i];
-            if (str[i] !== ' ') this.inkLevel -= 0.5;
-            i++;
-        }
-        document.write(`<p style="color:` + this.color + `">` + newStr + `</p>`); //выводим печать на экран
-        console.log('Ink left after printing: ' + this.inkLevel);  //выводим остаток чернил в консоль
-        return(this.inkLevel);  //возвращаем остаток чернил
-    }
-}
-
-class AddInkMarker extends Marker {
-    constructor(color,inkLevel,addInk) {
-        super(color,inkLevel);
-        this.addInk = addInk;
-    }
-    fillUp () {
-        this.inkLevel += this.addInk;  //добавляем к уровню чернил в родительском классе новые чернила
-        console.log('Now Ink level is ' + this.inkLevel);  //выводим остаток чернил в консоль
-    }
-}
-let col;
-let pr = new Marker(col = prompt('Enter color of Ink','red'),+prompt('Enter level of Ink','100'));
-let str = prompt('Enter your text','Интернет является основой сети (the Web),  технической ' +
-            'инфраструктурой, благодаря которой и существует Всемирная Паутина. По своей сути, интернет - очень ' +
-            'большая сеть  компьютеров, которые могут взаимодействовать друг с другом.');
-let rem = pr.print(str);
-let refill = new AddInkMarker(col,rem,+prompt('Enter level of Ink for refilling','10'));
-refill.fillUp();
-refill.print();
+//
+// class Marker {
+//     constructor(color, inkLevel) {
+//         this.color = color;
+//         this.inkLevel = inkLevel;
+//     }
+//     print() {
+//
+//         let i=0;
+//         let newStr ='';
+//         while (this.inkLevel>=0.5 && str[i]!==undefined) {
+//             newStr +=str[i];
+//             if (str[i] !== ' ') this.inkLevel -= 0.5;
+//             i++;
+//         }
+//         document.write(`<p style="color:` + this.color + `">` + newStr + `</p>`); //выводим печать на экран
+//         console.log('Ink left after printing: ' + this.inkLevel);  //выводим остаток чернил в консоль
+//         return(this.inkLevel);  //возвращаем остаток чернил
+//     }
+// }
+//
+// class AddInkMarker extends Marker {
+//     constructor(color,inkLevel,addInk) {
+//         super(color,inkLevel);
+//         this.addInk = addInk;
+//     }
+//     fillUp () {
+//         this.inkLevel += this.addInk;  //добавляем к уровню чернил в родительском классе новые чернила
+//         console.log('Now Ink level is ' + this.inkLevel);  //выводим остаток чернил в консоль
+//     }
+// }
+// let col;
+// let pr = new Marker(col = prompt('Enter color of Ink','red'),+prompt('Enter level of Ink','100'));
+// let str = prompt('Enter your text','Интернет является основой сети (the Web),  технической ' +
+//             'инфраструктурой, благодаря которой и существует Всемирная Паутина. По своей сути, интернет - очень ' +
+//             'большая сеть  компьютеров, которые могут взаимодействовать друг с другом.');
+// let rem = pr.print(str);
+// let refill = new AddInkMarker(col,rem,+prompt('Enter level of Ink for refilling','10'));
+// refill.fillUp();
+// refill.print();
 
 // Задание 2
 // Реализуйте класс ExtendedDate, унаследовав его от стандарт-

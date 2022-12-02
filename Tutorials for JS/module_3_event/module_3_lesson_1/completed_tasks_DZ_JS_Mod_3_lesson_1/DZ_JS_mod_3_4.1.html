@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    th {
+      color: black;
+      background: #d9e1f2;
+      cursor: url('../Starodubtsev_DZ_modul_3_lesson_1_top/text.png'), pointer;
+    }
+    td,th {
+      width: 150px;
+      height: 40px;
+      text-align: center;
+      border: 2px solid #000000;
+      padding:0;
+      border-collapse: collapse;
+    }
+    tr:nth-child(2n) {
+      background: #d9d9d9;
+    }
+  </style>
+</head>
+<body>
+<table class="table_sort">
+  <thead>
+  <tr>
+    <th>Номер</th>
+    <th>Имя</th>
+    <th>Страна</th>
+    <th>Очки</th>
+  </tr>
+  </thead>
+  <tr>
+    <td>1</td>
+    <td>Гарри</td>
+    <td>Россия</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Хагрид</td>
+    <td>Англия</td>
+    <td>70</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Гермиона</td>
+    <td>Англия</td>
+    <td>80</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Рон</td>
+    <td>Лес</td>
+    <td>-80</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Дамблдор</td>
+    <td>Темный лес</td>
+    <td>200</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Сириус</td>
+    <td>Германия</td>
+    <td>37</td>
+  </tr>
+</table>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+let getSort = ({ target }) => {
+  let order = (target.dataset.order = -(target.dataset.order || -1));
+  let index = [...target.parentNode.cells].indexOf(target);
+  let collator = new Intl.Collator(['en', 'ru'], { numeric: true });
+  let comparator = (index, order) => (a, b) => order * collator.compare(
+a.children[index].innerHTML,
+b.children[index].innerHTML
+);
+
+for(let tBody of target.closest('table').tBodies)
+tBody.append(...[...tBody.rows].sort(comparator(index, order)));
+
+for(let cell of target.parentNode.cells)
+cell.classList.toggle('sorted', cell === target);
+};
+
+document.querySelectorAll('.table_sort thead').forEach(tableTH => tableTH.addEventListener('click', () => getSort(event)));
+
+});
+</script>
+</body>
+</html>

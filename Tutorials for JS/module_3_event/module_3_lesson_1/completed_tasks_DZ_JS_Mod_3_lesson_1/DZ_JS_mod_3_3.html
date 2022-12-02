@@ -1,0 +1,56 @@
+<!--// 3. Разместите на странице 3 блока. Напишите инструкции, которые обеспечат перемещение в точку, в которой находится-->
+<!--// указатель мыши:-->
+<!--// первого блока — при нажатии левой клавиши мыши,-->
+<!--// второго блока — при нажатии средней клавиши (или колеса),-->
+<!--// третьего блока — при нажатии правой клавиши мыши.-->
+<!--// Контекстное меню при нажатии правой клавиши мыши появляться не должно.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            position: relative;
+            margin: 0;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        #div1 {
+            background: green;
+        }
+        #div2 {
+            background: yellow;
+            left: 150px;
+        }
+        #div3 {
+            background: red;
+            left: 300px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<script>
+    window.onmousedown = function (e) {
+        switch (e.button) {
+            case 0: div1.style.left = e.pageX + 'px';
+                    div1.style.top = e.pageY + 'px';
+                    break;
+            case 1: div2.style.left = e.pageX + 'px';
+                    div2.style.top = e.pageY + 'px';
+                    break;
+            case 2: div3.style.left = e.pageX + 'px';
+                    div3.style.top = e.pageY + 'px';
+                    break;
+        }
+        window.oncontextmenu = function() { return false }
+    }
+</script>
+</body>
+</html>

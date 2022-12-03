@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сalculator</title>
+  <style>
+    table{
+      border-collapse: collapse;
+      margin-left:500px;
+      margin-top:200px;
+    }
+    td {
+      border: solid 1px black;
+      width:75px;
+      height:75px;
+      text-align:center;
+      font-size:35px;
+      background:#e4e4e4;
+    }
+    input{
+      position:absolute;
+      margin-left:500px;
+      margin-top:-100px;
+      border:solid 1px black;
+      background:#fff;
+      width:312px;
+      height:70px;
+      font-size:35px;
+    }
+    .fon{
+      position:absolute;
+      width: 500px;
+      height: 500px;
+      background: #fcf2e9;
+      top:50px;
+      left:410px;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <form name="calc">
+    <input type="button" name="input">
+      <table>
+        <tr>
+          <td onclick="calc.input.value += '7'">7</td>
+          <td onclick="calc.input.value += '8'">8</td>
+          <td onclick="calc.input.value += '9'">9</td>
+          <td onclick="calc.input.value += '+'">+</td>
+        </tr>
+        <tr>
+          <td onclick="calc.input.value +='4'">4</td>
+          <td onclick="calc.input.value +='5'">5</td>
+          <td onclick="calc.input.value +='6'">6</td>
+          <td onclick="calc.input.value +='-'">-</td>
+        </tr>
+        <tr>
+          <td onclick="calc.input.value +='1'">1</td>
+          <td onclick="calc.input.value +='2'">2</td>
+          <td onclick="calc.input.value +='3'">3</td>
+          <td onclick="calc.input.value +='*'">*</td>
+        </tr>
+        <tr>
+          <td onclick="calc.input.value +='0'">0</td>
+          <td onclick="calc.input.value = eval(calc.input.value)" colspan="2">=</td>
+          <td onclick="calc.input.value +='/'">/</td>
+        </tr>
+      </table>
+  </form>
+<div class="fon"></div>
+</body>
+</html>

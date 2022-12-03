@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            width: 100px;
+            height: 30px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<!--Задание 1-->
+<!--Создать html-страницу с таблицей. При наведении мышкой на ячейку таблицы, у этой ячейки должен меняться фон. -->
+<!--Учтите, что когда мышку уводят с ячейки, то ее фон возвращается к прежнему. Выполнить задание с помощью JS, -->
+<!--а не с помощью CSS.-->
+<table>
+<thead>
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Company</th>
+    </tr>
+</thead>
+<tbody id="myTable">
+    <tr>
+        <td>Bill</td>
+        <td>Gates</td>
+        <td>Microsoft</td>
+    </tr>
+    <tr>
+        <td>Timothy</td>
+        <td>Cook</td>
+        <td>Apple</td>
+    </tr>
+    <tr>
+        <td>Larry</td>
+        <td>Page</td>
+        <td>Goggle</td>
+    </tr>
+    <tr>
+        <td>Mark</td>
+        <td>Zuckerberg</td>
+        <td>Facebook</td>
+    </tr>
+</tbody>
+</table>
+<script>
+    let myTab = document.querySelector('#myTable');
+    myTab.addEventListener("mouseover", function (e) {
+        e.target.style.background = 'red';
+    });
+    myTab.addEventListener('mouseout', function (e) {
+        e.target.style.background = 'none';
+    });
+</script>
+</body>
+</html>

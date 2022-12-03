@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Задание 2-->
+<!--Создать html-страницу с любым содержимым и запретить пользователю выделять текст и вызывать контекстное -->
+<!--меню кликом правой кнопки.-->
+<p id="txt"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<script>
+    document.onselectstart = function () { return false;};
+    document.oncontextmenu = function() { return false };
+</script>
+</body>
+</html>

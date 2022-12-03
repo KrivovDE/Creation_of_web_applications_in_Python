@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 150px;
+            height: 50px;
+            background: #4c9afe;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            font-family: arial,serif;
+            font-size: 30px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<!--Задание 3-->
+<!--Создать html-страницу с кнопкой Like, при нажатии на которую увеличивается счетчик лайков, -->
+<!--без перезагрузки страницы-->
+<div id="likeDiv"><p>Like<span id="counter">&nbsp0</span></p></div>
+<script>
+    let likeSel = document.querySelector('#likeDiv');
+    let countSel = document.querySelector('#counter');
+    let counter = 0;
+    likeSel.addEventListener('click', function () {
+        counter++;
+        countSel.innerText = ` ${counter}`;
+    })
+    likeSel.onselectstart = function () { return false;};
+</script>
+</body>
+</html>

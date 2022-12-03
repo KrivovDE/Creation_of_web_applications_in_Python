@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .menu {
+            min-height: 100vh;
+            width: 100px;
+            background: #808080;
+            position: fixed;
+        }
+        .text {
+            padding: 30px 50px 20px 180px;
+            min-width: 700px;
+            display: none;
+        }
+        #textHTML {
+            display: block;
+        }
+        ul {
+            margin: 0;
+            padding-left: 0;
+            padding-top: 50px;
+            list-style-type: none;
+        }
+        li {
+            box-sizing: border-box;
+            height: 50px;
+            color: #FFFFFF;
+            font-size: 16px;
+            padding: 16px 16px;
+        }
+        li:hover {
+            background-color: #414345;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<!--Задание 4-->
+<!--Создать html-страницу со вкладками. С левой стороны страницы отображается несколько вкладок, по которым -->
+<!--можно переключаться. У каждой вкладки есть свое содержимое, но в один момент-->
+<!--времени отображается содержимое только активной вкладки.-->
+    <div class="menu">
+         <ul>
+             <li>HTML</li>
+             <li>CSS</li>
+             <li>JS</li>
+         </ul>
+    </div>
+    <div id="textDiv">
+        <div class="text" id="textHTML">
+            <h1>HTML</h1>
+            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <div class="text" id="textCSS">
+            <h1>CSS</h1>
+            <p> It is a long-established fact that a reader will be distracted by the readable content of a page
+                when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                distribution of letters, as opposed to using 'Content here, content here', making it look like
+                readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                their default model text, and a search for 'lorem ipsum' will uncover many web-sites still in
+                their infancy. Various versions have evolved over the years, sometimes by accident, sometimes
+                on purpose (injected humour and the like).</p>
+        </div>
+        <div class="text" id="textJS">
+            <h1>JS</h1>
+            <p> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+                a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
+                consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature,
+                discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of
+                "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.
+                This book is a treatise on the theory of ethics, very popular during the Renaissance.
+                The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet.", comes from a line in section 1.10.32.</p>
+        </div>
+    </div>
+<script>
+    let menuSel = document.querySelector('.menu');
+    let menuCol = document.querySelectorAll('.menu li');
+    let txtDiv = document.querySelectorAll('#textDiv div');
+    //функция прячет все блоки с текстом
+    function hideDiv(nodeList) {
+        for (let i=0; i<nodeList.length; i++) {
+            nodeList[i].style.display = 'none';
+        }
+    }
+    //функция находит индекс элемента коллекции menuCol, на который осуществлен клик
+    function findIndexInMenuCol(nodeList, e) {
+        for (let i=0; i<nodeList.length; i++) {
+            if (e.target.innerText === nodeList[i].innerText) {
+                return i;
+            }
+        }
+    }
+    menuSel.addEventListener ('click', function(e) {
+        let indexOfText = findIndexInMenuCol(menuCol,e);
+        hideDiv(txtDiv);
+        txtDiv[indexOfText].style.display = 'block'; //выводим на экран блок текста с найденным индексом
+    })
+</script>
+</body>
+</html>

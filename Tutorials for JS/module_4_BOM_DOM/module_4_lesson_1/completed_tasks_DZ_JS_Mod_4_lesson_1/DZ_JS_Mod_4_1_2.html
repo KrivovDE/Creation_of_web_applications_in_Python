@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #img_container {
+            height: 500px;
+            width: 900px;
+            background-size: cover;
+            background-image: url("img/1.jpg");
+        }
+        #left_arrow {
+            float: left;
+            height: 500px;
+            width: 50px;
+            opacity: 50%;
+        }
+        #right_arrow {
+            float: right;
+            height: 500px;
+            width: 50px;
+        }
+        img {
+            margin-top: 150px;
+            height: 50px;
+        }
+        h1 {
+            color: white;
+            padding: 0 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="img_container"><h1>TALLIN</h1>
+    <div id="left_arrow"><img src="img/left_arrow.png" alt="<--"></div>
+    <div id="right_arrow"><img src="img/right_arrow.png" alt="-->"></div>
+</div>
+<script>
+    let imagesArr = [];
+    function getImages(){
+        for(let image, i = 1; i <= 5; i++ ) {
+            image = new Image;
+            image.src = "img/" + i + ".jpg";
+            imagesArr.push(image);
+        }
+    }
+    getImages();
+    let indexJPG=0;
+    let leftArrow = document.querySelector('#left_arrow');
+    let rightArrow = document.querySelector('#right_arrow');
+    let imgContainer = document.querySelector('#img_container');
+    rightArrow.addEventListener('click', function () {
+        imgContainer.style.backgroundImage = 'url(' + imagesArr[indexJPG + 1].src + ')';
+        indexJPG++;
+        if (indexJPG === imagesArr.length-1) rightArrow.style.opacity = '50%';
+        else leftArrow.style.opacity = '100%';
+    })
+    leftArrow.addEventListener('click', function () {
+        imgContainer.style.backgroundImage = 'url(' + imagesArr[indexJPG - 1].src + ')';
+        indexJPG--;
+        if (indexJPG === 0) leftArrow.style.opacity = '50%';
+        else rightArrow.style.opacity = '100%';
+    })
+</script>
+</body>
+</html>

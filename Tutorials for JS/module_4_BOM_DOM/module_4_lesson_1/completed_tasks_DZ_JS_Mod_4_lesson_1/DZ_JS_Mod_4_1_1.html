@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        #outerDiv {
+            height: 30px;
+            width: 300px;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 300px;
+            position: relative;
+            background-color: #d2e0ee;
+            background-clip: content-box;
+        }
+        #innerDiv {
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            background: #4c9afe;
+            top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outerDiv">
+        <div id="innerDiv"></div>
+    </div>
+    <script>
+        let trackBar = document.querySelector('#innerDiv');
+        let trackLine = document.querySelector('#outerDiv');
+        let l = trackLine.offsetWidth;
+        let isDrag = false;
+        trackBar.addEventListener('mousedown', function () {isDrag = true});
+        document.addEventListener('mouseup', function () {isDrag = false});
+        document.addEventListener('mousemove', function (e) {
+            if (isDrag && e.pageX >= 310 && e.pageX <= 570) trackBar.style.left = e.pageX - l + 'px';
+        })
+    </script>
+</body>
+</html>

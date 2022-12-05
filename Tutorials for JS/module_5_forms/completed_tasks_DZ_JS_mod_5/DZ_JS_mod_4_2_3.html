@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin:auto;
+            width: 800px;
+        }
+        #comments, #sub {
+            width: 800px;
+        }
+        #comInp {
+            width: 800px;
+            height: 200px;
+        }
+        h4 {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<!--Создать html-страницу со статьей, комментариями к ней и формой для добавления нового комментария. При нажатии -->
+<!--на кнопку Добавить комментарий форма должна очищаться, а комментарий добавляться к списку всех комментариев. -->
+<!--Комментарий состоит из имени пользователя, даты и текста.-->
+<body>
+<div>
+    <h3>What is Lorem Ipsum?</h3>
+</div>
+<div>
+    <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+        sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+        Aldus PageMaker including versions of Lorem Ipsum.</p>
+</div>
+<hr>
+<div id="comments"></div>
+<form>
+    <h4>Leave your comment</h4>
+    <label for="nameInp">Name:</label>
+    <input type="text" id="nameInp"><br>
+    <label for="comInp">Comment:</label><br>
+    <textarea id="comInp"></textarea>
+    <input type="submit" id="sub" value="Add comment">
+</form>
+<script>
+    let date = new Date();
+    let but = document.getElementById('sub');
+    but.addEventListener('click', function (e) {
+        e.preventDefault();
+        let name = document.querySelector('#nameInp').value;
+        let txt = document.querySelector('#comInp').value;
+        let com = document.getElementById('comments');
+        let comDiv = document.createElement('div');
+        let d = date.toLocaleDateString() + date.toLocaleTimeString()
+        comDiv.innerHTML = '<h4>' + name + '</h4>' + d + '<br>' + txt + '<hr>';
+        com.appendChild(comDiv);
+        document.querySelector('#nameInp').value = '';
+        document.querySelector('#comInp').value = '';
+    })
+</script>
+</body>
+</html>

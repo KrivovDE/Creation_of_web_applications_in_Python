@@ -1,0 +1,84 @@
+<!--Создать html-страницу с галереей.-->
+<!--В один момент времени на экране отображается одно изображение и две кнопки: -->
+<!--Назад и Вперед. При нажатии на кнопки изображения должны переключатся в указанном -->
+<!--порядке. Когда следующего/предыдущего изображения нет, то соответствующую-->
+<!--кнопку необходимо блокировать. Изображения хранить в заранее подготовленном массиве.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            position: relative;
+            background: #483f48;
+            margin: 0;
+            text-align: center;
+        }
+        img{
+            position: absolute;
+        }
+        #right{
+            top: 200px;
+            left: 90%;
+        }
+        #left{
+            top: 200px;
+            right: 90%;
+        }
+        #center{
+            position: absolute;
+            left: 33%;
+            height: 575px;
+        }
+    </style>
+</head>
+<body>
+    <img id="right" src="img/right.png" alt="right">
+    <div>
+        <img id="center" src="" alt="center">
+    </div>
+    <img id="left" src="img/left.png" alt="left">
+
+    <script>
+        let person = ['img/alh.jpg','img/axe.jpg','img/invoker.jpg',
+            'img/jager.jpg','img/lina.jpg','img/sf.jpg',
+            'img/shaman.jpg','img/teror.jpg','img/tidh.jpg']
+        let counters = 0;
+        center.src = person[counters];          //установили начальное значение для картинки
+        left.style.opacity = '.1';              //размыли левую стрелку при изначальном положении
+
+        function rightSwap() {
+            right.addEventListener('click', function () {
+                if (counters !== person.length - 1) {       //проверка на конец картинок
+                    counters++
+                    center.src = person[counters];
+                    left.style.opacity = '1';
+                }
+                if (counters === person.length - 1){            //если достигнут конец
+                    center.src = person[person.length - 1];
+                    right.style.opacity = '.1';
+                }
+            })
+        }
+
+        function leftSwap() {
+            left.addEventListener('click', function () {
+                if (counters !== 0) {                           //проверка на начало картинок
+                    counters--
+                    center.src = person[counters];
+                    right.style.opacity = '1';
+                }
+                if (counters === 0){                            //если достигнуто начало
+                    center.src = person[0];
+                    left.style.opacity = '.1';
+                }
+            })
+        }
+
+        rightSwap();
+        leftSwap();
+    </script>
+</body>
+</html>

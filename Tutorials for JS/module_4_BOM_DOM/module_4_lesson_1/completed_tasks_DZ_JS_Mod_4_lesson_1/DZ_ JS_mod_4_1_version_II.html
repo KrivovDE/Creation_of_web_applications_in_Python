@@ -1,0 +1,69 @@
+<!--Создать html-страницу с трекбаром. Предоставить пользователю возможность -->
+<!--изменять положение синего указателя.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            background: #eeb27f;
+        }
+        #d1{
+            position: relative;
+            top: 250px;
+            left: 150px;
+            height: 15px;
+            width: 500px;
+            background: #777677;
+        }
+        #d2{
+            position: absolute;
+            top: -4px;
+            height: 24px;
+            width: 18px;
+            background: #8d99f8;
+        }
+    </style>
+</head>
+<body id="b1">
+    <div id="d1">
+        <div id="d2"></div>
+    </div>
+    <script>
+        let slider = document.querySelectorAll("#d1,#d2");
+        let work = false;
+        function sliderStart() {
+            slider[1].addEventListener("mousedown", function () {
+                work = true;            //ползунок можно двигать
+            })
+        }
+
+        function sliderActive() {
+            slider[0].addEventListener("mousemove", function (e) {
+                if (work) {         //ограничения при движении ползунка
+                    slider[1].style.left = e.pageX - 155 + "px";
+                    if (e.pageX < 155) {
+                        slider[1].style.left = 0 + "px";
+                    }
+                    if (e.pageX > 640) {
+                        slider[1].style.left = 485 + "px";
+                    }
+                }
+            })
+        }
+
+        function sliderFinish() {
+            slider[1].addEventListener("mouseup", function () {
+                work = false;           //ползунок нельзя двигать
+            })
+        }
+
+        sliderStart();
+        sliderActive();
+        sliderFinish();
+    </script>
+</body>
+</html>

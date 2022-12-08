@@ -1,0 +1,136 @@
+<!--Создать html-страницу со статьей, комментариями к ней и формой для добавления -->
+<!--нового комментария. При нажатии на кнопку Добавить комментарий форма должна -->
+<!--очищаться, а комментарий добавляться к списку всех комментариев. Комментарий -->
+<!--состоит из имени пользователя, даты и текста-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            position: relative;
+            background: #fbf2ea;
+            margin: 30px 30px 0 30px;
+        }
+        hr{
+            height: 0;
+            background: #b6aaaa;
+            margin-bottom: 30px;
+        }
+        label{
+            font-size: 14px;
+        }
+        form{
+            margin-top: -15px;
+        }
+        #nameInp{
+            margin-bottom: 5px;
+        }
+        textarea{
+            height: 80px;
+            width: 100%;
+        }
+        button{
+            width: 100%;
+        }
+        #commName,#commDate,#commText{      /*стили бля будущих комментариев*/
+            margin-top: -15px;
+            font-size: 15px;
+        }
+        #commDate{
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>What is Lorem Ipsum?</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.</p>
+        <hr>
+    </div>
+    <div id="commBlock">
+
+    </div>
+    <div>
+        <h5>Leave you comment</h5>
+        <form>
+            <label>
+                <span>Name:</span>
+                <input type="text" name="yourName" id="nameInp"> <br>
+                <span>Comment:</span> <br>
+                <textarea id="commInp" name="yourComm"></textarea>
+                <button type="button" id="commSpend">Add comment</button>
+            </label>
+        </form>
+    </div>
+    <script>
+        let commentBlock = document.getElementById('commBlock')
+
+        let frm = document.forms[0];            //записали формы
+        let nameField = frm.yourName;           //записали формму с вводом имени
+        let commField = frm.yourComm;           //записали форму с вводом комментария
+
+        let dateNow = new Date();               //записали дтекущую дату
+        let dd = dateNow.getDate();             //получили текущий день
+        let mm = dateNow.getMonth() + 1;        //получили текущий месяц
+        let yy = dateNow.getFullYear();         //получили текущий год
+
+        //ФУНКЦИЯ ДЛЯ ВЫВОДА ИМЕНИ
+        function buttonClick() {
+            if (nameField.value.length > 1 && commField.value.length > 2){
+                let createName = document.createElement('p');
+                createName.innerHTML = `<b>${nameField.value}</b>`;
+                createName.id = 'commName';
+                commentBlock.appendChild(createName);
+            }
+        }
+
+        //ФУНКЦИЯ ДЛЯ ВЫВОДА ДАТЫ
+        function commentDate(){
+            let createDate = document.createElement('p');
+            createDate.innerHTML = `${dd}.${mm}.${yy}`;
+            createDate.id = 'commDate';
+            commentBlock.appendChild(createDate);
+        }
+
+        //ФУНКЦИЯ ДЛЯ ВЫВОДА КОММЕНТАРИЯ
+        function commentText(){
+            let createComm = document.createElement('p');
+            createComm.innerHTML = `${commField.value}`;
+            createComm.id = 'commText';
+            commentBlock.appendChild(createComm);
+        }
+
+        //ФУНКЦИЯ ДЛЯ ВЫВОДА HR
+        function commentHr(){
+            let createHr = document.createElement('hr');
+            commentBlock.appendChild(createHr);
+        }
+
+        //ОБРАБОТЧИК СОБЫТИЯ
+        commSpend.addEventListener('click',function (){
+            if (nameField.value.length > 1 && commField.value.length > 2) {     //проверили длинну символов
+                buttonClick();
+                commentDate();
+                commentText();
+                commentHr();
+            }
+            nameField.value = '';               //очистили формы
+            commField.value = '';
+        })
+    </script>
+</body>
+</html>

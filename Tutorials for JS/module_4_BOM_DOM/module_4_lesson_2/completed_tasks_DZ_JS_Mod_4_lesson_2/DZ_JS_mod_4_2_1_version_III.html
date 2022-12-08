@@ -1,0 +1,50 @@
+<!--Создать html-страницу с кнопкой, по нажатию на которую добавляются цветные блоки -->
+<!--на страницу. По клику на сам блок, он должен удаляться со страницы.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #main{
+        }
+        .divFool{
+            margin: 8px;
+            height: 100px;
+            width: 180px;
+            float: left;
+        }
+        button{
+             margin: 2% 10%;
+             width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+    <button id="b1">Add block</button>
+    <script>
+        let divMain = document.getElementById('main');
+
+        function addBlock(){
+            b1.onclick = function () {
+                let createDiv = document.createElement('div');      //создали див
+                createDiv.className = 'divFool';                    //присвоили ему класс
+                createDiv.style.background = 'rgb(' + Math.round(255 * Math.random()) +
+                    ',' + Math.round(255 * Math.random()) +
+                    ',' + Math.round(255 * Math.random()) + ')';        //назначили случайный цвет
+                divMain.appendChild(createDiv);                      //добавили его в DOM
+                chooseBlock();                           //срабатывает при нажатии на блок
+            }
+        }
+
+        function chooseBlock(){
+            divMain.onclick = function(e) {
+                e.target.remove();
+            }
+        }
+        addBlock();
+    </script>
+</body>
+</html>

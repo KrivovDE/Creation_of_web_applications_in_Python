@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Square-color</title>
+</head>
+<style>
+    div{
+        position:relative;
+        width: 120px;
+        height: 60px;
+        margin: 20px;
+        display: inline-block;
+    }
+    #Add_block{
+        width:100%;
+        height:40px;
+        font-size: 20px;
+    }
+</style>
+<body>
+<div style="width:96%; height:500px; background:#faf2e9" id='list'></div>
+<button id="Add_block">Add block</button>
+<script>
+    Add_block.addEventListener('click', function (){
+    let newItem = document.createElement('div');
+    let rrr =  'd'+ Math.random().toString(36).substring(7); // генератор случайного id, в начале добавил букву d,
+    let bbb = "rgb(" + Math.round(255*Math.random()) + "," + Math.round(255*Math.random()) + "," + Math.round(255*Math.random()) + ")" ;
+    newItem.setAttribute('id', rrr); // добавляет случайный id (rrr)
+    newItem.setAttribute("style", "background-color:"+ bbb+";"); // добавляет случайный цвет в див
+    newItem.setAttribute("onclick", `document.querySelector('#${rrr}').outerHTML = ''`); // добавляет метод удаления в див
+    list.appendChild(newItem)// добавляет созданный в начале див в конец дива с id=list в документе
+    })
+</script>
+</body>
+</html>

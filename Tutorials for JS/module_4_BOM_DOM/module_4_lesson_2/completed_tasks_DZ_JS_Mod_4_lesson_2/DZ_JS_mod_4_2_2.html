@@ -1,0 +1,62 @@
+<!--Создать html-страницу с текстом и палитрой цветов. При клике на цвет палитры, должен изменяться цвет текста -->
+<!--на выбранный. Для указания, какой ячейке какой цвет соответствует, можно использовать атрибут data-color -->
+<!--в каждой ячейке, а потом с помощью JS получать необходимый цвет из этого атрибута-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border: 1px solid lightgrey;
+        }
+        td {
+            height: 20px;
+            width: 20px;
+            border: 1px solid lightgrey;
+        }
+    </style>
+</head>
+<body>
+<table id="palette">
+    <tr>
+        <td data-color="black"></td>
+        <td data-color="grey"></td>
+        <td data-color="brown"></td>
+        <td data-color="deeppink"></td>
+        <td data-color="yellow"></td>
+        <td data-color="green"></td>
+        <td data-color="deepskyblue"></td>
+        <td data-color="blue"></td>
+        <td data-color="purple"></td>
+    </tr>
+    <tr>
+        <td data-color="white"></td>
+        <td data-color="lightgrey"></td>
+        <td data-color="saddlebrown"></td>
+        <td data-color="pink"></td>
+        <td data-color="lightgoldenrodyellow"></td>
+        <td data-color="lightgreen"></td>
+        <td data-color="lightskyblue"></td>
+        <td data-color="dodgerblue"></td>
+        <td data-color="mediumpurple"></td>
+    </tr>
+</table>
+<p id = 'text'>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim est id maiores molestias nobis perspiciatis
+    provident. A, architecto, assumenda deleniti eligendi eveniet expedita in non, nostrum odio omnis quod
+    voluptatibus!
+</p>
+<script>
+    let txt = document.getElementById('text');
+    let tab = document.getElementById('palette');
+    let cells = tab.querySelectorAll('td');
+    for (let cell of cells) {
+        cell.style.background = cell.dataset.color;
+    }
+    tab.addEventListener('click', function (e) {
+        txt.style.color = e.target.dataset.color;
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "firstName": "Andrey",
+  "lastName": "Ivanov",
+  "age": 19,
+  "isStudent": true,
+  "contactInfo": {
+    "phone": "098-556-33-41",
+    "email": "AndreyIvanov@gmail.com"
+  },
+  "disciplines": [
+    "Programming",
+    "Machine engineering",
+    "English"
+  ]
+}

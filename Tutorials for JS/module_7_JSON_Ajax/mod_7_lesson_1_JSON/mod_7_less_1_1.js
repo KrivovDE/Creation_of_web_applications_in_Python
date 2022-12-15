@@ -1,14 +1,15 @@
+'use strict';
 // let person = {
 //  firstName: "Andrey",
 //  lastName: "Ivanov",
 //  birthDate : "05.05.2000"
 // }
 
-//        "{
-//          "firstName" : "Andrey",
-//          "lastName" : "Ivanov",
-//          "birthDate" : "04.05.2000"
-//         }"
+       // "{
+       //   "firstName" : "Andrey",
+       //   "lastName" : "Ivanov",
+       //   "birthDate" : "04.05.2000"
+       //  }"
 // ////////////////////////////////////////////////
 // {
 //  "firstName" : "Andrey",
@@ -29,7 +30,6 @@
 //  "disciplines" : ["Programming", "Machine engineering", "English"]
 // }
 // ////////////////////////////////////////////////
-
 // let person = {
 //                firstName: "Andrey",
 //                lastName: "Ivanov",
@@ -44,7 +44,6 @@
 //
 // let jsonPerson = JSON.stringify(person);
 // document.write(`<h1 style="color: blue">` + jsonPerson + `</h1>`)
-//
 
 ////////////////////////////////////////////////
 // Циклическая ссылка
@@ -63,7 +62,7 @@
 // let person = {
 //                firstName: "Andrey",
 //                lastName: "Ivanov",
-//                age: 19,
+//                age: 1,
 //                isStudent: true,
 //                contactInfo: {
 //                              "phone": "098-556-33-41",
@@ -78,12 +77,15 @@
 //     }
 //     return value;
 // }
+// let jsonPerson2 = JSON.stringify(person);
+// console.log(jsonPerson2)
 
-// let jsonPerson2 = JSON.stringify(person, checkAge);
-// document.write(`<h1 style="color: red">` + jsonPerson2 + `</h1>`)
+// // let jsonPerson2 = JSON.stringify(person, checkAge);
+// // document.write(`<h1 style="color: red">` + jsonPerson2 + `</h1>`)
 
 // let jsonPerson3 = JSON.stringify(person, ["firstName", "lastName"]);
 // document.write(`<h1 style="color: mediumspringgreen">` + jsonPerson3 + `</h1>`)
+
 
 // let jsonPerson3 = JSON.stringify(person, ["firstName", "lastName"]);
 // document.write(`<h1 style="color: mediumspringgreen">` + jsonPerson3 + `</h1>`)
@@ -104,6 +106,8 @@
 //                 '"disciplines": [ "Programming", "Machine engineering", "English" ]' +
 //                 '}'
 //
+// console.log(typeof(personStr))
+//
 // let person = JSON.parse(personStr);
 // console.log(typeof(person))
 // console.log(person)
@@ -115,7 +119,7 @@ let personStr = '{' +
                 '"firstName": "Andrey", ' +
                 '"lastName": "Ivanov",' +
                 '"age": 20, ' +
-                '"isStudent": true, ' +
+                '"isStudent": false, ' +
                 '"contactInfo": { ' +
                                     '"phone": "098-556-33-41", ' +
                                     '"email": "AndreyIvanov@gmail.com" }, ' +
@@ -130,33 +134,34 @@ return value;
 }
 
 let person2 = JSON.parse(personStr, CheckIsStudent);
+console.log(person2)
 alert(person2.isStudent);
 ////////////////////////////////////////////////
+//
+let model = {
+            name: "BMW",
+            autopilot : undefined,
+            toJSON(){
+                    let jsonStr = `{"name": "${this.name}", "autopilot": `;
+                    if(this.autopilot === undefined){
+                        jsonStr += `"Not"}`
+                    }
+                    else{
+                        jsonStr += `"${this.autopilot}"`
+                    }
+            return jsonStr;
+            }
 
-// let model = {
-//             name: "BMW",
-//             autopilot : undefined,
-//             toJSON(){
-//                     let jsonStr = `{"name": "${this.name}", "autopilot": `;
-//                     if(this.autopilot === undefined){
-//                         jsonStr += `"Not"}`
-//                     }
-//                     else{
-//                         jsonStr += `"${this.autopilot}"`
-//                     }
-//             return jsonStr;
-//             }
-//
-// }
-// let car = {
-//             color: "Black",
-//             date : new Date(2022, 2, 24),
-//             model
-// }
-//
-// let carJSON = JSON.stringify(car)
-// alert(carJSON)
-// document.write(`<h1 style="color: darkorange">` + carJSON + `</h1>`)
+}
+let car = {
+            color: "Black",
+            engine : "diesel",
+            model
+}
+
+let carJSON = JSON.stringify(car)
+alert(carJSON)
+document.write(`<h1 style="color: darkorange">` + carJSON + `</h1>`)
 
 
 

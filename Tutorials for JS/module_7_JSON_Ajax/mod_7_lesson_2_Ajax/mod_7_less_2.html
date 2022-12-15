@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-  <script src="mod_7_less_2_1.js"></script>
+<!--  <script src="mod_7_less_2_1.js"></script>-->
 </head>
 <body>
 
     <form id="form" action="">
         <input type="text" name="name" id="name-inp" >
         <input type="text" name="phone" id="phone-inp" >
-        <input type="submit" id="submit-btn">
+        <button type="button" id="id_1"> кнопка </button>
     </form>
 
 <!--<script>-->
@@ -41,7 +41,7 @@
 
 
 <script>
-let subbliBtn = document.getElementById("submit-btm");
+let subbliBtn = document.getElementById("id_1");
 
 subbliBtn.onclick = function () {
     let form = document.getElementById("form");
@@ -59,6 +59,7 @@ subbliBtn.onclick = function () {
     request.onreadystatechange = function () {
         if (request.readyState === 4 && request.status === 200)
             alert("Здравствуйте " + nameValue + "! Мы перезвоним вам через 1 минуту");
+            console.log("Здравствуйте Мы перезвоним вам через 1 минуту");
     }
     request.setRequestHeader('Content-Type', 'multipart/form-data');
     request.send(formData);

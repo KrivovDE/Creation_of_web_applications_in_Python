@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--<body>-->
+
+<!--<form id="user-form">-->
+<!--  <input type="text" name="name" value="НАТАША" />-->
+<!--  <input type="text" name="language" value="JavaScriptTOP" />-->
+<!--</form>-->
+
+<!--<script>-->
+<!--let form = document.querySelector('#user-form')-->
+<!--let data = new FormData(form)-->
+
+<!--for (let [key, value] of data) {-->
+<!--  console.log(`${key} - ${value}`)-->
+<!--}-->
+
+<!--</script>-->
+
+
+
+<!--</body>-->
+
+
+
+<body>
+
+<input id="file-input" type="file" />
+
+<script>
+// Объявляем функцию загрузки файла
+function sendFile(file) {
+  let data = new FormData()
+
+  // Добавляем файл
+  data.append('document', file)
+
+  return fetch('/api/upload/', { method: 'POST',  body: data,})
+}
+
+let fileInput = document.querySelector('#file-input')
+fileInput.addEventListener('change', (e) => {
+  // Получаем файл. Файлов может быть несколько если у инпута стоит атрибут `multiple`
+  let file = e.target.files[0]
+
+  // Отправляем файл на сервер при помощи созданной функции
+  sendFile(file)
+
+  // Очищаем текущее значение инпута.
+  e.target.value = null
+})
+
+</script>
+
+
+
+</body>
+
+</html>

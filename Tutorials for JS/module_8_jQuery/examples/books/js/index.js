@@ -70,8 +70,9 @@ function stopAnimatedText() {
 	clearInterval(textId);
 	$("#start-stop").text('!').off('click', stopAnimatedText).on('click', showAnimatedText)
 }
-let userPhone = $('#user-phone');
-userPhone.mask("(999) 999-9999");
+let userPhone = $('#user-phone');
+userPhone.mask("(999) 999-9999");
+
 $('#contact-form').submit(function (e) {
 	e.preventDefault();
 	let userName = $('#user-name'),

@@ -12,7 +12,7 @@ $('.accordion-header').on('click', function () {
 	if (!$(this).hasClass('active')) {
 		activeHeader.next().slideUp(200).removeClass('active');
 		activeHeader.removeClass('active');
-		$(this).addClass('active').next().slideToggle(400).addClass('active');
+		$(this).addClass('active').next().slideToggle(800).addClass('active');
 	}
 });
 let sectionMore = $('#see-more'),
@@ -168,7 +168,7 @@ $.ajax({
 		$('.loader').show();
 	}
 }).done(function (data) {
-	// console.log(data);
+	console.log(data);
 	$('.loader').hide();
 	if (data.ebook_count == 0) {
 		$('.row.books').addClass('justify-content-center my-40')

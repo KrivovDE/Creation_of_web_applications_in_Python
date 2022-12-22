@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background: #fbf2ea;
+            height: 350px;
+            width: 750px
+        }
+        hr{
+            margin-left: 15%;
+            width: 525px;
+            background: #777677;
+            border: none;
+            height: 1px;
+        }
+        #sectFirst{
+            position: relative;
+            height: 10px;
+        }
+        #sectSecond{
+            position: relative;
+            display: grid;
+            justify-content: center;
+            margin-top: -12px;
+            margin-left: -10px;
+            font-size: 15px;
+        }
+        label{
+            position: relative;
+        }
+        input,select{
+            width: 252px;
+            height: 22px;
+            font-size: 10px;
+            margin-bottom: 8px;
+            outline: none;
+            border-radius: 3px;
+            border: 1px solid gray;
+        }
+        #saveSub{
+            width: 525px;
+            font-size: 13px;
+        }
+        form{
+            position: absolute;
+            top: 100%;
+            left: 16.5%;
+            font-size: 13px;
+        }
+        p{
+            text-align: center;
+        }
+        #hello{
+            position: absolute;
+            right: 15%;
+            font-size: 10px;
+        }
+        .divForm{
+            float: left;
+            margin-right: 20px;
+        }
+        .wrong{
+            position: absolute;
+            right: 0;
+            color: #be3d3d;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body onload="checkCookie();checkData();">
+    <div id="sectFirst">
+        <div id="hello">
+            Hello, <span id="email"></span>
+            <a href="Korotky_DZ_%20JS_Mod_9_1.html" onclick="clearCookie()">exit</a>
+        </div>
+    </div>
+    <hr>
+    <div id="sectSecond">
+        <p>User Info</p>
+        <form method="GET" id="regForm" onsubmit= "return checkForm ()">
+            <div class="divForm">
+                <label>
+                    <span>First Name:</span><span class="wrong">wrong first name</span><br>
+                    <input type="text" name="fName">
+                </label><br>
+                <label>
+                    <span>Year of birth:</span><span class="wrong">wrong year</span><br>
+                    <input type="text">
+                </label><br>
+                <label>
+                    <span>Phone number:</span><span class="wrong">wrong number</span><br>
+                    <input type="text">
+                </label>
+            </div>
+            <div class="divForm">
+                <label>
+                    <span>Last Name:</span><span class="wrong">wrong last name</span><br>
+                    <input type="text" name="lName">
+                </label><br>
+                <label>
+                    <span>Gender:</span><span class="wrong">wrong skype name</span><br>
+                    <select>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </label><br>
+                <label>
+                    <span>Skype:</span><span class="wrong">wrong skype name</span><br>
+                    <input type="text" name="skype">
+                </label>
+            </div>
+            <label>
+                <input name="save" id="saveSub" type="submit" value="Save">
+            </label>
+        </form>
+    </div>
+    <script>
+        let cookieObj = {};                                                 //объект для кукки файлов
+        let frm = document.forms[0]                                         //доступ к форме
+        let wrong = document.getElementsByClassName('wrong')                //надпись с ошибкой
+
+        //РЕГУЛЯРНЫЕ ВЫРАЖЕНИЯ ДЛЯ ПРОВЕРКИ ДАННЫХ
+        let nameReg = new RegExp(/^[a-zа-я]{2,20}$/i)
+        let dateReg =  /(0?[1-9]|[12][0-9]|3[01]).(0?[1-9]|1[012]).((19|20)\d\d)/
+        let phoneNumbReg = /^[-\n\(\)0-9]{10,20}$/
+        let skypeReg = /^[a-z0-9.-]{1,}$/i
+        let foolReg = /a/
+
+        //МАССИВ С REGEXP,ИМЕНЕМ,И ОБЯЗАТЕЛЬНЫМ ИЛИ НЕТ ВВОДОМ
+        let massReg = [[nameReg,"firstName","sure"],[dateReg,"date","sure"],
+            [phoneNumbReg,"phone","notSure"], [nameReg,"lastName","sure"],
+            [foolReg,"male","sure"],[skypeReg,"skype","notSure"]];
+
+        //ПРОВЕРКА ДАННЫХ В ПОЛЯХ ВВОДА
+        function checkForm (){
+            for (let i = 0; i < massReg.length;i++){
+                if(massReg[i][0].test(frm[i].value)){                   //проверка данных ввода
+                    wrong[i].style.visibility = 'hidden';
+                    addCookie(massReg[i][1],frm[i].value);              //добавление данных в кукки
+                }
+                else {
+                    wrong[i].style.visibility = 'visible';
+                    if(massReg[i][2] === 'sure') return false           //обязательный или не обязательный ввод поля
+                }
+            }
+        }
+
+        //ПРОВЕРКА КУККИ
+        function checkCookie(){
+            let emailOut = document.getElementById('email')
+            let cookie = document.cookie;
+            let cookieMass = cookie.split('; ');
+            let razdel
+            for (let i = 0;i < cookieMass.length;i++){
+                razdel = cookieMass[i].split('=');
+                cookieObj[razdel[0]] = razdel[1];
+            }
+            emailOut.innerHTML = cookieObj.email;
+            console.log(cookieObj)
+
+        }
+
+        //ФУНКЦИЯ ДОБАВЛЕНИЯ КУККИ(ВЫЗЫВАЕТСЯ ЕСЛИ ПРОВЕРКА ДАННЫХ УСПЕШНА)
+        function addCookie(register,data){
+            let expDateAdd = new Date();
+            expDateAdd.setMinutes(expDateAdd.getMinutes() + 60);
+            expDateAdd = expDateAdd.toUTCString();
+            document.cookie = `${register}=${data}; expires=${expDateAdd}`
+        }
+
+        //ВЫВОД ДАННЫХ В ПОЛЯ ЕСЛИ ОНИ УЖЕ ЕСТЬ В КУККИ
+        function checkData(){
+            for (let i = 0;i < massReg.length; i++){
+                if(massReg[i][1] in cookieObj){
+                    frm[i].value = cookieObj[`${massReg[i][1]}`]
+                }
+            }
+        }
+
+        //ОЧИТКА КУККИ ПРИ ВЫХОЕ ИЗ СТРАНИЦЫ
+        function clearCookie(){
+            let expDateClear = new Date();
+            expDateClear = expDateClear.toUTCString();
+            for (let i = 0;i < massReg.length; i++){
+                if(massReg[i][1] in cookieObj){
+                    document.cookie = `${massReg[i][1]}=${cookieObj[massReg[i][1]]}; expires =${expDateClear}`
+                }
+            }
+            document.cookie = `email=${cookieObj.email}; expires =${expDateClear}`
+        }
+    </script>
+</body>
+</html>

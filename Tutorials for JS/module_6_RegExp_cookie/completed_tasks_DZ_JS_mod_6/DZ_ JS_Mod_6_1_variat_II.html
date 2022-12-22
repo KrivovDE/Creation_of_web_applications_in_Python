@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            display: grid;
+            justify-content: center;
+            background: #fbf2ea;
+            height: 350px;
+            width: 100%;
+        }
+        input{
+            margin-bottom: 10px;
+            height: 25px;
+            width: 300px;
+            font-size: 11px;
+        }
+        form{
+            font-size: 12px;
+            margin-top: -45%;
+        }
+        h4{
+            text-align: center;
+        }
+        div{
+            width: 300px;
+            position: relative;
+        }
+        .wrong{
+            position: absolute;
+            right: 0;
+            color: #be3d3d;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body onload="checkCookie()">
+    <h4>Registration</h4>
+    <div>
+        <form method="GET" id="regForm" onsubmit= "return testData()">
+            <label>
+                <span>Email:</span><span class="wrong">Wrong email address</span><br>
+                <input type="email" name="email"><br>
+            </label>
+            <label>
+                <span>Password:</span><span class="wrong">Wrong password</span><br>
+                <input type="password" name="password"><br>
+            </label>
+            <label>
+                <span>Repeat:</span><span class="wrong">Password must match</span><br>
+                <input type="password" name="repPass"><br>
+            </label>
+            <label>
+                <input type="submit" value="Sing Up">
+            </label>
+        </form>
+    </div>
+    <script>
+
+        let frm = document.forms[0];                                        //доступ к полям формы
+        let wrong = document.getElementsByClassName('wrong')                //надпись с ошибкой
+
+        let email = frm.email;                                              //поле email
+        let password = frm.password;                                        //поле пароль
+        let repPass = frm.repPass;                                          //поле повторение пароля
+
+        //РЕГУЛЯРНЫЕ ВЫРАЖЕНИЯ ДЛЯ ПРОВЕРКИ EMAIL И ПАРОЛЯ
+        let regEmail = /^[a-zA-Z_\.-]{3,}@[a-zA-Z\.]{2,30}\.[a-z]{2,}$/;
+        let regPassword = /((?=.*[1-9])(?=.*[a-z])(?=.*[A-Z]).{6,20})/;
+
+        //ПРОВЕРКА ПРИСУТСТВУЮТ ЛИ КУККИ
+        function checkCookie(){
+            let cookie = document.cookie;
+            let cookieMass = cookie.split('; ');
+            let cookieObj = {};
+            let razdel
+            for (let i = 0;i < cookieMass.length;i++){
+                razdel = cookieMass[i].split('=');
+                cookieObj[razdel[0]] = razdel[1];
+            }
+            if ('email' in cookieObj) window.location="DZ_ JS_Mod_9_2.html"
+        }
+
+        //ПРОВЕРКА ДАННЫХ
+        function testData(){
+            if(regEmail.test(email.value)) wrong[0].style.visibility = 'hidden';
+            else {
+                wrong[0].style.visibility = 'visible';
+                return false
+            }
+
+            if(regPassword.test(password.value)) wrong[1].style.visibility = 'hidden';
+            else {
+                wrong[1].style.visibility = 'visible';
+                return false
+            }
+
+            if(password.value !== repPass.value) {
+                wrong[2].style.visibility = 'visible';
+                return false
+            }
+            else wrong[2].style.visibility = 'hidden';
+
+            addCookie();
+            checkCookie();
+
+        }
+
+        //ДОБАВЛЕНИЕ КУККИ ЕСЛИ ДАННЫЕ ВВЕДЕНЫ КОРРЕКТНО
+        function addCookie(){
+            let expDate = new Date();
+            expDate.setMinutes(expDate.getMinutes() + 60);
+            expDate = expDate.toUTCString();
+            document.cookie = `email=${email.value}; expires=${expDate}`
+        }
+    </script>
+</body>
+</html>

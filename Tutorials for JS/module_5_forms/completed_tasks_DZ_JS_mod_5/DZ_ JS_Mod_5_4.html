@@ -1,0 +1,274 @@
+<!--Создать html-страницу для магазина книг.-->
+<!--Пользователь должен иметь возможность выбрать книгу,указать количество экземпляров, -->
+<!--ввести свое имя, дату доставки,адрес доставки и комментарий.После заполнения -->
+<!--формы необходимо вывести на экран: «Имя покупателя, спасибо за заказ. Такой-то -->
+<!--товар будет доставлен в такую-то дату по такому-то адресу».-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background: #fbf2ea;
+            margin-left: 13%;
+            height: 350px;
+            width: 600px;
+        }
+        .obl,#buyWin{
+            position: relative;
+            height: 195px;
+            width: 100px;
+            border: 1px solid gray;
+            margin-left: 8px;
+            padding: 0 4px;
+            float: left;
+        }
+        #buyWin{
+            width: 210px;
+            padding: 8px 8px;
+            line-height: 15px;
+            min-width: 200px;
+        }
+        .txtByWin{
+            display: grid;
+            font-size: 8px;
+        }
+        .bookName{
+            font-size: 8px;
+            font-weight: bold;
+            margin-top: -2px;
+        }
+        .scribe{
+            margin-top: -6px;
+            font-size: 6px;
+        }
+        .prise{
+            position: absolute;
+            font-weight: bold;
+            font-size: 11px;
+            float: right;
+            right: 6%;
+            bottom: 4%;
+        }
+        .select{
+            height: 14px;
+            width: 90%;
+            font-size: 10px;
+            position: absolute;
+            bottom: 3%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        img{
+            margin-top: 4px;
+        }
+        input,textarea{
+            height: 12px;
+            width: 60%;
+            font-size: 7px;
+            border-radius: 3px;
+            border: 1px solid gray;
+            outline:none;
+            margin-top: 4px;
+        }
+        #spanDate{
+            margin-top: 35px;
+        }
+        #txtar1{
+            height: 40px;
+            max-height: 50px;
+            max-width: 60%;
+            min-height: 40px;
+            min-width: 40%;
+        }
+        #txtar2{
+            height: 50px;
+            max-height: 63px;
+            max-width: 60%;
+            min-height: 30px;
+            min-width: 40%;
+        }
+        #buttBuy{
+            width: 100%;
+            height: 12px;
+            font-size: 7px;
+            margin-top: 4px;
+        }
+        form{
+            position: absolute;
+            bottom: 2.5%;
+            right: 2%;
+            text-align: right;
+        }
+        h3{
+            clear: both;
+            padding: 10px 7px;
+            visibility: hidden;
+        }
+        #result{
+            padding: 0 10px;
+            margin: -20px 7px;
+            height: 100px;
+            width: 535px;
+            border: 1px solid gray;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="obl">
+        <img src="img/2.jpg"
+            height="120px"
+            width="90px"
+            alt="book1">
+        <p class="bookName">Learning JavaScript: JavaScript Essentials for Modern Application
+            Development</p>
+        <p class="scribe">Ethan Brown</p>
+        <p class="prise">16$</p>
+        <button type="button" class="select" name="book1">Select</button>
+    </div>
+    <div class="obl">
+        <img src="img/3.jpg"
+            height="120px"
+            width="90px"
+            alt="book2">
+        <p class="bookName">You Don't Know JS: Scope & Closures</p>
+        <p class="scribe">Kyle Simpson</p>
+        <p class="prise">20$</p>
+        <button type="button" class="select" name="book2">Select</button>
+    </div>
+    <div class="obl">
+        <img src="img/4.jpeg"
+            height="120px"
+            width="90px"
+            alt="book3">
+        <p class="bookName">JavaScript and JQuery: Interactive Front-End Web Development</p>
+        <p class="scribe">Jon Duckett</p>
+        <p class="prise">22$</p>
+        <button type="button" class="select" name="book3">Select</button>
+    </div>
+    <div id="buyWin">
+        <div>
+            <span class="txtByWin">Book:</span>
+            <span class="txtByWin">Quantity:</span>
+            <span class="txtByWin">Name:</span>
+            <span class="txtByWin">Delivery address:</span>
+            <span class="txtByWin" id="spanDate">DeliveryDate:</span>
+            <span class="txtByWin">Comment:</span>
+        </div>
+        <form>
+            <label>
+                <input type="text" name="book" disabled>
+                <input type="text" name="quantity"><br>
+                <input type="text" name="name"><br>
+                <textarea id="txtar1" name="address"></textarea><br>
+                <input  id="dataAd" type="date" name="delivDate"><br>
+                <textarea id="txtar2" name="comment"></textarea><br>
+               <button type="button" id="buttBuy">Buy</button>
+           </label>
+        </form>
+    </div>
+    <h3 id="hRes">Result:</h3>
+    <div id="result">
+        <p><span class="res"></span>, thanks for the order!</p>
+        <p>Book "<span class="res"></span>" will be delivered on <span class="res"></span>
+            to <span class="res"></span>.</p>
+    </div>
+    <script>
+        let buttSelect = document.getElementsByTagName('button');       //все кнопки
+        let bookName = document.getElementsByClassName('bookName')      //все названия книг
+        let frm = document.forms[0];                                    //все формы
+        let buttBuy = buttSelect[3];                                    //кнопка покупки
+        let countFrm = 0;                                   //счетчик для проверки заполнения форм
+
+        //ПРОВЕРКА НА ПОДЛИННУЮ ДАТУ(ДОСТАВИТЬ КНИГУ МОГУТ НЕ РАНЬШЕ 6 ДНЕЙ С НАСТОЯЩЕЙ ДАТЫ)
+        function verificationDate() {
+            let overDay = new Date();
+            overDay.setMonth(overDay.getMonth() + 6);
+            overDay = (overDay.toISOString().slice(0, 10));
+
+            let startDay = new Date();
+            startDay.setDate(startDay.getDate() + 6);
+            startDay = (startDay.toISOString().slice(0, 10));
+
+            if (frm[4].value < startDay || frm[4].value > overDay) {
+                frm[4].value = '';
+                alert("На эту дату доставка не возможна!");
+            }
+        }
+
+        //ВЫБИРАЕТ НУЖНУЮ КНИГУ
+        function chooseBook() {
+            let bookPlace = frm[0];                         //форма для названия книги
+            for (let i = 0; i < bookName.length; i++) {
+                buttSelect[i].addEventListener('click', function () {
+                    bookPlace.value = bookName[i].textContent;
+                    if(frm[0].value.length > 0) frm[0].style.border = '1px solid gray';
+                })
+            }
+        }
+
+        //ВЫВОДИТ РЕЗУЛЬТАТ ЗАКАЗА
+        function result(){
+            let headlineResult = document.getElementById('hRes');
+            let result = document.getElementById('result')
+            let res = document.getElementsByClassName('res');
+            let dateDel = new Date(`${frm[4].value}`)
+            res[0].innerHTML = frm[2].value;
+            res[1].innerHTML = frm[0].value;
+            res[2].innerHTML = dateDel.toLocaleString().slice(0, 10);
+            res[3].innerHTML = frm[3].value;
+            headlineResult.style.visibility = 'visible'
+            result.style.visibility = 'visible'
+        }
+
+        //ОЧИЩАЕТ ВСЕ ФОРМЫ
+        function clearForm(){
+            for(let i = 0; i < frm.length;i++){
+                frm[i].value = '';
+            }
+        }
+
+        //ЕСЛИ ПОЛЕ ПУСТОЕ,ПОДСВЕЧИВАЕТ КРАСНЫМ ПРИ ОТВОДЕ ФОКУСА
+        function onblurForm(){
+            for(let i = 0; i < frm.length - 1;i++){
+                frm[i].onblur = function () {
+                    if (frm[i].value.length === 0) {
+                        frm[i].style.border = '1px solid red';
+                    } else {frm[i].style.border = '1px solid gray';}
+                }
+            }
+        }
+
+        //ПРОВЕРЯЕТ ВСЕ ФОРМЫ ЗАПОЛНЕНЫ ИЛИ НЕТ(ДЛЯ РАЗРЕШЕНИЯ ПОКУПКИ)
+        function checkFullForm(){
+            for (let i = 0; i < frm.length - 1;i++){
+                if(frm[i].value.length > 0) {
+                    frm[i].style.border = '1px solid gray';
+                    countFrm++;
+                }
+                else {frm[i].style.border = '1px solid red'}   //Обводит красным незаполненную форму
+            }
+        }
+
+        //ОБРАБОТЧИК СОБЫТИЯ ПРИ НАЖАТИИ НА КУПИТЬ
+        buttBuy.addEventListener('click',function (e){
+            verificationDate();
+            checkFullForm();
+            if(countFrm === frm.length - 1) {              //дает разрешение на вывод результата
+                result();                                       //если все формы были заполнены
+                clearForm();
+            }
+            countFrm = 0;                                   //обнуляем счетчик
+        })
+        chooseBook();
+        onblurForm();
+    </script>
+</body>
+</html>

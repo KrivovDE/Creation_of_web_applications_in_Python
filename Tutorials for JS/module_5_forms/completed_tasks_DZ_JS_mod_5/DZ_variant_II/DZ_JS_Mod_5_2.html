@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        #form1 {
+            width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: pink;
+        }
+        #quesNum {
+            font-weight: bold;
+        }
+        #but {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="" id="form1">
+    <p id="quesStr"><span id="quesNum">1)&nbsp;</span>How many letters are there in the word "Hello"?</p>
+    <input type="radio" id="var1" name="variants" checked>
+    <label for="var1">5</label><br>
+    <input type="radio" id="var2" name="variants">
+    <label for="var2">2</label><br>
+    <input type="button" id="but" value="Next">
+</form>
+<script>
+    let test = {
+        ques: [['How many letters are there in the word "World"?','4','5'],
+               ['How many letters are there in the word "Answer"?','6','5']],
+        rightAns: ['5','5','6'],
+        counter: 0,
+        res: 0,
+        init() {
+                this.getHTML();
+                this.eventListener()
+        },
+        getHTML() {
+            this.quesStr = document.getElementById('quesStr');
+            this.var1 = document.getElementById('var1');
+            this.var2 = document.getElementById('var2');
+            this.labelForVar1 = document.querySelector('[for="var1"]');
+            this.labelForVar2 = document.querySelector('[for="var2"]');
+            this.but = document.getElementById('but');
+            this.frm = document.getElementById('form1')
+        },
+        eventListener() {
+            this.but.addEventListener('click', this.clickFunc)
+        },
+        clickFunc () {
+            test.answerAnalise();
+            test.askQuestion()
+        },
+        answerAnalise () {
+            if (this.var1.checked === true) {
+                if(this.labelForVar1.innerHTML === this.rightAns[this.counter]) {this.res++; return}
+            }
+            if (this.var2.checked === true) {
+                if(this.labelForVar2.innerHTML === this.rightAns[this.counter]) this.res++
+            }
+        },
+        askQuestion () {
+            if (this.counter+1 === this.ques.length) this.but.value = 'Finish'
+            if (this.counter === this.ques.length) this.showResult()
+            else {
+                this.quesStr.innerHTML = '<span id="quesNum">' + (this.counter+2) + ') </span>' +
+                                                                               this.ques[this.counter][0];
+                this.labelForVar1.innerHTML = this.ques[this.counter][1];
+                this.labelForVar2.innerHTML = this.ques[this.counter][2];
+                this.counter++
+            }
+        },
+        showResult () {
+            this.frm.innerHTML = '<p>Result: <b>' + this.res +'</b> correct answers to ' +
+                                                                               (this.counter+1) + ' questions</p>';
+        }
+    }
+    test.init();
+</script>
+</body>
+</html>

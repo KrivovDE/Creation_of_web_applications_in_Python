@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #form-field {
+            width: 430px;
+            margin: auto;
+            background: pink;
+            border: none;
+        }
+        #text {
+            width: 420px;
+        }
+        #but {
+            width: 420px;
+        }
+        #result {
+            width: 420px;
+            border: 1px solid grey;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <fieldset id="form-field">
+        <input type="checkbox" id="inp1">
+        <label for="inp1">Bold</label>
+        <input type="checkbox" id="inp2">
+        <label for="inp2">Underline</label>
+        <input type="checkbox" id="inp3">
+        <label for="inp3">Italics</label>
+        <input type="radio" id="inp4" name="text-align" data-style="left">
+        <label for="inp4">Left</label>
+        <input type="radio" id="inp5" name="text-align" data-style="right">
+        <label for="inp5">Right</label>
+        <input type="radio" id="inp6" name="text-align" data-style="justify">
+        <label for="inp6">Justify</label><br>
+        <textarea id="text" cols="60" rows="10" placeholder="Enter text"></textarea><br>
+        <label for="text"></label>
+        <input type="button" id="but" value="Show text">
+    </fieldset>
+</form>
+<script>
+    let styleText = {
+        init () {
+            this.getHTMLSelector();
+            this.eventListener()
+        },
+        getHTMLSelector() {
+            this.style1 = document.getElementById('inp1');
+            this.style2 = document.getElementById('inp2');
+            this.style3 = document.getElementById('inp3');
+            this.style4 = document.querySelectorAll('[name="text-align"]');
+            this.txt = document.getElementById('text');
+            this.btn = document.getElementById('but');
+            this.field = document.getElementById('form-field')
+        },
+        eventListener() {
+            this.btn.addEventListener('click', this.clickFunc)
+        },
+        clickFunc() {
+            styleText.showText()
+            styleText.addStyleCSS();
+        },
+        showText () {
+            this.field.innerHTML = '<p>Result:</p>\n <div id="result">' + this.txt.value + '</div>'
+        },
+        addStyleCSS() {
+            this.result = document.getElementById('result');
+            if (this.style1.checked === true) this.result.style.fontWeight = 'bold';
+            if (this.style2.checked === true) this.result.style.textDecoration = 'underline';
+            if (this.style3.checked === true) this.result.style.fontStyle = 'italic';
+            for (let elem of this.style4) {
+                if (elem.checked === true) this.result.style.textAlign = `${elem.getAttribute('data-style')}`;
+            }
+        }
+    }
+    styleText.init()
+</script>
+</body>
+</html>

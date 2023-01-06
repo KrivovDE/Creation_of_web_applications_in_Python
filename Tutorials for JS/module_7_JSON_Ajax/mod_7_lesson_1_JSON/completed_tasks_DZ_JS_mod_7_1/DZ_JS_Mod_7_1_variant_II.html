@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: antiquewhite;
+        }
+        #left_block {
+            width: 400px;
+            height: 600px;
+            float: left;
+        }
+        #left_header {
+            float: left;
+        }
+        #error {
+            float: right;
+            color: red;
+        }
+        textarea {
+            box-sizing: border-box;
+            width: 400px;
+            height: 540px;
+            padding: 20px 10px;
+            border: 1px solid grey;
+            border-radius: 5px;
+            background: white;
+            color: black;
+        }
+        #center_block {
+            width: 40px;
+            height: 600px;
+            float: left;
+            padding: 0 10px;
+        }
+        #button {
+            box-sizing: border-box;
+            width: 40px;
+            height: 540px;
+            background: lightgrey;
+            border: 1px solid grey;
+            padding: 250px 10px 250px 11px;
+        }
+        #button p {
+            margin: 0;
+            transform: scale(5, 6);
+        }
+        #right_block {
+            width: 400px;
+            height: 600px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div id="left_block">
+    <h3 id="left_header">Enter JSON data:</h3>
+    <h3 id="error"></h3>
+    <label for="input"></label>
+    <textarea id="input" placeholder="Enter string in JSON format"></textarea>
+</div>
+<div id="center_block">
+    <h3>&nbsp;</h3>
+    <div id="button"><p>&#9205;</p></div>
+</div>
+<div id="right_block">
+    <h3>Formatted JSON data:</h3>
+    <label for="output"></label>
+    <textarea id="output" disabled></textarea>
+</div>
+<script>
+    document.getElementById('button').addEventListener('click', function() {
+        try{
+            let str = JSON.parse(document.getElementById('input').value);
+            document.getElementById('output').value = JSON.stringify(str, null, 2);
+        }catch(error){
+            document.getElementById('error').innerHTML = '[format error]';
+            document.getElementById('output').value = '';
+        }
+    });
+    document.getElementById('input').addEventListener('focus', function () {
+        document.getElementById('error').innerHTML = '';
+    })
+</script>
+</body>
+</html>

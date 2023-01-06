@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random String Generator </title>
+  <script src="jquery-3.6.2.min.js"></script>
+</head>
+<style>
+  #backgrounD{
+    top: 100px;
+    left: 300px;
+    width: 800px;
+    height: 500px;
+    background: #fcf2e9;
+  }
+  #text1{
+    top: 105px;
+    left: 330px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #text2{
+    top: 140px;
+    left: 320px;
+    font-size: 17px;
+  }
+  #text3{
+    top: 140px;
+    left: 530px;
+    font-size: 17px;
+  }
+  #text4{
+    top: 180px;
+    left: 320px;
+    font-size: 17px;
+  }
+  #text5{
+    top: 220px;
+    left: 350px;
+    font-size: 17px;
+  }
+  #text6{
+    top: 250px;
+    left: 350px;
+    font-size: 17px;
+  }
+  #text7{
+    top: 280px;
+    left: 350px;
+    font-size: 17px;
+  }
+  #text8{
+    top: 420px;
+    left: 350px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #quantity{
+    display: block;
+    top: 140px;
+    left: 460px;
+    width: 30px;
+    font-size: 17px;
+  }
+  #checkbox1{
+    top: 220px;
+    left: 320px;
+    width: 17px;
+    height: 17px;
+  }
+  #checkbox2{
+    top: 250px;
+    left: 320px;
+    width: 17px;
+    height: 17px;
+  }
+  #checkbox3{
+    top: 280px;
+    left: 320px;
+    width: 17px;
+    height: 17px;
+  }
+  #buttoN{
+    top: 320px;
+    left: 330px;
+    width: 200px;
+    height: 30px;
+  }
+  #line{
+    top: 380px;
+    left: 330px;
+    width: 750px;
+  }
+  #resultText{
+    display: block;
+    top: 420px;
+    left: 460px;
+    width: 400px;
+    font-size: 17px;
+  }
+  div, input, hr, button {
+    position: absolute;
+  }
+</style>
+<body>
+<div id="backgrounD"></div>
+ <div id="text1">Random String Generator</div>
+  <div id="text2">String should be</div>
+   <div id="text3">characters long.</div>
+    <div id="text4">Which characters are allowed to occur in the string?</div>
+     <div id="text5">Numeric digit (0-9)</div>
+      <div id="text6">Uppercase letters (A-Z)</div>
+       <div id="text7">Lowercase letters (a-z)</div>
+        <div id="text8">Result:</div>
+<label><input id="quantity"></label>
+ <label><input id="checkbox1" type="checkbox"></label>
+  <label><input id="checkbox2" type="checkbox"></label>
+   <label><input id="checkbox3" type="checkbox"></label>
+    <label><input id="resultText"></label>
+<button id="buttoN">Generate</button>
+<hr id="line">
+<script>
+  $('#buttoN').on("click", function (){
+    let characters = ''
+
+    if($('#checkbox1').is(':checked')) {characters += "0123456789"}
+    if($('#checkbox2').is(':checked')) {characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
+    if($('#checkbox3').is(':checked')) {characters += "abcdefghijklmnopqrstuvwxyz"}
+
+    let result = '';
+    let charactersLength = characters.length;
+    for ( let i = 0; i < ($('#quantity').val()); i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));// (генерирует от входных данных
+    }                                   // (characters) - наполнение зависит от выбранного checkbox
+    $('#resultText').val(result);
+  })
+</script>
+</body>
+</html>

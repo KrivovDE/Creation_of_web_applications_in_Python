@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4 blocks</title>
+  <script src="jquery-3.6.3.js"></script>
+  <style>
+    body{
+      margin: 0;
+      overflow: hidden;
+    }
+    div{
+      position: absolute;
+      display: block;
+    }
+    #block1{
+      width: 30%;
+      height: 40%;
+      background: #b5dce9;
+      z-index: 40;
+      border-bottom: solid 20px #d7d7d7;
+      margin-bottom: 300px;
+      display: block;
+    }
+    #block2{
+      width: 30%;
+      height: 100%;;
+      background: #ffbdc7;
+      z-index: 30;
+    }
+    #block3{
+      width: 100%;
+      height: 70%;
+      background: #28b9b2;
+      z-index: 20;
+      border-bottom: solid 20px #d7d7d7;
+    }
+    #block4{
+      width: 100%;
+      height: 100%;
+      background: #ffa984;
+      z-index: 10;
+    }
+    #block5{
+      width: 2%;
+      height: 100%;
+      background: #d7d7d7;
+      z-index: 40;
+      left:425px;
+    }
+    #symbol1{
+      z-index: 50;
+      top: 330px;
+      left: 200px;
+      font-weight: bold;
+    }
+    #symbol2{
+      z-index: 50;
+      top: 575px;
+      left: 900px;
+      font-weight: bold;
+    }
+    #symbol3{
+      z-index: 50;
+      top: 400px;
+    }
+  </style>
+</head>
+<body id="bodyYYY">
+<div id="block1"></div>
+<div id="block2"></div>
+<div id="block3"></div>
+<div id="block4"></div>
+<div id="block5"></div>
+<div id="symbol1">=</div>
+<div id="symbol2">=</div>
+<div id="symbol3" style="rotate:180deg; left: 435px;">&#9658</div>
+<script>
+    let block1 = $('#block1');
+    let block2 = $('#block2');
+    let block3 = $('#block3');
+    let block4 = $('#block4');
+    let block5 = $('#block5');
+    let symbol1 = $('#symbol1');
+    let symbol2 = $('#symbol2');
+    let symbol3 = $('#symbol3');
+
+    block1.on('mousemove',function(e) {
+      if (block1.height() <100)
+      {
+        speed = false;
+      }
+      else if(block1.height() > 700)
+      {
+        speed = false;
+      }
+      else if (e.pageY>100&&e.pageY<700&&speed)
+      {
+        block1.css({'height': e.pageY,});
+        symbol1.css({'top': e.pageY,})
+      }
+    });
+    block2.on('mousemove',function(e) { // добавил, в качестве уловителя, т.к. при быстром движении мыши вниз
+      if (block1.height() <100)// событие  mousemove выскакивало за пределы block1 и перетаскивание прекращалось
+      {
+        speed = false;
+      }
+      else if(block1.height() > 700)
+      {
+        speed = false;
+      }
+      else if (e.pageY>100&&e.pageY<700&&speed)
+      {
+        block1.css({'height': e.pageY,});
+        symbol1.css({'top': e.pageY,})
+      }
+    });
+    block1.on('mousedown',function(){speed = true;})// событие нажатия клавиши
+    block1.on('mouseup',function(){speed = false;})// cобытие отпускания клавиши
+
+    block3.on('mousemove',function (e) {
+      if (block3.height() < 100)
+      {
+        speed = false;
+      }
+      else if(block3.height() > 700)
+      {
+        speed = false;
+      }
+      else if (e.pageY>100&&e.pageY<700&&speed)
+      {
+        block3.css({'height': e.pageY});
+        symbol2.css({'top': e.pageY})
+      }
+    });
+    block4.on('mousemove',function (e) {  // добавил, в качестве уловителя, т.к. при быстром движении мыши вниз
+      if (block3.height() < 100)   // событие  mousemove выскакивало за пределы block3 и перетаскивание прекращалось
+      {
+        speed = false;
+      }
+      else if(block3.height() > 700)
+      {
+        speed = false;
+      }
+      else if (e.pageY>100&&e.pageY<700&&speed)
+      {
+        block3.css({'height': e.pageY});
+        symbol2.css({'top': e.pageY})
+      }
+    });
+    block3.on('mousedown',function(){speed = true})// событие нажатия клавиши
+    block3.on('mouseup',function(){speed = false})// cобытие отпускания клавиши
+
+    block5.on('click', function(){
+      if (block5.offset().left===425)
+      {
+        block5.css({'left': '0px'});
+        block2.css({'z-index': '-1'});
+        block1.css({'z-index': '-1'});
+        symbol1.css({'z-index': '-1'});
+        symbol3.css({'rotate': '0deg', 'left': '8px'});
+        symbol2.css('left', '700px');
+      }
+      else
+      {
+        block5.css({'left': '425px'});
+        block2.css({'z-index': '30'});
+        block1.css({'z-index': '40'});
+        symbol1.css({'z-index': '40'});
+        symbol3.css({'rotate': '180deg', 'left': '435px'});
+        symbol2.css('left', '900px');
+      }
+    })
+</script>
+</body>
+</html>

@@ -1,24 +1,16 @@
-# print('"Anyone who \n'
-#       '    stops learning is old,\n'
-#       '         whether at twenty or eighty"\n'
-#       '                                  Henry Ford')
+print("+" + 10 * "-" + "+")
+print(("|" + " " * 10 + "|\n") * 5, end="")
+print("+" + 10 * "-" + "+")
 
 
 
-# w = float(input())
-# h = float(input())
-# p = 2*(w+h)
-# print(p)
 
-# print(1, 2, 3, sep=",", end=':')
-# print(1, 2, 3, sep="-", end='--end--\n')
-# print(1, 2, 3, sep="***")
+num = int(input('Введите двузначное число: '))
+a = num//10
+b = num - a * 10
+print(a)
+print(b)
 
-name = "Федор"; age = 18
-print("Имя %s, возраст %d" %(name, age))
-
-                            # •	%d, %i, %u – для вывода целочисленных значений;
-                            # •	%f – для вывода вещественных значений;
-                            # •	%s – для вывода строк;
-                            # •	%% - для вывода символа %
+#####################################################
+print(*input(), sep='\n')
 

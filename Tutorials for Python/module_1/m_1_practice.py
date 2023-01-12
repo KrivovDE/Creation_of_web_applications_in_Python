@@ -112,3 +112,7 @@
 # temperature_F = (temperature_C * 1.8) + 32
 #
 # print(f'Температура в цельсиях = {temperature_C}\n значит в Фарингейтах это = {temperature_F}')
+
+a = float(input())
+c = a // 1
+print((a-c)*100 > 50)

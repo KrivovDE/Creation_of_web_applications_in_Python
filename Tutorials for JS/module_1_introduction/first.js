@@ -3,10 +3,10 @@
 
 
 // alert('Академия ШАГ')
-//
+
 // let age = prompt('Возраст', 18);
 // console.log(age)
-// //
+//
 // let is_car = confirm('Продолжить?');
 // console.log(is_car)
 
@@ -20,15 +20,15 @@
 
 // console.log(4**(1/2))
 
-// let x = 5.7;
-//
-// if (x < 0)
-//    console.log('отрицательное');
-// else
-//     if (x > 0)
-//         console.log('положительное');
-//     else
-//         console.log('ноль');
+let x = 5.7;
+
+if (x < 0)
+   console.log('отрицательное');
+else
+    if (x > 0)
+        console.log('положительное');
+    else
+        console.log('ноль');
 
 // В ряде случаев конструкцию if else удобнее записывать через тернарный условный оператор,
 // который имеет такой синтаксис:
@@ -171,12 +171,12 @@
 //
 //     }
 
-let S=0, i=1;
-while(i <= 1000) {
-         S += 1/i;
-         ++i;
-}
-console.log(S);
+// let S=0, i=1;
+// while(i <= 1000) {
+//          S += 1/i;
+//          ++i;
+// }
+// console.log(S);
 
 
 

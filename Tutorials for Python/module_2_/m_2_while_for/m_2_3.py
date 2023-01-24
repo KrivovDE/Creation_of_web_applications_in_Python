@@ -5,10 +5,10 @@
 #     s += 1/i
 #     i += 1
 # print(s)
-
+# # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 # z = 0
-# v = -10
+# v = 4
 #
 # while v < 100:
 #     if v == 0:
@@ -18,7 +18,7 @@
 # else:
 #     print("Сумма вычислена корретно")
 # print(z)
-
+# # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 # a = 0
 # b = -5
@@ -31,36 +31,106 @@
 #     a += 1/b
 # print(a)
 
+# # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-#
 # for x in 1, 5, 2, 4:
 #     print(x**2)
+
+# # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 # for x in range(1, 5, 1):
 #     print(x)
 #
-#
+## # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
 # s = 0
 #
 # for i in range(1, 1001, 1):
 #     s += 1/i
 # print(s)
 
+# # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 # k = 0.5; b = 2
 # lst = [0, 0.1, 0.2, 0.3, 0.4, 0.5]
 # for x in lst:
 #     print(x*k+b)
-
-    # line = input("Enter some string: ")
-    #
-    # for c in line:
-    #     print(c)
+#
+#     line = input("Enter some string: ")
+#
+#     for c in line:
+#         print(c)
+## # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 # for i in range(1, 10):
 #     for j in range(1, 10):
 #         print(i * j, end="\t")
 #     print("\n")
+# # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+# number = 1
+# while number < 5:
+#     print(number)
+#     number += 1
+#
+#
+# number = 1
+# while True:
+# #     print(number)
+# #     number += 1
+# #
+# #     if number >= 5:
+# #         break
+# # # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+# number = 0
+# count = 0
+#
+# while count < 5:
+#
+#    number += 1
+#
+#    print(number)
+#    count += 1
+# #
+
+# number = 0
+# count = 0
+#
+# while count < 5:
+#
+#     number += 1
+#     if (number % 2) == 1:
+#         continue
+#
+#     print(number)
+#     count += 1
+# #
+# # # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+# number = 0
+# while number < 300:
+#     number += 1
+#     if number % 3 == 0 and number % 5 != 0:
+#         print(number, "divides by 3")
+#     elif number % 3 == 0:
+#         if number % 5 == 0 and number % 7 != 0:
+#             print(number, "divides by 3 and 5")
+#         elif number % 5 == 0 and number % 7 == 0:
+#             print(number, "divides by 3 and 5 and 7")
+#
+#
+# number = 0
+# while number < 300:
+#     number += 1
+#     if number % 3 != 0:
+#         continue
+#     elif number % 5 != 0:
+#         print(number, "divides by 3")
+#     elif number % 7 != 0:
+#         print(number, "divides by 3 and 5")
+#     else:
+#         print(number, "divides by 3 and 5 and 7")
+
+#  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 # floor = 1
 # energy = 70
@@ -76,4 +146,4 @@
 #             energy += 70
 #     floor += 1
 #     print(f'Сейчас я на {floor} этаже')
-# print('Ghbitk')
+# print('пришел')

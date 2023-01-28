@@ -162,10 +162,19 @@ cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/python
 
-# Игнорировать pdf файлы из папки Tutorials for html и подпапок, если таковые будут
-/Tutorials for html/**.*.pdf
+# Игнорировать файлы из папки Tutorials for html
 
-/Tutorials for JS/**.*.pdf
+DZ_m_3_str.docx
+DZ_module_1.pdf
+DZ_Module_2.pdf
+DZ_Module_3.pdf
+DZ_Module_5_6.pdf
+DZ_Module_6.pdf
+m_2_3.2_practic_text.docx
+theory_m_3_str.docx
+
+# Игнорировать файлы из папки Tutorials for JS
+
 DZ_Modul_1_5.pdf
 DZ_Modul_1_4.pdf
 DZ_Modul_1_3.pdf
@@ -178,4 +187,45 @@ DZ_Modul_2_string.pdf
 DZ_Modul_2_class.pdf
 DZ_Modul_2_OOP.pdf
 JS_module_2_lesson_1.pdf
+DZ_Modul_3_lesson_1.pdf
+DZ_Modul_3_lesson_2.pdf
+module_3_event_handling.pdf
+JS_DZ_Modul_4.pdf
+JS_mod_4_less_1.pdf
+JS_mod_4_less_2.pdf.pdf
+DZ_JS_mod_5_forms.pdf.pdf
+JS_mod_5_forms.pdf
+JS_DZ_Module_6.pdf
+JS_module_6_cookie.pdf
+JS_DZ_Module_7_lesson_2.pdf
+JS_module_7_JSON.pdf
+JS_PZ_Module_7.pdf
+module_8_1.pdf
+module_8_2.pdf
+program_JS.pdf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -204,8 +204,13 @@ module_8_1.pdf
 module_8_2.pdf
 program_JS.pdf
 
+# Игнорировать файлы из папки Tutorials for Pyrhon
 
-
+Python_urok_01.pdf
+Python_PZ_Modul__02_1.pdf
+Python_PZ_Modul__02_2.pdf
+Python_PZ_Modul__02_3.pdf
+Python_урок_02.pdf
 
 
 

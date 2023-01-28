@@ -161,3 +161,6 @@ cython_debug/
 .idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/python
+
+# Игнорировать pdf файлы из папки Tutorials for html и подпапок, если таковые будут
+/Tutorials for html/**.*.pdf

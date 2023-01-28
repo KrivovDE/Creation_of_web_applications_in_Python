@@ -164,3 +164,5 @@ cython_debug/
 
 # Игнорировать pdf файлы из папки Tutorials for html и подпапок, если таковые будут
 /Tutorials for html/**.*.pdf
+DZ_module_1.pdf
+html_lesson_1.pdf

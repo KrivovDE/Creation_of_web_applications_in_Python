@@ -18,8 +18,8 @@
 # else:
 #     print('Превышение скорости от 80 км/ч - штраф 5000 рублей')
 #
+# # #
 #
-
 # speed_const = int(input('Введите разрешенную скорость: '))
 # while True:
 #     speed_car = float(input('Введите скорость автомобиля: '))
@@ -34,37 +34,52 @@
 #         print('Превышение скорости от 40 до 60 км/ч - штраф 1000 рублей')
 #     else:
 #         print('Превышение скорости от 80 км/ч - штраф 5000 рублей')
+
+
 #
+
+USERNAMES = {'peter', '123', 'progamer'}
+
+
+def create_new_user(username, password):
+    global USERNAMES
+    USERNAMES.add(username)
+
 #
+def register_user():
+    username = input()
+    password = input()
+
+    if len(username) <= 20:
+        if len(username) > 3:
+            if username in USERNAMES:
+                print("User with this username already exists")
+            else:
+                if len(password) > 3:
+                    create_new_user(username, password)
+                    print("New user is created")
+                else:
+                    print("The password is too short")
+        else:
+            print("Username is too short")
+    else:
+        print("Username is too long")
+
+
+if __name__ == '__main__':
+    register_user()
+
+
 #
+# a = input('Город - ')
 #
-# USERNAMES = {'peter', '123', 'progamer'}
-#
-#
-# def create_new_user(username, password):
-#     global USERNAMES
-#     USERNAMES.add(username)
-#
-#
-# def register_user():
-#     username = input()
-#     password = input()
-#
-#     if len(username) <= 20:
-#         if len(username) > 3:
-#             if username in USERNAMES:
-#                 print("User with this username already exists")
-#             else:
-#                 if len(password) > 3:
-#                     create_new_user(username, password)
-#                     print("New user is created")
-#                 else:
-#                     print("The password is too short")
-#         else:
-#             print("Username is too short")
-#     else:
-#         print("Username is too long")
-#
-#
-# if __name__ == '__main__':
-#     register_user()
+# if a == 'Воронеж':
+#     print('Добро пожаловать в ' + a)
+# elif a == 'Липецк':
+#     print('Добро пожаловать в ' + a)
+# else:
+#     x = int(input('Введите число1 - '))
+#     x1 = int(input('Введите число2 - '))
+#     print(x**x1)
+
+

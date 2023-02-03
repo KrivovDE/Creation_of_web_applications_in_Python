@@ -113,6 +113,6 @@
 #
 # print(f'Температура в цельсиях = {temperature_C}\n значит в Фарингейтах это = {temperature_F}')
 
-a = float(input())
-c = a // 1
-print((a-c)*100 > 50)
+# a = float(input())
+# c = a // 1
+# print((a-c)*100 > 50)

@@ -1,12 +1,12 @@
-# Задание 1
+# # Задание 1
 # s = 0
 # n = 1
 # while n:
 #     n = int(input())
 #     s += n
 # print(s)
-
-# Задание 2
+#
+# # Задание 2
 # n = int(input())
 # s = 1
 # i = 2
@@ -38,7 +38,7 @@
 # else:
 #     print(f'баланс составит {round (deposit, 2)} руб.')
 
-# Задание 4
+# # Задание 4
 # p = 1
 # a = 1
 # while a != 0:
@@ -47,6 +47,7 @@
 #         continue
 #     p *= a
 # print(p)
+#
 # n = int(input())
 # i = 1
 # while True:
@@ -63,13 +64,13 @@
 #         print(i)
 
 # Задание 6
-# n = int(input())
-# for i in range(2, n):
-#     if n % i == 0:
-#         print('НЕТ')
-#         break
-# else:
-#     print('ДА')
+n = int(input())
+for i in range(2, n):
+    if n % i == 0:
+        print('НЕТ')
+        break
+else:
+    print('ДА')
 
 # Задание 7
 # n = int(input())

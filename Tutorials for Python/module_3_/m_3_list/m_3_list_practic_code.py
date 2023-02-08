@@ -49,9 +49,43 @@
 # print(input().replace('+7', '8').replace('-', ''))
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TASK 7~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-name = input().split()
-print(f"{name[-1]} {name[0][0]}.{name[1][0]}.")
+# name = input().split()
+# print(f"{name[-1]} {name[0][0]}.{name[1][0]}.")
 
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TASK 8~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# n = int(input())
+# s = []
+# for i in range(n):
+#     s.append([1] * n)
+#     s[i][-1] = 5
+#     print(*s[i], sep=' ')
+#
+#
+# n = int(input())
+#
+# lst = [[1] * n] * n
+# lst[0][n-1] = 5
+#
+# for i in lst:
+#     print(*i)
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TASK 9~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+# n = int(input())
+# s = []
+# for i in range(n):
+#     s.append([1] * n)
+#     s[i][-1] = 5
+#     print(*s[i], sep=' ')
+#
+# n=int(input())
+# for i in range(n):
+#     r=[]
+#     for j in range(n-1):
+#         r.append(1)
+#     r.append(5)
+#     print(*r)

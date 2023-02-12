@@ -49,19 +49,58 @@ else:
 
 say_hello()
 #---------------------------------------------------
+
+
 def max2(a, b):
     if a > b:
         return a
     return b
 
 
+print(max2(2, -3))
 
 
+def max3(a, b, c):
+    return max2(a, max2(b, c))
 
 
+print(max3(2, -3, 5))
+#---------------------------------------------------
+# Подвиг 1.
 
+#
+# def min_max_sum():
+#     n = [int(x) for x in input().split()]
+#     print(f'Min = {min(n)}, max = {max(n)}, sum = {sum(n)}')
+#
+# min_max_sum()
 
+#---------------------------------------------------
+# Подвиг 2.
 
+# def perimetr(width, height):
+#     p = (width + height) * 2
+#     print(f"Периметр прямоугольника, равен {p}")
+#
+#
+# width, height = map(int, input().split())
+# perimetr(width, height)
+#---------------------------------------------------
+# Подвиг 3.
+# def is_triangle(a, b, c):
+#     return a < b + c and b < a + c and c < a + b
+
+#---------------------------------------------------
+# Подвиг 4.
+# def is_odd(n):
+#     return len(n) >= 6
+#
+# lst = [i for i in input().split() if is_odd(i)]
+#
+# print(*lst)
+
+#---------------------------------------------------
+# Подвиг 5.
 
 
 

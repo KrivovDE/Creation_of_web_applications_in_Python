@@ -1,3 +1,34 @@
+# import time
+#
+#
+# def test_time(fn):
+#     def wrapper(*args, **kwargs):
+#         st = time.time()
+#         fn(*args, **kwargs)
+#         dt = time.time() - st
+#         print(f"Время работы: {dt} сек")
+#     return wrapper
+#
+#
+# @test_time
+# def func_rec(x, n):
+#     if n == 0:
+#         return 1
+#     else:
+#         return x * func_rec(x, n-1)
+#
+# func_rec(2, 3)
+#
+# print('*'*9)
+#
+# @test_time
+# def func_2(a, b):
+#     return a ** b
+#
+# func_2(2, 3)
+
+
+
 # def func_rec(x, n):
 #     if n == 0:
 #         return 1
@@ -7,6 +38,10 @@
 #
 # print(func_rec(2, 3))
 #---------------------------------------------------
+
+
+
+
 
 # N = int(input())
 #
@@ -78,6 +113,31 @@
 # lst = list(map(int, input().split()))
 # print(get_rec_sum(lst))
 #---------------------------------------------------
+# def show_elements(lst, func):
+#     for x in lst:
+#         if func(x):
+#             print(x)
+
+
+# def __odd(x):
+#     return True if x % 2 != 0 else False
+
+# l_1 = lambda x: x % 2 == 0
+# l_2 = lambda x: x % 2 != 0
+#
+# a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# show_elements(a, l_1)
+# print('----------')
+# show_elements(a, l_2)
+
+
+# show_elements(a, __odd)
+
+# #
+# r = lambda a, b: a+b
+# print('lambda', r(1, 2))
+
+# show_elements(a, lambda x: x % 2 == 0)
 
 # get_sq = lambda x: x ** 2
 # get_div = lambda x, y: None if y == 0 else x / y
@@ -105,14 +165,13 @@
 #
 # say_hi()
 # say_bye()
+# print(name)
 #---------------------------------------------------
 # x = 0
-#
-#
 # def outer():
 #     x = 1
-#
 #     def inner():
+#         nonlocal x
 #         x = 2
 #         print("inner:", x)
 #
@@ -121,6 +180,7 @@
 #
 #
 # outer()
+#
 # print("global:", x)
 
 

@@ -5,7 +5,7 @@
 # if x >= 0:
 #     print("x неотрицательное число")
 
-#
+# #
 # speed_const = 60
 # speed_car = float(input('Введите скорость автомобиля: '))
 #
@@ -17,10 +17,11 @@
 #     print('Превышение скорости от 40 до 60 км/ч - штраф 1000 рублей')
 # else:
 #     print('Превышение скорости от 80 км/ч - штраф 5000 рублей')
-#
-# # #
-#
+
+# #
+# #
 # speed_const = int(input('Введите разрешенную скорость: '))
+#
 # while True:
 #     speed_car = float(input('Введите скорость автомобиля: '))
 #
@@ -66,20 +67,20 @@ def register_user():
         print("Username is too long")
 
 
-if __name__ == '__main__':
-    register_user()
+# if __name__ == '__main__':
+#     register_user()
 
 
-#
-# a = input('Город - ')
-#
-# if a == 'Воронеж':
-#     print('Добро пожаловать в ' + a)
-# elif a == 'Липецк':
-#     print('Добро пожаловать в ' + a)
-# else:
-#     x = int(input('Введите число1 - '))
-#     x1 = int(input('Введите число2 - '))
-#     print(x**x1)
+
+a = input('Город - ')
+
+if a == 'Воронеж':
+    print('Добро пожаловать в ' + a)
+elif a == 'Липецк':
+    print('Добро пожаловать в ' + a)
+else:
+    x = int(input('Введите число1 - '))
+    x1 = int(input('Введите число2 - '))
+    print(x**x1)
 
 

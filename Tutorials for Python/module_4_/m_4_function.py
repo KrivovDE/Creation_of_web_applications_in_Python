@@ -40,17 +40,17 @@
 # print(per, sq)
 # #---------------------------------------------------
 # #
-# TYPE_FUNC = False
-#
-# if TYPE_FUNC:
-#     def say_hello():
-#         print("hello")
-# else:
-#     def say_hello(msg):
-#         print(msg)
-#
-# say_hello('sdfghjkl')
-#---------------------------------------------------
+TYPE_FUNC = False
+
+if TYPE_FUNC:
+    def say_hello():
+        print("hello")
+else:
+    def say_hello(msg):
+        print(msg)
+
+say_hello('xcvbnm,')
+# #---------------------------------------------------
 
 
 # def max2(a, b):

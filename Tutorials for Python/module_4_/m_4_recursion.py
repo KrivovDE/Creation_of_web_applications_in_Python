@@ -1,31 +1,35 @@
-# import time
+import time
+
+def test_time(fn):
+    def wrapper(*args, **kwargs):
+        st = time.time()
+        fn(*args, **kwargs)
+        dt = time.time() - st
+        print(f"Время работы рекурсии: {dt} сек")
+    return wrapper
+
+
+@test_time
+def func_2(a, b):
+    return a ** b
+
+func_2(100, 100)
+
+
+def func_rec(x, n):
+    if n == 0:
+        return 1
+    else:
+        return x * func_rec(x, n-1)
+
+
+st = time.time()
+func_rec(2, 1000)
+dt = time.time() - st
+print(f"Время работы второй: {dt} сек")
+
 #
-#
-# def test_time(fn):
-#     def wrapper(*args, **kwargs):
-#         st = time.time()
-#         fn(*args, **kwargs)
-#         dt = time.time() - st
-#         print(f"Время работы: {dt} сек")
-#     return wrapper
-#
-#
-# @test_time
-# def func_rec(x, n):
-#     if n == 0:
-#         return 1
-#     else:
-#         return x * func_rec(x, n-1)
-#
-# func_rec(2, 3)
-#
-# print('*'*9)
-#
-# @test_time
-# def func_2(a, b):
-#     return a ** b
-#
-# func_2(2, 3)
+
 
 
 
@@ -73,24 +77,24 @@
 #---------------------------------------------------
 # Подвиг 1.
 
-# n = int(input())
-#
-#
-# def fact_rec(n):
-#     if n > 1:
-#         return n * fact_rec(n-1)
-#     return 1
-#
-#
-# print(fact_rec(n))
-#
-#
-#
-# def fact_rec_2(n):
-#     return n * fact_rec_2(n-1) if n else 1
-#
-#
-# print(f' -------{fact_rec_2(n)}')
+n = int(input())
+
+
+def fact_rec(n):
+    if n > 1:
+        return n * fact_rec(n-1)
+    return 1
+
+
+print(fact_rec(n))
+
+
+
+def fact_rec_2(n):
+    return n * fact_rec_2(n-1) if n else 1
+
+
+print(f' -------{fact_rec_2(n)}')
 #---------------------------------------------------
 # Подвиг 2.
 
@@ -109,10 +113,10 @@
 #         return lst[0] + get_rec_sum(lst[1:])
 #     return 0
 #
-#
+# #
 # lst = list(map(int, input().split()))
 # print(get_rec_sum(lst))
-#---------------------------------------------------
+# #---------------------------------------------------
 # def show_elements(lst, func):
 #     for x in lst:
 #         if func(x):

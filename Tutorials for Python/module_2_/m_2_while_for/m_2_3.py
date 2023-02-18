@@ -1,11 +1,17 @@
-# S=0
-# i=1
+# S = 0
+# i = 1
 # while i <= 1000:
 #     S += 1/i
 #     i += 1
 # print(S)
-#
 
+# a = 8
+# count = 0
+# while a != count:
+#     if count % 2 == 0 or count == 0 or count == 5:
+#         print(count)
+#     count += 1
+#
 
 #
 # s = 0
@@ -14,12 +20,12 @@
 # while True:
 #     s += 1/i
 #     i += 1
-# print(s)
+#     print(s)
 # # # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 #
-# # z = 0
-# # v = -4
-# #
+# z = 0
+# v = -4
+#
 # while v < 100:
 #     if v == 0:
 #         break

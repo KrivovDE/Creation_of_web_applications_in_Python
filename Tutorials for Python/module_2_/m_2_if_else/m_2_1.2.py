@@ -44,14 +44,16 @@
 # [если истина] if [выражение] else [если ложь]
 
 
-x, y = 25, 50
-big = x if x < y else y
+# x, y = 25, 50
+#
+# big = x if x < y else y
+#
 
-# age = 11
-#
-# # accessAllowed = True if age >= 18 else False
-#
-# accessAllowed = age >= 18
-#
-# print(accessAllowed)
+age = 11
+
+# accessAllowed = True if age >= 18 else False
+
+accessAllowed = age >= 18
+
+print(accessAllowed)
 

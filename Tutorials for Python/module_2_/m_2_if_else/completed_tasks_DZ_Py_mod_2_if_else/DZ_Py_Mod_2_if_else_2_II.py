@@ -7,16 +7,16 @@
 # Если пользователь ввел не шестизначное число требуется вывести сообщение об
 # ошибке ввода.
 
-digit = int(input('Введите шестизначное число: '))
-if not 0 < (digit // 100000) < 9:
-    print('Вы ввели не шестизначное число')
-else:
-    first = digit // 1000
-    last = digit % 1000
-    sumFirst = (first // 100) + (first // 10 % 10) + (first % 100 % 10)
-    sumLast = (last // 100) + (last // 10 % 10) + (last % 100 % 10)
-    print('Счастливое число') if sumFirst == sumLast else print('Не счастливое число')
-
+# digit = int(input('Введите шестизначное число: '))
+# if not 0 < (digit // 100000) < 9:
+#     print('Вы ввели не шестизначное число')
+# else:
+#     first = digit // 1000
+#     last = digit % 1000
+#     sumFirst = (first // 100) + (first // 10 % 10) + (first % 100 % 10)
+#     sumLast = (last // 100) + (last // 10 % 10) + (last % 100 % 10)
+#     print('Счастливое число') if sumFirst == sumLast else print('Не счастливое число')
+#
 
 # Задание 2
 # Пользователь вводит шестизначное число. Необходимо поменять в этом числе

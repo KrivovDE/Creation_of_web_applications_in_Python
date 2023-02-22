@@ -39,23 +39,23 @@
 #     print(f'баланс составит {round (deposit, 2)} руб.')
 
 # # Задание 4
-# p = 1
-# a = 1
-# while a != 0:
-#     a = int(input())
-#     if a <= 0:
-#         continue
-#     p *= a
-# print(p)
-#
-# n = int(input())
-# i = 1
-# while True:
-#     if i ** 2 > n:
-#         print(i)
-#         break
-#
-#     i += 1
+p = 1
+a = 1
+while a != 0:
+    a = int(input())
+    if a <= 0:
+        continue
+    p *= a
+print(p)
+
+n = int(input())
+i = 1
+while True:
+    if i ** 2 > n:
+        print(i)
+        break
+
+    i += 1
 
 # Задание 5
 # a = int(input())

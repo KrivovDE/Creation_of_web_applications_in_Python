@@ -19,22 +19,22 @@
 #     print('Превышение скорости от 80 км/ч - штраф 5000 рублей')
 #
 
-
-speed_const = int(input('Введите разрешенную скорость: '))
-
-while True:
-    speed_car = float(input('Введите скорость автомобиля: '))
-
-    difference = speed_car - speed_const
-
-    if difference <= 0:
-        print('Скоростной режим не нарушен')
-    elif difference <= 40:
-        print('Превышение скорости от 20 до 40 км/ч - штраф 500 рублей')
-    elif difference <= 60:
-        print('Превышение скорости от 40 до 60 км/ч - штраф 1000 рублей')
-    else:
-        print('Превышение скорости от 80 км/ч - штраф 5000 рублей')
+#
+# speed_const = int(input('Введите разрешенную скорость: '))
+#
+# while True:
+#     speed_car = float(input('Введите скорость автомобиля: '))
+#
+#     difference = speed_car - speed_const
+#
+#     if difference <= 0:
+#         print('Скоростной режим не нарушен')
+#     elif difference <= 40:
+#         print('Превышение скорости от 20 до 40 км/ч - штраф 500 рублей')
+#     elif difference <= 60:
+#         print('Превышение скорости от 40 до 60 км/ч - штраф 1000 рублей')
+#     else:
+#         print('Превышение скорости от 80 км/ч - штраф 5000 рублей')
 
 #
 # USERNAMES = {'peter', '123', 'progamer'}
@@ -68,6 +68,11 @@ while True:
 # # if __name__ == '__main__':
 #     register_user()
 
+a = 9
+if a == 1 or 0:
+    print('first pr')
+else:
+    print('two pr')
 
 
 

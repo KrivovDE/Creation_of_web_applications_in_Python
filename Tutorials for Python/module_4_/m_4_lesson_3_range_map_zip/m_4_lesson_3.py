@@ -1,3 +1,9 @@
+# import random
+#
+# list_1 = [1, 2, 45.34, True]
+# print(random.choice(list_1))
+
+
 # Хороший пароль должен быть произвольным и состоять минимум из 6 символов, в нём должны быть цифры,
 # строчные и прописные буквы. Приготовить такой пароль можно по следующему рецепту:
 # import random
@@ -11,8 +17,8 @@
 # psw = ''.join([random.choice(ls) for x in range(12)])
 #
 # print(psw)
-
-
+#
+#
 # import random
 # print(''.join([random.choice(list('123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM')) for _ in range(12)]))
 #
@@ -32,44 +38,48 @@
 # b = list(map(sq, lst))
 # print(b)
 
+
 #---------------------------------------------------
 # lst = ["Москва", "Рязань", "Смоленск", "Тверь", "Томск"]
 # b = map(len, lst)
 # a = list(b)
 # print(a)
 # b = map(str.upper, lst)
+# b = list(b)
 # print(b)
 
 # b = map(lambda x: x[::-1], lst)
-#---------------------------------------------------
+# b = list(b)
+# print(b)
+# # ---------------------------------------------------
 # lst = ["Москва", "Рязань", "Смоленск", "Тверь", "Томск"]
 #
 # b = map(lambda x: x.replace("а", "А"), lst)
+#
 # c = map(sorted, b)
 # res1 = list(c)
 # print(res1)
-
-#---------------------------------------------------
+#
+# #---------------------------------------------------
 # a = list(map(int, input().split()))
-
-#---------------------------------------------------
+# print(a)
+# #---------------------------------------------------
 # a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 #
 # def odd(x):
 #     return x % 2
-
-# b = list(filter(odd, a))
-# print(b)
 #
+# # b = list(filter(odd, a))
+# # print(b)
+# #
 # b = list(filter(lambda x: x % 2, a))
 # print(b)
 #---------------------------------------------------
 
 # lst = ["Москва", "Рязань1", "Смоленск", "Тверь2", "Воронеж45"]
 # b = filter(str.isalpha, lst)
-#
-# for x in b:
-#     print(x, end=" ")
+# print(*b)
+
 # #---------------------------------------------------
 # items = [1, 2, 3, 4, 5]
 # #
@@ -83,9 +93,9 @@
 #     acc2 = acc2 * item
 #
 # print(acc, acc2, sep='\n')
-
+#
 # from functools import reduce
-
+#
 # sum_all = reduce(lambda x,y: x+y, items)
 # print('reduce', sum_all)
 #
@@ -101,15 +111,14 @@
 #
 # it = zip(a, b)
 # print(it)
-# print(list(it))
+# print(dict(it))
 #
-
+#
 # a = [1, 2, 3, 4]
 # b = [5, 6, 7, 8]
 # c = "abracadabra"
 #
-# it = zip(a, b)
-# print(it)
+# it = zip(a, b, c)
 # print(list(it))
 #---------------------------------------------------
 # На вход поступает строка из целых чисел, записанных через пробел.
@@ -141,3 +150,12 @@
 
 # Вводятся два списка целых чисел. Необходимо попарно перебрать их элементы и перемножить между собой.
 # При реализации программы используйте функции zip и map.
+#
+# n=map(int, input().split())
+# m=map(int, input().split())
+# res=(x*y for x,y in zip(n, m))
+# for _ in range(3):
+#     print(next(res), end= " ")
+#
+# m=map(lambda x: x[0]*x[1], zip(map(int, input().split()), map(int, input().split())))
+# print(next(m), next(m), next(m))

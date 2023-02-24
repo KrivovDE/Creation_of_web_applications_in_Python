@@ -169,3 +169,35 @@
 #     floor += 1
 #     print(f'Сейчас я на {floor} этаже')
 # print('пришел')
+
+
+# str_1 = 'QWERTTYUIO'
+# for i in str_1:
+#     print(i)
+
+# _sum = 0
+# for i in range(1, 1001):
+#     _sum += 1/i
+#
+# print(_sum)
+#
+# for i in range(1, 11):
+#    for j in range(1, 11):
+#        print(i * j, end='\t')
+#    print('\n')
+floor = 1
+energy = 70
+print(f'Я на {floor} этаже')
+ot = 0
+while floor != 5:
+    step = 0
+    while step != 20:
+        step += 1
+        energy -= 1
+        if energy == 0:
+            print('Я устал, я немного отдохну')
+            ot += 1
+            energy += 70
+    floor += 1
+    print(f'Сейчас я на {floor} этаже')
+print('Я отдыхал', ot)

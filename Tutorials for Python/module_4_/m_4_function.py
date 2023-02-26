@@ -40,16 +40,16 @@
 # print(per, sq)
 # #---------------------------------------------------
 # #
-TYPE_FUNC = False
-
-if TYPE_FUNC:
-    def say_hello():
-        print("hello")
-else:
-    def say_hello(msg):
-        print(msg)
-
-say_hello('xcvbnm,')
+# TYPE_FUNC = False
+#
+# if TYPE_FUNC:
+#     def say_hello():
+#         print("hello")
+# else:
+#     def say_hello(msg):
+#         print(msg)
+#
+# say_hello('xcvbnm,')
 # #---------------------------------------------------
 
 
@@ -80,36 +80,39 @@ say_hello('xcvbnm,')
 #---------------------------------------------------
 # Подвиг 2.
 
-def perimetr(width, height):
-    p = (width + height) * 2
-    print(f"Периметр прямоугольника, равен {p}")
-
-
-width, height = map(int, input().split())
-perimetr(width, height)
-#---------------------------------------------------
-# Подвиг 3.
-def is_triangle(a, b, c):
-    return a < b + c and b < a + c and c < a + b
-
-#---------------------------------------------------
-# Подвиг 4.
-
-
-def is_odd(n):
-    return len(n) >= 6
-
-
-lst = [i for i in input().split() if is_odd(i)]
-
-print(*lst)
+# def perimetr(width, height):
+#     p = (width + height) * 2
+#     print(f"Периметр прямоугольника, равен {p}")
+#
+#
+# width, height = map(int, input().split())
+# perimetr(width, height)
+# #---------------------------------------------------
+# # Подвиг 3.
+# def is_triangle(a, b, c):
+#     return a < b + c and b < a + c and c < a + b
+#
+# #---------------------------------------------------
+# # Подвиг 4.
+#
+#
+# def is_odd(n):
+#     return len(n) >= 6
+#
+#
+# lst = [i for i in input().split() if is_odd(i)]
+#
+# print(*lst)
 
 #---------------------------------------------------
 # Подвиг 5.
 
 
 
-
+a = 'dmitrii'
+print(a)
+print(a.capitalize())
+print(a.isupper())
 
 
 

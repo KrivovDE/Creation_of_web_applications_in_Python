@@ -2,7 +2,6 @@
 # def summ(*elements):
 #     #здесь эти элементы автоматически упакуются в кортеж
 #     result = 0
-#
 #     for element in elements:
 #         result += element
 #
@@ -10,17 +9,16 @@
 #
 #
 # print(summ(1, 2, 3))
-#
+# #
 # print(summ(1, 2, 3, 122, 5000, 10, -1, -5434))
 
-# ---------------------------------------------------
+# # ---------------------------------------------------
 # def fun(*args):
-#     # обращаемся к первому элементу кортежа
-#     print(args[0])
 #
+#     print(args[0])
 #     print(args)
 #
-# fun("Python", "C++", "Java", "C#")
+# fun("Python", "C++", "Java", "C#", 55, 898)
 # ---------------------------------------------------
 # def print_scores(student, *args):
 #    print(f'Student Name: {student}')
@@ -28,13 +26,14 @@
 #    for score in args:
 #       print(score)
 #
-#
 # print_scores('DMITRII', 100, 95, 88, 92, 99)
 
 # ---------------------------------------------------
-
+#
 # def print_pet_names(owner, **pets):
 #     print(f'Имя владельца: {owner}')
+#
+#     print(pets)
 #
 #     for pet, name in pets.items():
 #         print(f'{pet}: {name}')
@@ -64,7 +63,6 @@
 # def multiply(n):
 #     def inner(m):
 #         return n * m
-#
 #     return inner
 #
 #
@@ -76,7 +74,7 @@
 #
 # def multiply(n):
 #     return lambda m: n * m
-#
+
 #
 # fn = multiply(5)
 # print(fn(5))  # 25
@@ -98,9 +96,9 @@
 # c1 = counter(10)
 # c2 = counter()
 #
-# print(c1, c2)
-# print(c1, c2)
-# print(c1, c2)
+# print(c1(), c2())
+# print(c1(), c2())
+# print(c1(), c2())
 #
 # # ---------------------------------------------------
 # def strip_string(strip_chars=' '):
@@ -108,7 +106,6 @@
 #         return string.strip(strip_chars)
 #
 #     return do_strip
-#
 #
 # strip1 = strip_string()
 # strip2 = strip_string(" !?,.;")
@@ -118,9 +115,34 @@
 
 # ---------------------------------------------------
 
-
-
 # Алгоритм Евклида
+def get_nod(a, b):
+    while a != b:
+        if a > b:
+            a -= b
+        else:
+            b -= a
+    return a
+
+print(get_nod(1,5))
+# ---------------------------------------------------
+import time
+
+
+def test_time(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        func(*args, **kwargs)
+        stop = time.time() - start
+        print(f"Время работы: {stop} сек")
+    return wrapper
+
+test1 = test_time(get_nod)
+test1(1000000000, 2)
+
+
+
+# ---------------------------------------------------
 # def get_nod(a, b):
 #     while a != b:
 #         if a > b:
@@ -130,23 +152,15 @@
 #     return a
 #
 # print(get_nod(1,5))
-# ---------------------------------------------------
-# import time
+# # Быстрый алгоритм Евклида
+# def get_fast_nod(a, b):
+#     if a < b:
+#         a, b = b, a
+#     while b:
+#         a, b = b, a % b
+#     return a
+# print(get_fast_nod(1,5))
 #
-#
-# def test_time(func):
-#     def wrapper(*args, **kwargs):
-#         start = time.time()
-#         func(*args, **kwargs)
-#         stop = time.time() - start
-#         print(f"Время работы: {stop} сек")
-#     return wrapper
-
-
-# test1 = test_time(get_nod)
-# test1(100000, 2)
-
-# ---------------------------------------------------
 # def test_time(fn, *args):
 #     st = time.time()
 #     fn(*args)
@@ -154,26 +168,15 @@
 #     print(f"Время работы: {dt} сек")
 #
 #
-# test_time(get_nod, 100000, 2)
-
-# ---------------------------------------------------
-# Быстрый алгоритм Евклида
-# def get_fast_nod(a, b):
-#     if a < b:
-#         a, b = b, a
-#     while b:
-#         a, b = b, a % b
-#     return a
-#
-#
-# test1 = test_time(get_nod)
-# test2 = test_time(get_fast_nod)
-#
-# test1(100000, 2)
-# test2(100000, 2)
+# test1 = test_time(get_nod,100000, 2)
+# test2 = test_time(get_fast_nod,100000, 2)
+# #
+# test1()
+# test2()
 
 # ---------------------------------------------------
 # import time
+#
 # def test_time(func):
 #     def wrapper(*args, **kwargs):
 #         start = time.time()
@@ -181,7 +184,7 @@
 #         stop = time.time() - start
 #         print(f"Время работы: {stop} сек")
 #     return wrapper
-#
+# #
 # @test_time
 # def get_fast_nod(a, b):
 #     if a < b:
@@ -190,9 +193,9 @@
 #         a, b = b, a % b
 #     return a
 #
-# get_fast_nod(1000, 2)
-
-# ---------------------------------------------------
+# get_fast_nod(100000000000, 2)
+#
+# # ---------------------------------------------------
 # def test_time(fn):
 #     def wrapper(*args, **kwargs):
 #         st = time.time()
@@ -230,7 +233,7 @@
 # который сортирует список чисел по возрастанию. Результат сортировки должен возвращаться при вызове декоратора.
 # Вызовите декорированную функцию get_list и отобразите полученный отсортированный список lst
 # s = input()
-
+#
 # def get_sort(func):
 #     def wrapper(s):
 #         res = sorted(func(s))
@@ -243,13 +246,12 @@
 #     s = list(map(int, s.split()))
 #     return s
 #
-#
 # lst = get_list(s)
 # print(*lst)
-
+#
 # a, b = input(), input()
-#
-#
+
+
 # def get_decor(func):
 #     def get_dict(a, b):
 #         c = list(zip(*func(a, b)))
@@ -265,3 +267,50 @@
 #
 # d = get_list(a, b)
 # print(d)
+
+
+
+# dict_coll = [{'key1': 'value1'}, {'k1': 'v1', 'k2': 'v2', 'k3': 'v3'}, {}, {}, {'key1': 'value1'}, {'key1': 'value1'},
+#              {'key2': 'value2'}]
+#
+# dict_new_cool = []
+# for dict_i in dict_coll:
+#     if dict_i not in dict_new_cool:
+#         dict_new_cool.append(dict_i)
+#
+# print(dict_coll)
+# print(dict_new_cool)
+
+# new = list(map(dict, set(tuple(sorted(e.items())) for e in dict_coll)))
+#
+#
+# new2 = [dict(s) for s in set(frozenset(d.items()) for d in dict_coll)]
+#
+#
+# print('1', new)
+# print('2', new2)
+
+
+# Пример который можно переделать
+# import time
+
+# inp = 'd:\\text.txt'
+#
+# unique = list()
+# remove_index = list()
+# hashes = set()
+#
+# with open(inp, 'r', encoding="utf-8") as fp:
+#     data = fp.read()
+#
+#     start_time = time.time()
+#
+#     for ln_index, ln in enumerate(data.split('\n', )):
+#
+#         if ln not in hashes:
+#             hashes.add(ln)
+#             unique.append(ln)
+#         else:
+#             remove_index.append(ln_index)
+#
+#     print("---Выполнено за %s секунд ---" % (time.time() - start_time))

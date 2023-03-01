@@ -270,27 +270,6 @@ test1(1000000000, 2)
 
 
 
-# dict_coll = [{'key1': 'value1'}, {'k1': 'v1', 'k2': 'v2', 'k3': 'v3'}, {}, {}, {'key1': 'value1'}, {'key1': 'value1'},
-#              {'key2': 'value2'}]
-#
-# dict_new_cool = []
-# for dict_i in dict_coll:
-#     if dict_i not in dict_new_cool:
-#         dict_new_cool.append(dict_i)
-#
-# print(dict_coll)
-# print(dict_new_cool)
-
-# new = list(map(dict, set(tuple(sorted(e.items())) for e in dict_coll)))
-#
-#
-# new2 = [dict(s) for s in set(frozenset(d.items()) for d in dict_coll)]
-#
-#
-# print('1', new)
-# print('2', new2)
-
-
 # Пример который можно переделать
 # import time
 

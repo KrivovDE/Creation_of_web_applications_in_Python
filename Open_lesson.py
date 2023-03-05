@@ -68,11 +68,7 @@
 # # if __name__ == '__main__':
 #     register_user()
 
-a = 9
-if a == 1 or 0:
-    print('first pr')
-else:
-    print('two pr')
+
 
 
 

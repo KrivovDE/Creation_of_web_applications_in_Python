@@ -30,9 +30,6 @@
 
 #
 
-
-
-
 # def func_rec(x, n):
 #     if n == 0:
 #         return 1
@@ -42,9 +39,6 @@
 #
 # print(func_rec(2, 3))
 #---------------------------------------------------
-
-
-
 
 
 # N = int(input())
@@ -63,38 +57,32 @@
 #     for x in lst:
 #         if func(x):
 #             print(x)
-#
-#
+# #
+# #
 # def _odd(x):
 #     return True if x % 2 != 0 else False
-#
-#
+# #
+# #
 # a = [1, 2, 3, 4, 5, 6, 7]
 # show_elements(a, _odd)
-#
+# #
 # show_elements(a, lambda x: True if x % 2 == 0 else False)
 
 #---------------------------------------------------
 # Подвиг 1.
 #
-# n = int(input())
-#
-#
-# def fact_rec(n):
-#     if n > 1:
-#         return n * fact_rec(n-1)
-#     return 1
-#
-#
-# print(fact_rec(n))
-#
-#
-#
-# def fact_rec_2(n):
-#     return n * fact_rec_2(n-1) if n else 1
-#
-#
-# print(f' -------{fact_rec_2(n)}')
+n = int(input())
+def fact_rec(n):
+    if n > 1:
+        return n * fact_rec(n-1)
+    return 1
+print(fact_rec(n))
+
+def fact_rec_2(n):
+    return n * fact_rec_2(n-1) if n else 1
+
+
+print(f' -------{fact_rec_2(n)}')
 #---------------------------------------------------
 # Подвиг 2.
 
@@ -147,6 +135,8 @@
 # get_div = lambda x, y: None if y == 0 else x / y
 # a = lambda x: abs(x)
 #---------------------------------------------------
+
+
 # def my_func(b):
 #     for x in range(b):
 #         n = x + 1
@@ -154,9 +144,10 @@
 #
 #
 # my_func(6)
+
 #---------------------------------------------------
 # name = "Tom"
-#
+# #
 #
 # def say_hi():
 #     print("Hello", name)
@@ -173,17 +164,14 @@
 #---------------------------------------------------
 # x = 0
 # def outer():
+#     global x
 #     x = 1
 #     def inner():
 #         nonlocal x
 #         x = 2
 #         print("inner:", x)
-#
 #     inner()
 #     print("outer:", x)
-#
-#
 # outer()
-#
 # print("global:", x)
 

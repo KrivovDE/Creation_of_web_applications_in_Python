@@ -43,6 +43,6 @@ def gap_insertion_sort(alist, start, gap):
         alist[position] = currentvalue
 
 
-alist = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+alist = [12, 34, 25, 15, 67, 23, 11, 86]
 shell_sort(alist)
 print(alist)

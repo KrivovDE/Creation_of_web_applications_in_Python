@@ -1,13 +1,16 @@
-# def linear_search(_list: list[int], _key: int) -> int:
-#     for i in range(len(_list)):
-#         if _list[i] == _key:
-#             return i
-#     return -1
-#
-#
-# list1 = [1, 3, 5, 4, 7, 9]
-#
-# print(linear_search(list1, 12))
+from typing import List
+
+
+def linear_search(_list: List[int], _key: int) -> int:
+    for i in range(len(_list)):
+        if _list[i] == _key:
+            return i
+    return -1
+
+
+list1 = [1, 3, 5, 4, 7, 9]
+
+print(linear_search(list1, 12))
 
 
 # Можно использовать только 1 цикл!!!
@@ -35,11 +38,11 @@
 
 
 n: int = int(input())
-b: list[int] = list(map(int, input().split()))
+b: List[int] = list(map(int, input().split()))
 c: int = int(input())
 
 
-def feat_1(lst: list[int], c: int):
+def feat_1(lst: List[int], c: int):
     res: int = c
     diff = 2001
 
@@ -51,7 +54,7 @@ def feat_1(lst: list[int], c: int):
 
 
 _v: int = 5
-_z: list[int] = [5, 4, 3, 2, 1]
+_z: List[int] = [5, 4, 3, 2, 1]
 _o: int = 3
 
 feat_1(_z, _o)

@@ -12,7 +12,6 @@ list1 = [1, 3, 5, 4, 7, 9]
 
 print(linear_search(list1, 12))
 
-
 # Можно использовать только 1 цикл!!!
 # Вот вопрос задачи:
 # Напишите программу, которая находит в массиве элемент, самый близкий по величине к данному числу.
@@ -37,14 +36,14 @@ print(linear_search(list1, 12))
 # 3
 
 
-n: int = int(input())
-b: List[int] = list(map(int, input().split()))
-c: int = int(input())
+# n: int = int(input())
+# b: List[int] = list(map(int, input().split()))
+# c: int = int(input())
 
 
 def feat_1(lst: List[int], c: int):
     res: int = c
-    diff = 2001
+    diff: int = 2001
 
     for i_num in lst:
         if abs(c - i_num) < diff:
@@ -53,16 +52,8 @@ def feat_1(lst: List[int], c: int):
     print(res)
 
 
-_v: int = 5
+
 _z: List[int] = [5, 4, 3, 2, 1]
 _o: int = 3
 
 feat_1(_z, _o)
-
-
-
-
-
-
-
-

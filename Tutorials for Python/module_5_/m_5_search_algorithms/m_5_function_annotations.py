@@ -20,7 +20,7 @@
 from functools import wraps
 from typing import Optional, Any, Union, List, Tuple, Dict, Callable, TypeVar, Generic
 
-#
+
 # amount: int
 # amount = None
 #
@@ -36,7 +36,7 @@ from typing import Optional, Any, Union, List, Tuple, Dict, Callable, TypeVar, G
 # print(unknown_object.startswith("hello"))
 # #---------------------------------------------------------------------
 #
-#
+
 # def hundreds(x: Union[int, float]) -> int:
 #     return (int(x) // 100) % 10
 #
@@ -44,7 +44,7 @@ from typing import Optional, Any, Union, List, Tuple, Dict, Callable, TypeVar, G
 # hundreds(100)
 # hundreds("100")  # Expected type 'Union[int, float]', got 'str' instead
 # ---------------------------------------------------------------------
-
+#
 # titles: List[str] = ["hello", "world"]
 #
 # titles.append(100500)  # Expected type 'str' (matched generic type '_T'), got 'int' instead
@@ -70,22 +70,25 @@ from typing import Optional, Any, Union, List, Tuple, Dict, Callable, TypeVar, G
 # book_authors: Dict[str, str] = {"Fahrenheit 451": "Bradbury"}
 # book_authors["1984"] = 0  # Incompatible types in assignment (expression has type "int", target has type "str")
 # book_authors[1984] = "Orwell"
-# ---------------------------------------------------------------------
+# # ---------------------------------------------------------------------
 # def nothing(a: int) -> None:
 #     if a == 1:
 #         return
 #     elif a == 2:
 #         return None
 #     elif a == 3:
-#         return ""  # Expected type 'None', got 'str' instead
+#         return "j"  # Expected type 'None', got 'str' instead
 #     else:
 #         pass
+#
+#
+# nothing(3)
 
 # ---------------------------------------------------------------------
 # class LinkedList:
 #     data: Any
 #     next: LinkedList  # NameError: name 'LinkedList' is not defined
-#
+
 #
 # class LinkedList:
 #     data: Any
@@ -105,12 +108,12 @@ from typing import Optional, Any, Union, List, Tuple, Dict, Callable, TypeVar, G
 #     helper()
 #     num = 12345
 #     print(renderer(num))
-#
+# #
 # app(help, render_hundreds)
 # app(help, help)  # Expected type '(int) -> str', got '() -> None' instead
 
 
-# ---------------------------------------------------------------------
+# # ---------------------------------------------------------------------
 # T = TypeVar('T')
 #
 #
@@ -131,7 +134,7 @@ from typing import Optional, Any, Union, List, Tuple, Dict, Callable, TypeVar, G
 # head_str: LinkedList[str] = LinkedList("1")
 # head_str.data.replace("0", "1")
 #
-# head_str = LinkedList[str](1)
+# # head_str = LinkedList[str](1)
 
 # ---------------------------------------------------------------------
 # from typing import List, cast

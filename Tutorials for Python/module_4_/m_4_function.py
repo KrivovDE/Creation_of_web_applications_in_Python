@@ -70,19 +70,19 @@
 # say_hello(False)
 # #---------------------------------------------------
 #
-# def max2(a, b):
-#     if a > b:
-#         return a
-#     return b
-#
+def max2(a, b):
+    if a > b:
+        return a
+    return b
+
 # print(max2(2, -3))
-# #
 #
-# def max3(a, b, c):
-#     return max2(a, max2(b, c))
+
+def max3(a, b, c):
+    return max2(a, max2(b, c))
 #
-# print(max3(2, -3, 5))
-#
+print(max3(2, -3, 5))
+
 # print(max3(len('Qsd'), len('a'), len('AAAAAAAAAA')))
 # #---------------------------------------------------
 # Подвиг 1.
@@ -106,11 +106,11 @@
 # perimetr(width, height)
 # #---------------------------------------------------
 # # Подвиг 3.
-def is_triangle(a, b, c):
-    return a < b + c and b < a + c and c < a + b
-print(is_triangle(1,2,3))
-print(is_triangle(12,2,14))
-print(is_triangle(8,8,8))
+# def is_triangle(a, b, c):
+#     return a < b + c and b < a + c and c < a + b
+# print(is_triangle(1,2,3))
+# print(is_triangle(12,2,14))
+# print(is_triangle(8,8,8))
 # #---------------------------------------------------
 # # Подвиг 4.
 #5

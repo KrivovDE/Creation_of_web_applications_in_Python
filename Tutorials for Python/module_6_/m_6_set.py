@@ -1,7 +1,7 @@
 from typing import Set, List, Tuple
 
-# set_a: Set[int] = {1, 2, 3, 4}
-# set_b: Set[int] = {3, 4, 5, 6, 7}
+set_a: Set[int] = {1, 2, 3, 4}
+set_b: Set[int] = {3, 4, 5, 6, 7}
 # ---------------------------------------------------------------------
 
 # res_1: set = set_a & set_b
@@ -34,7 +34,7 @@ from typing import Set, List, Tuple
 # ---------------------------------------------------------------------
 # mylist: List[int] = [2021, 2020, 2019, 2018, 2017, 2016]
 # mytuple: Tuple[int, ...] = (2021, 2020, 2016)
-# mystr: str = 'abcd'
+# mystr: str = 'abcdddd'
 #
 # myset: Set[int] = {2009, 2010, 2016}
 #
@@ -44,9 +44,9 @@ from typing import Set, List, Tuple
 
 
 # ---------------------------------------------------------------------
-# myset1: Set[int] = {1, 2, 3, 4, 5, 6}
-# myset2: Set[int] = {2, 3, 4, 5}
-# myset3: Set[int] = {5, 6, 7, 8}
+myset1: Set[int] = {1, 2, 3, 4, 5, 6}
+myset2: Set[int] = {2, 3, 4, 5}
+myset3: Set[int] = {5, 6, 7, 8}
 #
 # union1: Set[int] = myset1.union(myset2, myset3)
 # union2: Set[int] = myset1 | myset2 | myset3
@@ -61,7 +61,7 @@ from typing import Set, List, Tuple
 # ---------------------------------------------------------------------
 # symdifference: Set[int] = myset1 ^ myset2 ^ myset3  # порядок выполнения слева-направо
 #
-# # symdifference = myset1.symmetric_difference(myset2, myset3) #TypeError: symmetric_difference() takes exactly one argument (2 given)
+# symdifference = myset1.symmetric_difference(myset2, myset3) #TypeError: symmetric_difference() takes exactly one argument (2 given)
 #
 # print(symdifference)
 # ---------------------------------------------------------------------

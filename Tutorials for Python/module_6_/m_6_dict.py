@@ -2,15 +2,15 @@
 # creators = ['Гвидо ван Россум', 'Андерс Хейлсберг', 'Джеймс Гослинг', 'Бьёрн Страуструп']
 #
 # print('Создателем языка', languages[0], 'является', creators[0])
-#
+
 # # #--------------------------------------------------
 # languages = [('Python', 'Гвидо ван Россум'),
 #              ('C#', 'Андерс Хейлсберг'),
 #              ('Java', 'Джеймс Гослинг'),
 #              ('C++', 'Бьёрн Страуструп')]
-#
+
 # print('Создателем языка', languages[2][0], 'является', languages[2][1])
-#
+
 # for item in languages:
 #     if item[0] == 'C++':
 #         print('Создателем языка', item[0], 'является', item[1])
@@ -32,35 +32,39 @@
 #      "river": "река"
 #      }
 #
-# print(d["house"])
-# print(d[100])
 #
-# d2 = dict(house="дом", car="машина",
+# print(d["house"])
+# # print(d[100])
+#
+# d2 = dict(house="дом",
+#           car="машина",
 #           tree="дерево",
 #           road="дорога",
 #           river="река"
 #           )
-#
-# # d2 = dict(1 = "дом", 2 = "машина")
+# print(d2)
+# d2 = dict(1 = "дом", 2 = "машина")
 #
 # #--------------------------------------------------
 # lst = [[2, "неудовлетворительно"], [3, "удовлетворительно"], [4, "хорошо"], [5, "отлично"]]
 # d3 = dict(lst)
+# print(d3)
 #
 # a = dict.fromkeys(["+7", "+6", "+5", "+4"])
-#
+# print(a)
 # c = dict.fromkeys(["+7", "+6", "+5", "+4"], "код страны")
+# print(c)
 # --------------------------------------------------
 # d = {True: 1, False: "Ложь", "list": [1,2,3], 5: 5}
 # --------------------------------------------------
 # d = {True: 1, False: "Ложь", "list": [1, 2, 3], 5: 5}
 # for x in d:
-#      print(x)
+#      print(x, d[x])
 
 
 # --------------------------------------------------
 # d = {True: 1, False: "Ложь", "list": [1,2,3], 5: 5}
-
+#
 # d2 = d.copy()
 # d2["list"] = [5,6,7]
 # print(d)
@@ -68,41 +72,46 @@
 
 # --------------------------------------------------
 # d = {True: 1, False: "Ложь", "list": [1,2,3], 5: 5}
+#
+# print(d.get("77", False))
+# print(d["77"])
 
-# d.get("list")
-# d["list"]
-# print(d.get(3))
 
 # --------------------------------------------------
 # d = {True: 1, False: "Ложь", "list": [1, 2, 3], 5: 5}
-#
+
 # print(d.setdefault("list"))
 # print((d.setdefault(3)))
+# print((d.setdefault(3, 'три')))
 # print(d)
-#
-#
-# #--------------------------------------------------
-# d.pop(3)
-# d.pop("abc")
-# d.pop("abc", False)
-#
 
+
+#--------------------------------------------------
+# print(d.pop(3))
+# d.pop("abc")
+# print(d.pop("abc", False))
+# d.popitem()
+# print(d.keys())
 # --------------------------------------------------
 # d = {True: 1, False: "Ложь", "list": [1, 2, 3], 5: 5}
-#
-# # for x in d:
-# #     print(x, end=' ')
-# # print()
+
+# for x in d:
+#     print(x, end=' ')
+# print()
 # #
-# # for x in d.keys():
-# #     print(x, end=' ')
-# # print()
+# for x in d.keys():
+#     print(x, end=' ')
+# print()
 # #
-# # for x in d.values():
-# #     print(x, end=' ')
+# for x in d.values():
+#     print(x, end=' ')
 #
 # # --------------------------------------------------
-# for key, value in d.items():
+# d = {True: 1, False: "Ложь", "list": [1, 2, 3], 5: 5}
+#
+# dict_items = ([(True, 1), (False, 'Ложь'), ('list', [1, 2, 3]), (5, 5)])
+#
+# for key, value in dict_items:
 #     print(key, value)
 
 
@@ -134,7 +143,7 @@
 #     del d['False']
 #     del d['3']
 # print(*sorted(d.items()))
-
+#
 # d = dict([i.split('=') for i in input().split()])
 #
 # del_values = ['False', '3']
@@ -154,15 +163,15 @@
 # +71234567890 +71234567854 +61234576890 +52134567890 +21235777890 +21234567110 +71232267890
 
 
-# lst = input().split()
-# d = {}
-# for s in lst:
-#     c = s[:2]
-#     if c in d:
-#         d[c].append(s)
-#     else:
-#         d[c] = [s]
-# print(*sorted(d.items()))
+lst = input().split()
+d = {}
+for s in lst:
+    c = s[:2]
+    if c in d:
+        d[c].append(s)
+    else:
+        d[c] = [s]
+print(*sorted(d.items()))
 
 
 

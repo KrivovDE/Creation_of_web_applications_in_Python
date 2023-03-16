@@ -68,8 +68,13 @@
 # # if __name__ == '__main__':
 #     register_user()
 
+def foo():
+    global t
+    t += 1
+    return t
 
-
+t = 0
+print(foo())
 
 
 

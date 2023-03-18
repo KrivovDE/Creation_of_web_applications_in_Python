@@ -1,10 +1,11 @@
-# import os
+import os
 # abs_path = os.path.abspath('my_file')
 # print(abs_path)
+# print(type(abs_path))
 
 
-# file = open('/Users/ШАГ/Course creating web applications with Python/Tutorials for Python/module_7/my_file.txt')
-#
+# file = open('/Users/ШАГ/Course creating web applications with Python/Tutorials for Python/module_7_/my_file.txt')
+
 #
 # try:
 #     file = open('my_file2.txt')

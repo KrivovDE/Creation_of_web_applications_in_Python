@@ -30,20 +30,21 @@
 //  "disciplines" : ["Programming", "Machine engineering", "English"]
 // }
 // ////////////////////////////////////////////////
-// let person = {
-//                firstName: "Andrey",
-//                lastName: "Ivanov",
-//                age: 20,
-//                isStudent: true,
-//                contactInfo: {
-//                              "phone": "098-556-33-41",
-//                              "email": "AndreyIvanov@gmail.com"
-//                              },
-//                disciplines: ["Programming", "Machine engineering", "English"]
-//               }
-//
-// let jsonPerson = JSON.stringify(person);
-// document.write(`<h1 style="color: blue">` + jsonPerson + `</h1>`)
+let person = {
+               firstName: "Andrey",
+               lastName: "Ivanov",
+               age: 20,
+               isStudent: true,
+               contactInfo: {
+                             "phone": "098-556-33-41",
+                             "email": "AndreyIvanov@gmail.com"
+                             },
+               disciplines: ["Programming", "Machine engineering", "English"]
+              }
+
+let jsonPerson = JSON.stringify(person);
+document.write(`<h1 style="color: blue">` + jsonPerson + `</h1>`)
+document.write(`<h1 style="color: mediumvioletred">` + person + `</h1>`)
 
 ////////////////////////////////////////////////
 // Циклическая ссылка
@@ -115,64 +116,64 @@
 // alert(person.firstName)
 // alert(person.contactInfo.phone);
 ////////////////////////////////////////////////
-let personStr = '{' +
-                '"firstName": "Andrey", ' +
-                '"lastName": "Ivanov",' +
-                '"age": 20, ' +
-                '"isStudent": false, ' +
-                '"contactInfo": { ' +
-                                    '"phone": "098-556-33-41", ' +
-                                    '"email": "AndreyIvanov@gmail.com" }, ' +
-                '"disciplines": [ "Programming", "Machine engineering", "English" ]' +
-                '}'
-
-function CheckIsStudent(key, value) {
-    if (key === "isStudent" && value === true) {
-        return undefined;
-    }
-return value;
-}
-
-let person2 = JSON.parse(personStr, CheckIsStudent);
-console.log(person2)
-alert(person2.isStudent);
-////////////////////////////////////////////////
+// let personStr = '{' +
+//                 '"firstName": "Andrey", ' +
+//                 '"lastName": "Ivanov",' +
+//                 '"age": 20, ' +
+//                 '"isStudent": false, ' +
+//                 '"contactInfo": { ' +
+//                                     '"phone": "098-556-33-41", ' +
+//                                     '"email": "AndreyIvanov@gmail.com" }, ' +
+//                 '"disciplines": [ "Programming", "Machine engineering", "English" ]' +
+//                 '}'
 //
-let model = {
-            name: "BMW",
-            autopilot : undefined,
-            toJSON(){
-                    let jsonStr = `{"name": "${this.name}", "autopilot": `;
-                    if(this.autopilot === undefined){
-                        jsonStr += `"Not"}`
-                    }
-                    else{
-                        jsonStr += `"${this.autopilot}"`
-                    }
-            return jsonStr;
-            }
-
-}
-let car = {
-            color: "Black",
-            engine : "diesel",
-            model
-}
-
-let carJSON = JSON.stringify(car)
-alert(carJSON)
-document.write(`<h1 style="color: darkorange">` + carJSON + `</h1>`)
-
-
-
-
-
-
-
-
-
-
-
+// function CheckIsStudent(key, value) {
+//     if (key === "isStudent" && value === true) {
+//         return undefined;
+//     }
+// return value;
+// }
+//
+// let person2 = JSON.parse(personStr, CheckIsStudent);
+// console.log(person2)
+// alert(person2.isStudent);
+// ////////////////////////////////////////////////
+// //
+// let model = {
+//             name: "BMW",
+//             autopilot : undefined,
+//             toJSON(){
+//                     let jsonStr = `{"name": "${this.name}", "autopilot": `;
+//                     if(this.autopilot === undefined){
+//                         jsonStr += `"Not"}`
+//                     }
+//                     else{
+//                         jsonStr += `"${this.autopilot}"`
+//                     }
+//             return jsonStr;
+//             }
+//
+// }
+// let car = {
+//             color: "Black",
+//             engine : "diesel",
+//             model
+// }
+//
+// let carJSON = JSON.stringify(car)
+// alert(carJSON)
+// document.write(`<h1 style="color: darkorange">` + carJSON + `</h1>`)
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 

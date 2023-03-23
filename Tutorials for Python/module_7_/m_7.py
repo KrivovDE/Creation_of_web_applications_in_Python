@@ -58,14 +58,14 @@
 # file.write("Привет мир!")
 # #
 # file.write("Hello1\n")
-# # file.write("Hello2\n")
-# # file.write("Hello3\n")
-#
+# file.write("Hello2\n")
+# file.write("Hello3\n")
+
 # # _____________________________________________________
-# # file = open("out.txt", "a+")
-# # file.writelines(["Hello11\n", "Hello22\n"])
-# # file.seek(0)
-# # print(file.read())
+# file = open("out.txt", "a+")
+# file.writelines(["Hello11\n", "Hello22\n"])
+# file.seek(0)
+# print(file.read())
 # # _____________________________________________________
 # import pickle
 # #

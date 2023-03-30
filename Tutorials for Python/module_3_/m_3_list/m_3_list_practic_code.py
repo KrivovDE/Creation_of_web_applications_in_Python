@@ -65,31 +65,31 @@
 #     print(*s[i], sep=' ')
 # for i in lst:
 #     print(*i)
-
-
-import copy
-
-n = int(input())
-
-lst = [[1] * n] * n         # формируем вложенный список
-print(f'lst--до--{lst}')    # [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
-lst[0][-1] = 5              # меняем последний элемент на 5
-print(f'lst----{lst}')      # [[1, 1, 5], [1, 1, 5], [1, 1, 5]]
-
-lst3 = copy.deepcopy(lst)
-print(f'lst3-до-{lst3}')
-lst3[0][-1] = 5
-print(f'lst3--{lst3}')
-
-lst2 = copy.copy(lst)
-print(f'lst2-до-{lst2}')
-lst2[0][-1] = 5
-print(f'lst2--{lst2}')
-
-lst4 = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
-print(f'lst4-до-{lst4}')
-lst4[0][-1] = 5
-print(f'lst4--{lst4}')      # lst4--[[1, 1, 5], [1, 1, 1], [1, 1, 1]]
+#
+#
+# import copy
+#
+# n = int(input())
+#
+# lst = [[1] * n] * n         # формируем вложенный список
+# print(f'lst--до--{lst}')    # [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
+# lst[0][-1] = 5              # меняем последний элемент на 5
+# print(f'lst----{lst}')      # [[1, 1, 5], [1, 1, 5], [1, 1, 5]]
+#
+# lst3 = copy.deepcopy(lst)
+# print(f'lst3-до-{lst3}')
+# lst3[0][-1] = 5
+# print(f'lst3--{lst3}')
+#
+# lst2 = copy.copy(lst)
+# print(f'lst2-до-{lst2}')
+# lst2[0][-1] = 5
+# print(f'lst2--{lst2}')
+#
+# lst4 = [[1, 1, 1], [1, 1, 1], [1, 1, 1]]
+# print(f'lst4-до-{lst4}')
+# lst4[0][-1] = 5
+# print(f'lst4--{lst4}')      # lst4--[[1, 1, 5], [1, 1, 1], [1, 1, 1]]
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TASK 9~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -108,3 +108,6 @@ print(f'lst4--{lst4}')      # lst4--[[1, 1, 5], [1, 1, 1], [1, 1, 1]]
 #         r.append(1)
 #     r.append(5)
 #     print(*r)
+
+# a =''
+# a.count('')

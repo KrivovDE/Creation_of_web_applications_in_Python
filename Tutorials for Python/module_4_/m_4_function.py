@@ -1,5 +1,5 @@
 
-#
+
 # def fuu(msg, _end='!', _sep=':'):
 #     print(_sep+_end+msg)
 #
@@ -7,11 +7,11 @@
 # fuu('Hello', '?', '&&&')
 # fuu('Какой то текст в msg', _sep='*****', _end='')
 
-#
+# #
 # def get_sqr(w, h, fg=0):
 #     return 2 * (w+h) + fg
 #
-# p = get_sqr(10, 20, 100, 99)
+# p = get_sqr(10, 20, 100)
 # print(p)
 
 # def is_positive(x):
@@ -25,20 +25,19 @@
 #
 # p = []
 #
-# for a in range(-5, 11):
+# for a in range(-588, 11):
 #     if is_positive(a):
 #         p.append(a)
 #
 # print(p)
-#
+
 # #
 # def say_hello(msg, end="!"):
 #     print(msg+end)
 #
 #
-# say_hello("Hello")
+# say_hello("Hello", )
 # say_hello("Hello", "?")
-#
 
 
 # def say_hello(msg, end="!", sep=": "):
@@ -47,12 +46,13 @@
 # say_hello("Hello", sep=" ")
 # #---------------------------------------------------
 #
-# def per_and_sq(w, h):
-#     return 2*(w+h), w*h
-#
+def per_and_sq(w, h):
+    return 2*(w+h), w*h
+
+
 # res = per_and_sq(2.3, 5)
-# print(res)
-#
+# print(res[0], res[1])
+
 # per, sq = per_and_sq(2.3, 5)
 # print(per, sq)
 # #---------------------------------------------------
@@ -69,7 +69,7 @@
 #
 # say_hello(False)
 # #---------------------------------------------------
-#
+# #
 def max2(a, b):
     if a > b:
         return a
@@ -77,14 +77,13 @@ def max2(a, b):
 
 # print(max2(2, -3))
 #
-
-def max3(a, b, c):
-    return max2(a, max2(b, c))
 #
-print(max3(2, -3, 5))
+# def max3(a, b, c):
+#     return max2(a, max2(b, c))
+# #
+# print(max3(2, -3, 5))
 
-# print(max3(len('Qsd'), len('a'), len('AAAAAAAAAA')))
-# #---------------------------------------------------
+ #---------------------------------------------------
 # Подвиг 1.
 
 #

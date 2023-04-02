@@ -78,14 +78,14 @@
 # x = int(input("Введите целое положительное число: "))
 # digs = []
 # while x:
-#     digs.append(x % 10)   #берем последнюю цифру числа
-#     x = x//10             #отбрасываем последнюю цифру числа
-#     # digs = [x % 10] + digs
+#     # digs.append(x % 10)   #берем последнюю цифру числа
+#     # x = x//10             #отбрасываем последнюю цифру числа
+#     digs = [x % 10] + digs
 # print(digs)
 # # # /////////////////////////////////
 #
 # # программа reverse
-# N = 11
+# N = 4
 # A = list(range(N))
 # print(A)
 #
@@ -100,21 +100,24 @@
 # сортировка методом выбора
 # A = [2, 2, -1, -5, 55, 34, 0, 10]
 # N = len(A)
-#
+# pr = 0
 # for i in range(N-1):
 #     for j in range(i+1, N):
 #         if A[i] > A[j]:
+#             pr += 1
 #             A[i], A[j] = A[j], A[i]
 # print(A)
+# print(pr)
+from copy import deepcopy
 
-
-# srt = [1, 7, 1, -10, 4, 76]
-#
+srt = [1, 7, 1, -10, 4, 76]
+srt7 = deepcopy(srt)
 # srt2 = srt.copy()
-# srt2.sort()
+# srt.sort()
 #
 #
-# print(srt2)
+# # print(srt2)
+# print(srt)
 
 
 

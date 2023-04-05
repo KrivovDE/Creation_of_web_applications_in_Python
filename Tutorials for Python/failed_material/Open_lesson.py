@@ -76,5 +76,5 @@ def foo():
 t = 0
 print(foo())
 
-
+# git config --global KrivovDE.email d.krivov@kitcup.ru
 

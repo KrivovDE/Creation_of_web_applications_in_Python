@@ -31,7 +31,7 @@
 #      "road": "дорога",
 #      "river": "река"
 #      }
-#
+
 #
 # print(d["house"])
 # # print(d[100])

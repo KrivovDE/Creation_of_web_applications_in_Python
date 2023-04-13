@@ -1,5 +1,3 @@
-
-
 # def fuu(msg, _end='!', _sep=':'):
 #     print(_sep+_end+msg)
 #
@@ -46,8 +44,8 @@
 # say_hello("Hello", sep=" ")
 # #---------------------------------------------------
 #
-def per_and_sq(w, h):
-    return 2*(w+h), w*h
+# def per_and_sq(w, h):
+#     return 2*(w+h), w*h
 
 
 # res = per_and_sq(2.3, 5)
@@ -70,10 +68,10 @@ def per_and_sq(w, h):
 # say_hello(False)
 # #---------------------------------------------------
 # #
-def max2(a, b):
-    if a > b:
-        return a
-    return b
+# def max2(a, b):
+#     if a > b:
+#         return a
+#     return b
 
 # print(max2(2, -3))
 #
@@ -83,7 +81,7 @@ def max2(a, b):
 # #
 # print(max3(2, -3, 5))
 
- #---------------------------------------------------
+# ---------------------------------------------------
 # Подвиг 1.
 
 #
@@ -93,7 +91,7 @@ def max2(a, b):
 #
 # min_max_sum()
 
-#---------------------------------------------------
+# ---------------------------------------------------
 # Подвиг 2.
 
 # def perimetr(width, height):
@@ -107,36 +105,39 @@ def max2(a, b):
 # # Подвиг 3.
 # def is_triangle(a, b, c):
 #     return a < b + c and b < a + c and c < a + b
-# print(is_triangle(1,2,3))
-# print(is_triangle(12,2,14))
-# print(is_triangle(8,8,8))
+#
+#
+# print(is_triangle(1, 2, 3))
+# print(is_triangle(12, 2, 14))
+# print(is_triangle(8, 8, 8))
 # #---------------------------------------------------
 # # Подвиг 4.
-#5
-#
-# def is_odd(n):
-#     return len(n) >= 6
-#
-#
-# lst = [i for i in input().split() if is_odd(i)]
-#
+# 5
+
+def is_odd(n):
+    return len(n) >= 6
+
+
+l = ['Москва', 'Уфа', 'Пермь', 'Самара', 'Вологда']
+
+# lst = [r for r in l if is_odd(r)]
+
+list_2 = []
+
+for r in l:
+    if len(r) >= 6:
+        list_2.append(r)
+
+print(list_2)
+
+
 # print(*lst)
 
-#---------------------------------------------------
+# ---------------------------------------------------
 # Подвиг 5.
-
 
 
 # a = 'dmitrii'
 # print(a)
 # print(a.capitalize())
 # print(a.isupper())
-
-
-
-
-
-
-
-
-

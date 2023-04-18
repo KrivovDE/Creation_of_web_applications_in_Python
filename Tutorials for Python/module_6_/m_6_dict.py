@@ -116,15 +116,15 @@
 
 
 # --------------------------------------------------
-info = {'name': 'Timur',
-        'age': 28,
-        'job': 'Teacher',
-        'city': 'Moscow',
-        'email': 'timyr-guev@yandex.ru'}
-
-print(info['name'])
-print(info['email'])
-
+# info = {'name': 'Timur',
+#         'age': 28,
+#         'job': 'Teacher',
+#         'city': 'Moscow',
+#         'email': 'timyr-guev@yandex.ru'}
+#
+# print(info['name'])
+# print(info['email'])
+#
 
 # --------------------------------------------------
 # Подвиг.
@@ -162,21 +162,21 @@ print(info['email'])
 # (следующих в том же порядке, что и во входной строке) с соответствующими кодами. Полученный словарь вывести
 # +71234567890 +71234567854 +61234576890 +52134567890 +21235777890 +21234567110 +71232267890
 
-
-lst = input().split()
-d = {}
-for s in lst:
-    c = s[:2]
-    if c in d:
-        d[c].append(s)
-    else:
-        d[c] = [s]
-print(*sorted(d.items()))
-
-
-
-
-
+#
+# lst = input().split()
+# d = {}
+# for s in lst:
+#     c = s[:2]
+#     if c in d:
+#         d[c].append(s)
+#     else:
+#         d[c] = [s]
+# print(*sorted(d.items()))
+#
+#
+#
+#
+#
 
 
 

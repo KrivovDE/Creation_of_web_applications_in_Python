@@ -116,14 +116,14 @@
 
 
 # --------------------------------------------------
-# info = {'name': 'Timur',
-#         'age': 28,
-#         'job': 'Teacher',
-#         'city': 'Moscow',
-#         'email': 'timyr-guev@yandex.ru'}
-#
-# print(info['name'])
-# print(info['email'])
+info = {'name': 'Timur',
+        'age': 28,
+        'job': 'Teacher',
+        'city': 'Moscow',
+        'email': 'timyr-guev@yandex.ru'}
+
+print(info['name'])
+print(info['email'])
 
 
 # --------------------------------------------------

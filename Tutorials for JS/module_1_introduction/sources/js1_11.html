@@ -5,9 +5,9 @@
  <body>
   <script>
 	var num = +prompt("Final number:");
-    
+
 	alert(stringWithNumbers(num));
-	
+
 	function stringWithNumbers(n){
 		if(n==1) return "1";
 		return stringWithNumbers(n-1) + ", " + n;

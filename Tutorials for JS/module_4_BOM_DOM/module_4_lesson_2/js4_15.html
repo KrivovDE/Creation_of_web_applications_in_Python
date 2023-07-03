@@ -26,7 +26,7 @@
   <script>
     let draggedElement = false;
 	let phantomElement = false;
-	
+
     document.onmousedown = function(e){
 		e.preventDefault();
         let clickedElement = document.elementFromPoint(e.clientX,e.clientY);
@@ -35,7 +35,7 @@
             draggedElement  =  clickedElement;
         }
     }
-	
+
     document.onmouseup = function(e){
         if(draggedElement){
             draggedElement.style.opacity = '1';
@@ -46,7 +46,7 @@
             phantomElement = false;
         }
     }
-	
+
     document.onmousemove = function(e){
         if(draggedElement){
             if(!phantomElement){
@@ -60,22 +60,22 @@
             else{
                 phantomElement.style.left = e.pageX-phantomElement.offsetWidth/2 + 'px';
                 phantomElement.style.top  = e.pageY-phantomElement.offsetHeight/2 + 'px';
-				
+
                 phantomElement.style.zIndex = '-1';
                 var lowerElement = document.elementFromPoint(e.clientX, e.clientY);
                 phantomElement.style.zIndex = '1';
-                
-                if(lowerElement != null 
+
+                if(lowerElement != null
 				&& lowerElement != draggedElement
 				&& lowerElement.className.indexOf('item')>-1){
-                    if(lowerElement == window.list.lastChild 
+                    if(lowerElement == window.list.lastChild
 					&& e.pageY > (lowerElement.offsetTop + lowerElement.offsetHeight/2)){
                             window.list.removeChild(draggedElement);
                             window.list.appendChild(draggedElement);
 					}
 					else{
 						if(e.pageY > (lowerElement.offsetTop + lowerElement.offsetHeight/2)){
-							if(lowerElement.previousSibling == draggedElement){ 
+							if(lowerElement.previousSibling == draggedElement){
 							  window.list.removeChild(draggedElement);
 							  window.list.insertBefore(draggedElement,lowerElement.nextSibling);
 							}

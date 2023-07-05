@@ -19,11 +19,11 @@
 	  var range = document.createRange();
 	  range.setStartAfter(checkedBoxes[0]);
 	  range.setEndBefore(checkedBoxes[1]);
-	  
+
 	  var span = document.createElement("SPAN");
 	  span.style.backgroundColor = 'aqua';
 	  range.surroundContents(span);
-	  
+
 	  out.innerHTML = "Selected text:<br>" + range.toString();
 	}
   </script>

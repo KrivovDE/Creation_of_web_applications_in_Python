@@ -56,6 +56,3 @@ function dateUser(n1,n2){
     let userTime = new Date();
     return userTime.toLocaleString().slice(n1, n2);
 }
-
-
-

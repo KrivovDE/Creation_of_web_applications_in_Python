@@ -1,13 +1,13 @@
-# x = int(input('Введите число - '))
-#
-# if x < 0:
-#     print("x отрицательное число")
-# else:
-#     print("x неотрицательное число")
-#
+x = int(input("Введите число - "))
+
+if x < 0:
+    print("x отрицательное число")
+else:
+    print("x неотрицательное число")
+
 
 #
-# speed_car = float(input('Введите скорость автомобиля: '))
+# speed_car = float(input("Введите скорость автомобиля: "))
 #
 # if speed_car <= 60:
 #     print('Скоростной режим не нарушен')
@@ -18,7 +18,7 @@
 # else:
 #     print('Превышение скорости от 80 км/ч - штраф 5000 рублей')
 #
-
+#
 #
 # speed_const = int(input('Введите разрешенную скорость: '))
 #
@@ -35,10 +35,10 @@
 #         print('Превышение скорости от 40 до 60 км/ч - штраф 1000 рублей')
 #     else:
 #         print('Превышение скорости от 80 км/ч - штраф 5000 рублей')
-
 #
-# USERNAMES = {'peter', '123', 'progamer'}
-#
+# #
+# # USERNAMES = {'peter', '123', 'progamer'}
+# #
 #
 # def create_new_user(username, password):
 #     global USERNAMES
@@ -68,13 +68,14 @@
 # # if __name__ == '__main__':
 #     register_user()
 
+
 def foo():
     global t
     t += 1
     return t
 
+
 t = 0
 print(foo())
 
 # git config --global KrivovDE.email d.krivov@kitcup.ru
-

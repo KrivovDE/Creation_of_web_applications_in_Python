@@ -311,6 +311,3 @@ function ajaxRequest(url,num){
         console.log(result.sourceUrl)
     });
 }
-
-
-

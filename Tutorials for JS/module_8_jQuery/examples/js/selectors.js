@@ -42,7 +42,7 @@ $('.main :radio').on('click', function () {
 		case '[name]':
 			removeStyles();
 			location.href = '#top-footer';
-			$('[href]').addClass('bg-red arrow');			
+			$('[href]').addClass('bg-red arrow');
 			break;
 		case '[name = value]':
 			removeStyles();

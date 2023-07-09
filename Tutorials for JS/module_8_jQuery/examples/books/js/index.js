@@ -203,4 +203,3 @@ $.ajax({
 	$('.loader').hide();
 	$('.row.books').addClass('justify-content-center error my-3').html('<h3 class="text-center">Loading of books failed...<br>An error has occurred.</h3>')
 });
-

@@ -77,4 +77,3 @@ $('.main :radio').on('click', function () {
 function removeStyles() {
     $('*').removeClass('red-border gray-border bg-blue bg-red bg-green shadow');
 }
-

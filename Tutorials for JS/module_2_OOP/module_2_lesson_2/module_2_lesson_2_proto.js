@@ -140,10 +140,3 @@ let rect = {
 //
 // console.log(studentTop.nameTop)
 // console.log(studentTop.surnameTop)
-
-
-
-
-
-
-

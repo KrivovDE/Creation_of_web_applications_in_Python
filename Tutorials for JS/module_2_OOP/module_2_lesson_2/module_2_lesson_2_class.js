@@ -111,11 +111,3 @@ console.log(book1.S);
 //
 // let rect2 = new Rectangle(78, 92);
 // console.log(rect2.square(), rect2.perimeter());
-
-
-
-
-
-
-
-

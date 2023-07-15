@@ -80,13 +80,3 @@ ar3[3] = 'Лимон';
 // }
 let a = [600]
 console.log(a.reverse())
-
-
-
-
-
-
-
-
-
-

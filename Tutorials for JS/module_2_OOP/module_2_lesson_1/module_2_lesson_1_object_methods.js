@@ -70,8 +70,3 @@
 //
 // console.log( car.getModel() );
 // console.log( get() );
-
-
-
-
-

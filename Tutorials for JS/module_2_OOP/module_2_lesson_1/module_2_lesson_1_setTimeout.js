@@ -71,8 +71,3 @@
 //
 // let date2 = new Date("05/26/1989");
 // console.log(date2);
-
-
-
-
-

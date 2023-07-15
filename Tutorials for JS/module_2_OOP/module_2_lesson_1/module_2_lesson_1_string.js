@@ -77,23 +77,3 @@ let guests = new Set(a);
 for (let guest of guests) {
     console.log(guests);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

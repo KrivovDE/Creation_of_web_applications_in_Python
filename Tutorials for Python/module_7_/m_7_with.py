@@ -1,4 +1,3 @@
-# file = open('languages.txt', 'r', encoding='utf-8')
 #
 # for line in file:
 #     print(line)
@@ -14,7 +13,7 @@
 #                           # автоматическое закрытие файла
 # print('Файл закрыт')
 
-#==========================================================
+# ==========================================================
 
 # try:
 #     with open("my_file.txt") as fp:
@@ -23,7 +22,7 @@
 # except Exception as e:
 #     print(e)
 
-#==========================================================
+# ==========================================================
 try:
     with open("my_file.txt") as fin:
         with open("out.txt", "w") as fout:
@@ -34,25 +33,12 @@ except Exception as e:
 
 # ==========================================================
 
-with open('philosophers.txt', 'w', encoding='utf-8') as output:
-    print('Джoн Локк', file=output)
-    print('Дэвид Хьюм', file=output)
-    print('Эдмyнд Берк', file=output)
+with open("philosophers.txt", "w", encoding="utf-8") as output:
+    print("Джoн Локк", file=output)
+    print("Дэвид Хьюм", file=output)
+    print("Эдмyнд Берк", file=output)
 
-#==========================================================
+# ==========================================================
 #
 # with open('philosophers.txt', 'a+', encoding='utf-8') as output:
 #     print('Джoн Локк', 'Дэвид Хьюм', 'Эдмyнд Берк', sep='|||||', file=output, end=' ')
-
-
-
-
-
-
-
-
-
-
-
-
-

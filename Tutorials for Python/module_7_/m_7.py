@@ -128,25 +128,3 @@ try:
         file.close()
 except FileNotFoundError:
     print("Невозможно открыть файл")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -16,7 +16,3 @@ $(document).ready(function () {
     $('.owl-stage').css({'padding-left': '0'})
     new WOW().init();
 });
-
-
-
-

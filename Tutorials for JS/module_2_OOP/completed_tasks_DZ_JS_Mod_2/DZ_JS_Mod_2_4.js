@@ -95,4 +95,3 @@
 // console.log('It is a future Date: ' + eD.pastOrFuture(anyDay));
 // console.log('It is a Date of abnormal year: ' + eD.abnormalYear(anyDay));
 // console.log('Next date is ' + eD.nextDate(anyDay));
-

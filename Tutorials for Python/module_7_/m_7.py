@@ -98,33 +98,68 @@
 #     print('Невозможно открыть файл')
 
 # _____________________________________________________
-import pickle
+# import pickle
+#
+# book1 = ["Евгений Онегин", "Пушкин А.С.", 200]
+# book2 = ["Муму", "Тургенев И.С.", 250]
+# book3 = ["Мастер и Маргарита", "Булгаков М.А.", 500]
+# book4 = ["Мертвые души", "Гоголь Н.В.", 190]
+# try:
+#     file = open("out.bin", "wb")
+#     try:
+#         pickle.dump(book1, file)
+#         pickle.dump(book2, file)
+#         pickle.dump(book3, file)
+#         pickle.dump(book4, file)
+#     finally:
+#         file.close()
+# except FileNotFoundError:
+#     print("Невозможно открыть файл")
+#
+# try:
+#     file = open("out.bin", "rb")
+#     try:
+#         b1 = pickle.load(file)
+#         b2 = pickle.load(file)
+#         b3 = pickle.load(file)
+#         b4 = pickle.load(file)
+#         print(b1, b2, b3, b4, sep="\n")
+#     finally:
+#         file.close()
+# except FileNotFoundError:
+#     print("Невозможно открыть файл")
 
-book1 = ["Евгений Онегин", "Пушкин А.С.", 200]
-book2 = ["Муму", "Тургенев И.С.", 250]
-book3 = ["Мастер и Маргарита", "Булгаков М.А.", 500]
-book4 = ["Мертвые души", "Гоголь Н.В.", 190]
-try:
-    file = open("out.bin", "wb")
-    try:
-        pickle.dump(book1, file)
-        pickle.dump(book2, file)
-        pickle.dump(book3, file)
-        pickle.dump(book4, file)
-    finally:
-        file.close()
-except FileNotFoundError:
-    print("Невозможно открыть файл")
 
-try:
-    file = open("out.bin", "rb")
-    try:
-        b1 = pickle.load(file)
-        b2 = pickle.load(file)
-        b3 = pickle.load(file)
-        b4 = pickle.load(file)
-        print(b1, b2, b3, b4, sep="\n")
-    finally:
-        file.close()
-except FileNotFoundError:
-    print("Невозможно открыть файл")
+
+
+
+
+
+list_ = [1, 2, 3, 4, 5, 6, ]
+str = "str(list_)"
+
+for i in list_:
+    print(id(i))
+
+print()
+print(id(list_))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

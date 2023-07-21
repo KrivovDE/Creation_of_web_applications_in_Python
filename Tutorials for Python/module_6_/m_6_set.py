@@ -1,7 +1,7 @@
-from typing import Set, List, Tuple
+from typing import Set
 
-set_a: Set[int] = {1, 2, 3, 4}
-set_b: Set[int] = {3, 4, 5, 6, 7}
+set_a: set[int] = {1, 2, 3, 4}
+set_b: set[int] = {3, 4, 5, 6, 7}
 # ---------------------------------------------------------------------
 
 # res_1: set = set_a & set_b
@@ -44,9 +44,9 @@ set_b: Set[int] = {3, 4, 5, 6, 7}
 
 
 # ---------------------------------------------------------------------
-myset1: Set[int] = {1, 2, 3, 4, 5, 6}
-myset2: Set[int] = {2, 3, 4, 5}
-myset3: Set[int] = {5, 6, 7, 8}
+myset1: set[int] = {1, 2, 3, 4, 5, 6}
+myset2: set[int] = {2, 3, 4, 5}
+myset3: set[int] = {5, 6, 7, 8}
 #
 # union1: Set[int] = myset1.union(myset2, myset3)
 # union2: Set[int] = myset1 | myset2 | myset3
@@ -133,5 +133,3 @@ myset3: Set[int] = {5, 6, 7, 8}
 
 
 # ---------------------------------------------------------------------
-
-

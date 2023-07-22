@@ -49,11 +49,10 @@
 # big = x if x < y else y
 #
 
-age = 11
+# age = 11
 
 # accessAllowed = True if age >= 18 else False
 
-accessAllowed = age >= 18
+# accessAllowed = age >= 18
 
-print(accessAllowed)
-
+# print(accessAllowed)

@@ -4,7 +4,7 @@ import math
 def shell_sort(array):
     n = len(array)
     k = int(math.log2(n))
-    interval = 2 ** k - 1
+    interval = 2**k - 1
     while interval > 0:
         for i in range(interval, n):
             temp = array[i]
@@ -14,7 +14,7 @@ def shell_sort(array):
                 j -= interval
             array[j] = temp
         k -= 1
-        interval = 2 ** k - 1
+        interval = 2**k - 1
     return array
 
 

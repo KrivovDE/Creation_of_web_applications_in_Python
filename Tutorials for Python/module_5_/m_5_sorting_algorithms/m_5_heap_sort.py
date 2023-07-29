@@ -18,9 +18,8 @@ array = [13, 21, 15, 5, 26, 4, 17, 18, 24, 2]
 print(heap_sort(array))
 
 
-
-
 # без модуля heapq
+
 
 def heapify(nums, heap_size, root_index):
     largest = root_index
@@ -47,6 +46,7 @@ def heap_sort(nums):
     for i in range(n - 1, 0, -1):
         nums[i], nums[0] = nums[0], nums[i]
         heapify(nums, i, 0)
+
 
 #
 random_list_of_nums = [35, 12, 43, 8, 51]

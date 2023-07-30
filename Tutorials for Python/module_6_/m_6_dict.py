@@ -86,7 +86,7 @@
 # print(d)
 
 
-#--------------------------------------------------
+# --------------------------------------------------
 # print(d.pop(3))
 # d.pop("abc")
 # print(d.pop("abc", False))
@@ -163,27 +163,17 @@
 # +71234567890 +71234567854 +61234576890 +52134567890 +21235777890 +21234567110 +71232267890
 
 #
-# lst = input().split()
-# d = {}
-# for s in lst:
-#     c = s[:2]
-#     if c in d:
-#         d[c].append(s)
-#     else:
-#         d[c] = [s]
-# print(*sorted(d.items()))
+lst = input().split()
+d = {}
+for s in lst:
+    c = s[:2]
+    if c in d:
+        d[c].append(s)
+    else:
+        d[c] = [s]
+print(*sorted(d.items()))
+
+
+
 #
 #
-#
-#
-#
-
-
-
-
-
-
-
-
-
-

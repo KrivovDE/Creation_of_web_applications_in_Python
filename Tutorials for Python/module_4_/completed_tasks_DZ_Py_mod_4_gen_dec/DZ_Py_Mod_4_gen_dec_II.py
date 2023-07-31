@@ -97,4 +97,3 @@
 #
 #
 # print(str_to_list('house river tree car', 'дом река дерево машина'))
-

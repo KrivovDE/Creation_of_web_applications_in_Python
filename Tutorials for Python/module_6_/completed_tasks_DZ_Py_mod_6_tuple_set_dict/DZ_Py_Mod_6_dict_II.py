@@ -1,5 +1,3 @@
-from typing import List
-
 # ЗАДАНИЕ 1 Основы работы со словарями
 # Дополните приведенный код, чтобы он вывел имена всех пользователей
 # (в алфавитном порядке), чей номер оканчивается на 88.
@@ -99,44 +97,75 @@ from typing import List
 # перечисленные в таблице.
 
 import re
-morze: dict = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
-         'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
-         'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---',
-         'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
-         'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--',
-         'Z': '--..', '0': '-----', '1': '.----', '2': '..---', '3': '...--',
-         '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..',
-         '9': '----.'}
+
+morze: dict = {
+    "A": ".-",
+    "B": "-...",
+    "C": "-.-.",
+    "D": "-..",
+    "E": ".",
+    "F": "..-.",
+    "G": "--.",
+    "H": "....",
+    "I": "..",
+    "J": ".---",
+    "K": "-.-",
+    "L": ".-..",
+    "M": "--",
+    "N": "-.",
+    "O": "---",
+    "P": ".--.",
+    "Q": "--.-",
+    "R": ".-.",
+    "S": "...",
+    "T": "-",
+    "U": "..-",
+    "V": "...-",
+    "W": ".--",
+    "X": "-..-",
+    "Y": "-.--",
+    "Z": "--..",
+    "0": "-----",
+    "1": ".----",
+    "2": "..---",
+    "3": "...--",
+    "4": "....-",
+    "5": ".....",
+    "6": "-....",
+    "7": "--...",
+    "8": "---..",
+    "9": "----.",
+}
 
 
 def to_Morze(mrz: dict, line: str) -> None:
-    reg_letter = re.findall(r'[A-z0-9]', line)
-    if len(reg_letter) > 0:                                         # В морзе
+    reg_letter = re.findall(r"[A-z0-9]", line)
+    if len(reg_letter) > 0:  # В морзе
         for i in reg_letter:
-            print(mrz[i.upper()], end=' ')
-        print(end='\n')
-    else:                                                           # Из морзе
-        reg_morze = re.sub(r'[^\s.-]', '', line).split(' ')
+            print(mrz[i.upper()], end=" ")
+        print(end="\n")
+    else:  # Из морзе
+        reg_morze = re.sub(r"[^\s.-]", "", line).split(" ")
         for i in reg_morze:
             for item, value in mrz.items():
                 if i == value:
-                    print(item, end='')
-        print(end='\n')
+                    print(item, end="")
+        print(end="\n")
 
 
-to_Morze(morze, 'Interstellar')
-to_Morze(morze, 'SOS')
-to_Morze(morze, 'Agent 007')
-to_Morze(morze, 'Hello, World!')
-to_Morze(morze, 'zero000')
-to_Morze(morze, '89+54=143')
-to_Morze(morze, 'Interstellar')
-to_Morze(morze, 'Python3.8')
-to_Morze(morze, '.. -. - . .-. ... - . .-.. .-.. .- .-.')
-to_Morze(morze, '... --- ...')
-to_Morze(morze, '.- --. . -. - ----- ----- --...')
-to_Morze(morze, '.... . .-.. .-.. --- .-- --- .-. .-.. -..')
-to_Morze(morze, '--.. . .-. --- ----- ----- -----')
-to_Morze(morze, '---.. ----. ..... ....- .---- ....- ...--')
-to_Morze(morze, '.. -. - . .-. ... - . .-.. .-.. .- .-.')
-to_Morze(morze, '.--. -.-- - .... --- -. ...-- ---..')
+to_Morze(morze, "Interstellar")
+to_Morze(morze, "SOS")
+to_Morze(morze, "Agent 007")
+to_Morze(morze, "Hello, World!")
+to_Morze(morze, "zero000")
+to_Morze(morze, "89+54=143")
+to_Morze(morze, "Interstellar")
+to_Morze(morze, "Python3.8")
+to_Morze(morze, ".. -. - . .-. ... - . .-.. .-.. .- .-.")
+to_Morze(morze, "... --- ...")
+to_Morze(morze, ".- --. . -. - ----- ----- --...")
+to_Morze(morze, ".... . .-.. .-.. --- .-- --- .-. .-.. -..")
+to_Morze(morze, "--.. . .-. --- ----- ----- -----")
+to_Morze(morze, "---.. ----. ..... ....- .---- ....- ...--")
+to_Morze(morze, ".. -. - . .-. ... - . .-.. .-.. .- .-.")
+to_Morze(morze, ".--. -.-- - .... --- -. ...-- ---..")

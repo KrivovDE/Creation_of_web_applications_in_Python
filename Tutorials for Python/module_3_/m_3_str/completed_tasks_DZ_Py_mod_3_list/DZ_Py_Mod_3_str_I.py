@@ -7,10 +7,13 @@
 
 
 import re
-line = input("Введите буквы и цифры и я все посчитаю, а в подарок поменяю все с ног на голову: ")
+
+line = input(
+    "Введите буквы и цифры и я все посчитаю, а в подарок поменяю все с ног на голову: "
+)
 stroka_rewers = line[::-1]
-line_numbers = len(re.findall('[0-9]', line))
-line_letters = len(re.findall('[A-я]', line))
+line_numbers = len(re.findall("[0-9]", line))
+line_letters = len(re.findall("[A-я]", line))
 print("Переворачиваем сторону: ", stroka_rewers)
 print("Всего цифр: ", line_numbers)
 print("Всего букв: ", line_letters)
@@ -46,7 +49,8 @@ print(replacement_ok)
 # Полученный результат выведите на экран.
 
 import re
-text = '''В Python 3.12 появилась поддержка perf profiling. В этой статье
+
+text = """В Python 3.12 появилась поддержка perf profiling. В этой статье
 рассмотрим, как это помогает сократить время выполнения Python-
 скрипта с 36 секунд до 0,8! мы рассмотрим Linux-инструмент perf, а
 также графики Flame Graph (добавить пояснение: способ визуализации
@@ -71,13 +75,13 @@ Python и в список изменений. Для этой статьи из 
 вставляет небольшой фрагмент кода, скомпилированный на лету, перед
 выполнением каждой функции Python и обучает perf взаимосвязи
 между этим фрагментом кода и связанной с ним функцией Python с
-помощью файлов perf map.'''
+помощью файлов perf map."""
 text_up = ""
-for i in re.split(r'([.!?]\s+)', text):
+for i in re.split(r"([.!?]\s+)", text):
     text_up += i[0].upper() + i[1:]
-text_numbers = len(re.findall('[0-9]', text))
-text_signs = len(re.findall('[.|,|!|?|:|;]', text))
-text_exclamation_mark = len(re.findall('[!]', text))
+text_numbers = len(re.findall("[0-9]", text))
+text_signs = len(re.findall("[.|,|!|?|:|;]", text))
+text_exclamation_mark = len(re.findall("[!]", text))
 print(text_up.strip())
 print("Всего цыфр: ", text_numbers)
 print("Всего знаков препинания: ", text_signs)

@@ -113,6 +113,7 @@
 #################### ВЕРСИЯ БЕЗ ОГРАНИЧЕНИЙ МЕЖДУ ДАТАМИ #####################
 ############ НО КОД ПОЛУЧИЛСЯ БОЛЬШИМ И НАВРЯДЛИ НОРМАЛЬНО ЧИТАЕМЫЕЙ##########
 
+
 def leap_year(yr: int) -> int:
     return yr % 4 == 0
 
@@ -127,41 +128,38 @@ def cnt_day_rec(day1, mth1, yr1, day2, mth2, yr2):
             cnt_yr = 365 * (dy_yr - dy_yr % 4) + (dy_yr // 4) + 1
         elif leap_year(yr1) and mth1 < 3:  # Високосный год
             cnt_yr, yr1 = 366, yr1 + 1
-        else:                               # Не високосный
+        else:  # Не високосный
             cnt_yr, yr1 = 365, yr1 + 1
         return cnt_day_rec(day1, mth1, yr1, day2, mth2, yr2) + cnt_yr
     # СЧИТАЕМ ДНИ И МЕСЯЦЫ
     elif day1 != day2 or mth1 != mth2:
         if mth1 == 12 and day1 == 31:  # увеличиваем год
             day1, mth1, yr1 = 1, 1, yr1 + 1
-        elif (mth1 in thirty and day1 != 30) or \
-                (mth1 in thirty_one and day1 != 31) or \
-                (leap_year(yr1) and mth1 == 2 and day1 != 29) or \
-                ((not leap_year(yr1)) and mth1 == 2 and day1 != 28):
+        elif (
+            (mth1 in thirty and day1 != 30)
+            or (mth1 in thirty_one and day1 != 31)
+            or (leap_year(yr1) and mth1 == 2 and day1 != 29)
+            or ((not leap_year(yr1)) and mth1 == 2 and day1 != 28)
+        ):
             day1 += 1  # увеличиваем дни в зависимости от месяца
         else:
             day1, mth1 = 1, mth1 + 1  # увеличиваем месяц
         return cnt_day_rec(day1, mth1, yr1, day2, mth2, yr2) + 1
-    else:                                 #
+    else:  #
         return 0
 
 
 try:
-    print('Введите дату через пробел (dd mm yy)')
-    d1, m1, y1 = [int(i) for i in input("Дата №1: ").split(' ')]  # Дата1
-    d2, m2, y2 = [int(i) for i in input("Дата №2: ").split(' ')]  # Дата2
+    print("Введите дату через пробел (dd mm yy)")
+    d1, m1, y1 = (int(i) for i in input("Дата №1: ").split(" "))  # Дата1
+    d2, m2, y2 = (int(i) for i in input("Дата №2: ").split(" "))  # Дата2
     # НОРМАЛИЗАЦИЯ ДАТ
-    if (y1 > y2) or (m1 > m2 and y1 == y2) or (
-            d1 > d2 and m1 == m2 and y1 == y2):
+    if (y1 > y2) or (m1 > m2 and y1 == y2) or (d1 > d2 and m1 == m2 and y1 == y2):
         d1, m1, y1, d2, m2, y2 = d2, m2, y2, d1, m1, y1
     if (d1 or d2) > 31 or (m1 or m2) > 12 or (0 > (y1 or y2)):
-        raise ValueError('Дата введена неверно')
-    print('Разность в днях:', cnt_day_rec(d1, m1, y1, d2, m2, y2))
+        raise ValueError("Дата введена неверно")
+    print("Разность в днях:", cnt_day_rec(d1, m1, y1, d2, m2, y2))
 except ValueError as err:
     print(err)
 except RecursionError:
-    print('Дата введена неверно')
-
-
-
-
+    print("Дата введена неверно")

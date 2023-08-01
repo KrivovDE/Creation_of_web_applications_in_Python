@@ -18,31 +18,61 @@
 # Проверка победы или ничьей
 # После каждого хода нам нужно проверять, выиграл ли какой-либо игрок матч или матч был ничейным.
 
-start_cells = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+start_cells = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 results = [0, 0]
 
 
 def print_rules():
-    print('Правила: \n'
-          '1.Первый игрок всегда играет за Х\n'
-          '2.Второй за ○\n'
-          '3.После окончания раунда игроки меняются автоматически\n')
+    print(
+        "Правила: \n"
+        "1.Первый игрок всегда играет за Х\n"
+        "2.Второй за ○\n"
+        "3.После окончания раунда игроки меняются автоматически\n",
+    )
 
 
 def reg_player():
-    p1 = input('Enter name of player 1: ')
-    p2 = input('Enter name of player 2: ')
+    p1 = input("Enter name of player 1: ")
+    p2 = input("Enter name of player 2: ")
     return p1, p2
 
 
 def print_field(cells):
-    print('-' * 13, '\n',
-          '| ', cells[0], ' | ', cells[1], ' | ', cells[2], ' |', '\n',
-          '-' * 13, '\n',
-          '| ', cells[3], ' | ', cells[4], ' | ', cells[5], ' |', '\n',
-          '-' * 13, '\n',
-          '| ', cells[6], ' | ', cells[7], ' | ', cells[8], ' |', '\n',
-          '-' * 13, '\n', sep='')
+    print(
+        "-" * 13,
+        "\n",
+        "| ",
+        cells[0],
+        " | ",
+        cells[1],
+        " | ",
+        cells[2],
+        " |",
+        "\n",
+        "-" * 13,
+        "\n",
+        "| ",
+        cells[3],
+        " | ",
+        cells[4],
+        " | ",
+        cells[5],
+        " |",
+        "\n",
+        "-" * 13,
+        "\n",
+        "| ",
+        cells[6],
+        " | ",
+        cells[7],
+        " | ",
+        cells[8],
+        " |",
+        "\n",
+        "-" * 13,
+        "\n",
+        sep="",
+    )
 
 
 def check_parity(num):
@@ -58,16 +88,16 @@ def check_current_player(step_even, pl1, pl2, r_num):
 
 def input_step(step_even, player_name):
     if step_even:
-        pos = input(f'{player_name}, enter field for X: ')
-        sym_let = 'X'
+        pos = input(f"{player_name}, enter field for X: ")
+        sym_let = "X"
     else:
-        pos = input(f'{player_name}, enter field for ○: ')
-        sym_let = '○'
+        pos = input(f"{player_name}, enter field for ○: ")
+        sym_let = "○"
     return pos, sym_let
 
 
 def check_step(cells, elem):
-    return True if elem in cells and elem != 'X' and elem != '○' else False
+    return True if elem in cells and elem != "X" and elem != "○" else False
 
 
 def change_field(cells, cell_num, symbol):
@@ -80,81 +110,91 @@ def change_field(cells, cell_num, symbol):
 def check_victory(cells, counter):
     if counter < 4:
         return False
-    vic_comb = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+    vic_comb = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
+    ]
     for comb in vic_comb:
-        if cells[comb[0]] + cells[comb[1]] + cells[comb[2]] == 'XXX':
+        if cells[comb[0]] + cells[comb[1]] + cells[comb[2]] == "XXX":
             return True
-        elif cells[comb[0]] + cells[comb[1]] + cells[comb[2]] == '○○○':
+        elif cells[comb[0]] + cells[comb[1]] + cells[comb[2]] == "○○○":
             return True
         elif counter == 8:
-            return 'Draw'
+            return "Draw"
     return False
 
 
 def count_result(symbol, round_num):
     if round_num % 2 != 0:
-        if symbol == 'X':
+        if symbol == "X":
             results[0] += 1
         else:
             results[1] += 1
     else:
-        if symbol == '○':
+        if symbol == "○":
             results[0] += 1
         else:
             results[1] += 1
 
 
 def print_result(pl1, pl2, res_arr):
-    print(f'Current match score:\n'
-          f'{pl1}: {res_arr[0]}  '
-          f'{pl2}: {res_arr[1]}')
+    print(
+        f"Current match score:\n" f"{pl1}: {res_arr[0]}  " f"{pl2}: {res_arr[1]}",
+    )
 
 
 def func_game(field):
     print_rules()
     player1, player2 = reg_player()
     round_number = 1
-    cont = 'Y'
+    cont = "Y"
 
-    while cont == 'Y':
+    while cont == "Y":
         cur_field = field.copy()
         print_field(cur_field)
         i = 0
 
         while i != 9:
             step_parity = check_parity(i)
-            current_player = check_current_player(step_parity, player1, player2, round_number)
+            current_player = check_current_player(
+                step_parity, player1, player2, round_number
+            )
             step_pos, step_sym = input_step(step_parity, current_player)
 
             if check_step(cur_field, step_pos):
                 cur_field = change_field(cur_field, step_pos, step_sym)
             else:
-                print('Choose empty field, please!')
+                print("Choose empty field, please!")
                 continue
 
             print_field(cur_field)
             res = check_victory(cur_field, i)
 
-            if res and step_sym == 'X':
-                print(f'{current_player} win!!!')
+            if res and step_sym == "X":
+                print(f"{current_player} win!!!")
                 count_result(step_sym, round_number)
                 break
-            elif res and step_sym == '○':
-                print(f'{current_player} win!!!')
+            elif res and step_sym == "○":
+                print(f"{current_player} win!!!")
                 count_result(step_sym, round_number)
                 break
-            elif res == 'Draw':
-                print('Draw!!!')
+            elif res == "Draw":
+                print("Draw!!!")
                 break
             elif not res:
                 i += 1
 
         print_result(player1, player2, results)
         round_number += 1
-        cont = input('If You want to continue, press Y or any key for stop: ')
+        cont = input("If You want to continue, press Y or any key for stop: ")
 
-    print('Thank you for game!')
+    print("Thank you for game!")
 
 
 func_game(start_cells)
-

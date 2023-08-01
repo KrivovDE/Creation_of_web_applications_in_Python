@@ -7,25 +7,26 @@
 # | ■ если False, квадрат пустой.                                             |
 # \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/========\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/
 
+
 def qudrt(len_side, symbol, full):
     if full:
         for i in range(len_side):
             for j in range(len_side):
-                print(symbol, end='\t')
-            print('')
+                print(symbol, end="\t")
+            print("")
     else:
         for i in range(len_side):
             for j in range(len_side):
                 if i == 0 or j == 0 or i == len_side - 1 or j == len_side - 1:
-                    print(symbol, end='\t')
+                    print(symbol, end="\t")
                 else:
-                    print(' ', end='\t')
-            print('')
+                    print(" ", end="\t")
+            print("")
 
 
-qudrt(4, '}{', False)
-qudrt(4, '[x]', True)
-qudrt(90, '[x]', True)
+qudrt(4, "}{", False)
+qudrt(4, "[x]", True)
+qudrt(90, "[x]", True)
 
 
 # /~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\========/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\

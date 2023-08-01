@@ -4,23 +4,25 @@
 # ■ если она равна True, квадрат заполненный;
 # ■ если False, квадрат пустой.
 
+
 def square(side_length, char, fill):
     if fill:
-        print(*[char * side_length for i in range(side_length)], sep='\n')
+        print(*[char * side_length for i in range(side_length)], sep="\n")
     else:
-        res = [char + ' ' * (side_length - 2) + char for i in range(side_length - 2)]
+        res = [char + " " * (side_length - 2) + char for i in range(side_length - 2)]
         res.append(char * side_length)
         res.insert(0, char * side_length)
-        print(*res, sep='\n')
+        print(*res, sep="\n")
 
 
-square(5, '#', False)
-square(6, '&', True)
+square(5, "#", False)
+square(6, "&", True)
 
 # Задание 2
 # Напишите функцию, которая возвращает произведение чисел в указанном диапазоне.
 # Границы диапазона передаются в качестве параметров. Если границы диапазона перепутаны (например, 5 — верхняя граница,
 # 25— нижняя граница), их нужно поменять местами.
+
 
 def multiply(num1, num2):
     res = 1
@@ -32,7 +34,7 @@ def multiply(num1, num2):
     return res
 
 
-print(multiply(int(input('Enter num1: ')), int(input('Enter num2: '))))
+print(multiply(int(input("Enter num1: ")), int(input("Enter num2: "))))
 
 # Задание 3
 # Напишите функцию, которая считает количество цифр в числе. Число передаётся в качестве параметра.
@@ -51,6 +53,7 @@ print(multiply(int(input('Enter num1: ')), int(input('Enter num2: '))))
 # Например, 123321 — палиндром (первая часть 123, вторая 321, которая после переворота становится 123),
 # 546645 — палиндром, а 421987 — не палиндром.
 
+
 def palindrom(num):
     lst1 = [*str(num)]
     lst2 = lst1.copy()
@@ -58,22 +61,22 @@ def palindrom(num):
     return lst1 == lst2
 
 
-print(palindrom(int(input('Enter number: '))))
+print(palindrom(int(input("Enter number: "))))
 
 # Задание 5
 # Напишите функцию, которая отображает горизонтальную или вертикальную линию из некоторого символа.
 # Функция принимает в качестве параметра: длину линии, направление, символ.
 
+
 def line(leng, direct, char):
-    if direct == 'hor':
+    if direct == "hor":
         print(*[char for i in range(leng)])
-    elif direct == 'ver':
-        print(*[char for i in range(leng)], sep='\n')
+    elif direct == "ver":
+        print(*[char for i in range(leng)], sep="\n")
 
 
-quantity = int(input('Enter length of line: '))
-direction = input('Choose direction (hor / ver): ')
-character = input('Enter symbol: ')
+quantity = int(input("Enter length of line: "))
+direction = input("Choose direction (hor / ver): ")
+character = input("Enter symbol: ")
 
 line(quantity, direction, character)
-

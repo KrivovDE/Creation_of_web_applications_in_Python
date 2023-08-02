@@ -1,7 +1,7 @@
 from typing import List
 
 
-def binary_search(lst: List[int], val: int) -> int:
+def binary_search(lst: list[int], val: int) -> int:
     first: int = 0
     last: int = len(lst) - 1
     index: int = -1
@@ -15,7 +15,6 @@ def binary_search(lst: List[int], val: int) -> int:
             else:
                 first = mid + 1
     return index
+
+
 print(binary_search([10, 20, 30, 40, 50], 20))
-
-
-

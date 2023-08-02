@@ -101,8 +101,6 @@
 #
 # print(f"Меня зовут {name.upper()}, мне {age-15} и я люблю язык Python.")
 # /////////////////////////////////
-import string
-import random
 
 # userLogin = "".join(random.sample(string.ascii_lowercase, 6))
 # userPass = "".join(random.sample(string.ascii_letters + string.digits, 8))

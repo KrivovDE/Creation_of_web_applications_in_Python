@@ -124,7 +124,8 @@ def get_nod(a, b):
             b -= a
     return a
 
-print(get_nod(1,5))
+
+print(get_nod(1, 5))
 # ---------------------------------------------------
 import time
 
@@ -135,11 +136,12 @@ def test_time(func):
         func(*args, **kwargs)
         stop = time.time() - start
         print(f"Время работы: {stop} сек")
+
     return wrapper
+
 
 test1 = test_time(get_nod)
 test1(1000000000, 2)
-
 
 
 # ---------------------------------------------------
@@ -267,7 +269,6 @@ test1(1000000000, 2)
 #
 # d = get_list(a, b)
 # print(d)
-
 
 
 # Пример который можно переделать

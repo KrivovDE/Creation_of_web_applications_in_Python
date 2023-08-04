@@ -24,13 +24,16 @@ lst_min_max = [min(lst1), max(lst1), min(lst2), max(lst2)]
 for i in lst_repeat:
     lst_no_repeat.remove(i)
 
-print(f'list 1_________: {lst1}',
-      f'list 2_________: {lst2}',
-      f'sum list_______: {lst_sum}',
-      f'list no repeat_: {lst_no_repeat}',
-      f'repeat elements: {lst_repeat}',
-      f'uniq elements__: {lst_uniq}',
-      f'min-max list___: {lst_min_max}', sep='\n')
+print(
+    f"list 1_________: {lst1}",
+    f"list 2_________: {lst2}",
+    f"sum list_______: {lst_sum}",
+    f"list no repeat_: {lst_no_repeat}",
+    f"repeat elements: {lst_repeat}",
+    f"uniq elements__: {lst_uniq}",
+    f"min-max list___: {lst_min_max}",
+    sep="\n",
+)
 
 # Задание 2
 # В списке целых, заполненном случайными числами вычислить:
@@ -46,7 +49,7 @@ import random
 N = random.randint(10, 20)
 lst1 = [random.randint(-50, 50) for x in range(N)]
 lst1.sort()
-print(f' List: {lst1}')
+print(f" List: {lst1}")
 
 sum_neg = 0
 sum_odd = 0
@@ -70,14 +73,16 @@ for i in range(len(lst1)):
     if i != 0 and i != (len(lst1) - 1):
         mult_between *= lst1[i]
 
-sum_between = sum(lst_pos[1:len(lst_pos)-2])
+sum_between = sum(lst_pos[1 : len(lst_pos) - 2])
 
-print(f' Summ of negative elements: {sum_neg}\n',
-      f'Summ of even elements: {sum_even}\n',
-      f'Summ of odd elements: {sum_odd}\n',
-      f'Multiplication of element with index / 3: {mult_ind3}\n',
-      f'Multiplcation of elements between min and max: {mult_between}\n',
-      f'Summ of elements between first and last positive: {sum_between}')
+print(
+    f" Summ of negative elements: {sum_neg}\n",
+    f"Summ of even elements: {sum_even}\n",
+    f"Summ of odd elements: {sum_odd}\n",
+    f"Multiplication of element with index / 3: {mult_ind3}\n",
+    f"Multiplcation of elements between min and max: {mult_between}\n",
+    f"Summ of elements between first and last positive: {sum_between}",
+)
 
 # Задание 3
 # Есть список целых, заполненный случайными числами. На основании данных этого массива нужно:
@@ -90,7 +95,7 @@ import random
 
 N = random.randint(10, 50)
 lst1 = [random.randint(-50, 50) for x in range(N)]
-print(f' List: {lst1}')
+print(f" List: {lst1}")
 
 lst_odd = []
 lst_even = []
@@ -106,8 +111,9 @@ for i in lst1:
         lst_pos.append(i)
     elif i < 0:
         lst_neg.append(i)
-print(f' List of even elements: {lst_even}\n',
-      f'List of odd elements: {lst_odd}\n',
-      f'List of negative elements: {lst_neg}\n',
-      f'List of positive elements: {lst_pos}')
-
+print(
+    f" List of even elements: {lst_even}\n",
+    f"List of odd elements: {lst_odd}\n",
+    f"List of negative elements: {lst_neg}\n",
+    f"List of positive elements: {lst_pos}",
+)

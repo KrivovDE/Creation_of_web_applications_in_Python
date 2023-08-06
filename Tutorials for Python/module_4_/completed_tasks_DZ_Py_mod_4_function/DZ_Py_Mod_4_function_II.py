@@ -4,6 +4,7 @@
 # ■ если она равна True, квадрат заполненный;
 # ■ если False, квадрат пустой.
 
+
 def square(sym, n, filled=True):
     line = n * sym
     if filled:
@@ -36,7 +37,11 @@ def proizv(a, b):
     return res
 
 
-print(proizv(int(input("Введите нижняя граница: ")), int(input("Введите вверхнюю границу: "))))
+print(
+    proizv(
+        int(input("Введите нижняя граница: ")), int(input("Введите вверхнюю границу: "))
+    )
+)
 # print(proizv(2, 5))
 
 #
@@ -61,31 +66,33 @@ print(f"Количество цифр", digit_number(1234))
 # Например, 123321 — палиндром (первая часть 123, вторая 321, которая после переворота становится 123),
 # 546645 — палиндром, а 421987 — не палиндром.
 
+
 def polindrom(x):
     """
 
     :param x:
     :return:
     """
-    compil = ''.join(reversed(str(x)))
+    compil = "".join(reversed(str(x)))
     return str(x) == str(compil)
 
 
 num = 1221
 if polindrom(num):
-    print('Число ', num, '- полиндром.')
+    print("Число ", num, "- полиндром.")
 else:
-    print('Число ', num, '- не полиндром.')
+    print("Число ", num, "- не полиндром.")
 
 # Задание 5
 # Напишите функцию, которая отображает горизонтальную или вертикальную линию из некоторого символа.
 # Функция принимает в качестве параметра: длину линии, направление, символ.
 # #
 def line(leng, nap, sim):
-  _end = "" if nap else "\n"
+    _end = "" if nap else "\n"
 
-  for i in range(leng):
-    print(sim, end=_end)
+    for i in range(leng):
+        print(sim, end=_end)
+
 
 line(5, True, "#")
 line(4, False, "!")

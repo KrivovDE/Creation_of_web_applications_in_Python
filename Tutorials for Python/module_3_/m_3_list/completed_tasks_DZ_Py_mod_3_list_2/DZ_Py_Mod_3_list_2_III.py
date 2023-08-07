@@ -148,24 +148,33 @@
 # Введите название фильма: Мементо
 # Ваш список любимых фильмов: Леон, Мементо
 
-films = ['Крепкий орешек', 'Назад в будущее', 'Таксист', 'Леон', 'Богемская рапсодия',
-         'Город грехов', 'Мементо', 'Отступники', 'Деревня']
+films = [
+    "Крепкий орешек",
+    "Назад в будущее",
+    "Таксист",
+    "Леон",
+    "Богемская рапсодия",
+    "Город грехов",
+    "Мементо",
+    "Отступники",
+    "Деревня",
+]
 
-quan = int(input('How much movies do you want to add? '))
+quan = int(input("How much movies do you want to add? "))
 fav_mov = []
 
 for i in range(quan):
-    mov = input('Enter movie\'s name: ')
+    mov = input("Enter movie's name: ")
     if mov in fav_mov:
-        print('This movie is already in your favorites list')
+        print("This movie is already in your favorites list")
     elif mov in films:
         fav_mov.append(mov)
     else:
-        print('This movie is not in our database')
+        print("This movie is not in our database")
 
-str_fav_mov = ', '.join(fav_mov)
+str_fav_mov = ", ".join(fav_mov)
 
-print(f'Your favorite movies list: {str_fav_mov}')
+print(f"Your favorite movies list: {str_fav_mov}")
 
 # СТРОКИ
 # Задача 6. Файлы
@@ -180,17 +189,17 @@ print(f'Your favorite movies list: {str_fav_mov}')
 # Пример 3: Название файла: example.txt
 # Файл назван верно.
 
-file_name = input('Enter file name: ')
+file_name = input("Enter file name: ")
 
-mark1 = '@№$%^&*() '
-mark2 = ['.txt', '.docx']
+mark1 = "@№$%^&*() "
+mark2 = [".txt", ".docx"]
 
 if file_name[0] in mark1:
-    print('Error: filename starts with one of the special characters')
+    print("Error: filename starts with one of the special characters")
 elif file_name[-4:] not in mark2 and file_name[-5:] not in mark2:
-    print('Error: wrong file extension. Expected .txt or .docx.')
+    print("Error: wrong file extension. Expected .txt or .docx.")
 else:
-    print('File has named correctly')
+    print("File has named correctly")
 
 # Задача 7. Сжатие
 # С увеличением объёма данных возникла потребность в сжатии этих данных без потери важной информации.
@@ -205,14 +214,14 @@ else:
 # Введите строку: aaAAbbсaaaA
 # Закодированная строка: a2A2b2с1a3A1
 
-str_start = input('Enter string: ')
+str_start = input("Enter string: ")
 
 L = len(str_start)
-str_res = str_start[0] + '1'
+str_res = str_start[0] + "1"
 count = 1
 
 for i in range(1, L):
-    if str_start[i] == str_start[i-1]:
+    if str_start[i] == str_start[i - 1]:
         count += 1
         str_res = str_res[:-1] + str(count)
     else:

@@ -1,7 +1,7 @@
 from typing import List
 
 
-def linear_search(_list: List[int], _key: int) -> int:
+def linear_search(_list: list[int], _key: int) -> int:
     for i in range(len(_list)):
         if _list[i] == _key:
             return i
@@ -41,7 +41,7 @@ print(linear_search(list1, 12))
 # c: int = int(input())
 
 
-def feat_1(lst: List[int], c: int):
+def feat_1(lst: list[int], c: int):
     res: int = c
     diff: int = 2001
 
@@ -52,8 +52,7 @@ def feat_1(lst: List[int], c: int):
     print(res)
 
 
-
-_z: List[int] = [5, 4, 3, 2, 1]
+_z: list[int] = [5, 4, 3, 2, 1]
 _o: int = 3
 
 feat_1(_z, _o)

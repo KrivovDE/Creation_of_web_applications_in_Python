@@ -1,4 +1,5 @@
 import re
+
 #
 # text = "(Eда), беду, победа"
 
@@ -21,4 +22,3 @@ phone = "81234567890"
 match = re.findall(r"8\d{10}", phone)
 print(type(match))
 # /////////////////////////////////
-

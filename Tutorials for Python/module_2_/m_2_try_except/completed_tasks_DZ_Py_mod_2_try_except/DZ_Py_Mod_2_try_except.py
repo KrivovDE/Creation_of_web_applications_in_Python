@@ -18,16 +18,16 @@
 # Пример.
 # Исходная программа:
 
-# try:
-#     a = float(input("a = "))
-#     b = float(input("b = "))
-#     if a * b > 0:
-#         c = (a * b) ** 0.5
-#     else:
-#         raise ValueError('Вы ввели отрицательное число')
-#     print(f'Среднее геометрическое = {c}')
-# except ValueError as value:
-#     print(value)
-# except Exception as Except:
-#     print(Except)
+try:
+    a = float(input("a = "))
+    b = float(input("b = "))
+    if a * b > 0:
+        c = (a * b) ** 0.5
+    else:
+        raise ValueError('Вы ввели отрицательное число')
+    print(f'Среднее геометрическое = {c}')
+except ValueError as value:
+    print(value)
+except Exception as Except:
+    print(Except)
 

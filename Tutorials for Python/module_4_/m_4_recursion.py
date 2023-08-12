@@ -1,14 +1,14 @@
-# import time
-#
-# def test_time(fn):
-#     def wrapper(*args, **kwargs):
-#         st = time.time()
-#         fn(*args, **kwargs)
-#         dt = time.time() - st
-#         print(f"Время работы рекурсии: {dt} сек")
-#     return wrapper
-#
-#
+import time
+
+def test_time(fn):
+    def wrapper(*args, **kwargs):
+        st = time.time()
+        fn(*args, **kwargs)
+        dt = time.time() - st
+        print(f"Время работы рекурсии: {dt} сек")
+    return wrapper
+
+
 # @test_time
 # def func_2(a, b):
 #     return a ** b
@@ -38,7 +38,7 @@
 #
 #
 # print(func_rec(2, 3))
-#---------------------------------------------------
+# ---------------------------------------------------
 
 
 # N = int(input())
@@ -50,7 +50,7 @@
 #     print(N)
 #
 # get_rec_N(N)
-#---------------------------------------------------
+# ---------------------------------------------------
 
 
 # def show_elements(lst, func):
@@ -68,22 +68,27 @@
 # #
 # show_elements(a, lambda x: True if x % 2 == 0 else False)
 
-#---------------------------------------------------
+# ---------------------------------------------------
 # Подвиг 1.
 #
 n = int(input())
+
+
 def fact_rec(n):
     if n > 1:
-        return n * fact_rec(n-1)
+        return n * fact_rec(n - 1)
     return 1
+
+
 print(fact_rec(n))
 
+
 def fact_rec_2(n):
-    return n * fact_rec_2(n-1) if n else 1
+    return n * fact_rec_2(n - 1) if n else 1
 
 
-print(f' -------{fact_rec_2(n)}')
-#---------------------------------------------------
+print(f" -------{fact_rec_2(n)}")
+# ---------------------------------------------------
 # Подвиг 2.
 
 # def get_rec_sum(lst):
@@ -134,7 +139,7 @@ print(f' -------{fact_rec_2(n)}')
 # get_sq = lambda x: x ** 2
 # get_div = lambda x, y: None if y == 0 else x / y
 # a = lambda x: abs(x)
-#---------------------------------------------------
+# ---------------------------------------------------
 
 
 # def my_func(b):
@@ -145,7 +150,7 @@ print(f' -------{fact_rec_2(n)}')
 #
 # my_func(6)
 
-#---------------------------------------------------
+# ---------------------------------------------------
 # name = "Tom"
 # #
 #
@@ -161,7 +166,7 @@ print(f' -------{fact_rec_2(n)}')
 # say_hi()
 # say_bye()
 # print(name)
-#---------------------------------------------------
+# ---------------------------------------------------
 # x = 0
 # def outer():
 #     global x
@@ -174,4 +179,3 @@ print(f' -------{fact_rec_2(n)}')
 #     print("outer:", x)
 # outer()
 # print("global:", x)
-

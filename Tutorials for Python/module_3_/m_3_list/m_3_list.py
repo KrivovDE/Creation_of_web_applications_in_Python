@@ -35,7 +35,6 @@
 # A = [[1,2,3], [4,5,6], [7,8,9]]
 
 
-
 # Инструмент list comprehensions
 
 # A = []
@@ -118,16 +117,3 @@ srt7 = deepcopy(srt)
 #
 # # print(srt2)
 # print(srt)
-
-
-
-
-
-
-
-
-
-
-
-
-

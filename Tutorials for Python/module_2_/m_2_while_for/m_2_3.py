@@ -16,7 +16,7 @@
 #
 # s = 0
 # i = 1
-#
+
 # while True:
 #     s += 1/i
 #     i += 1
@@ -24,17 +24,17 @@
 # # # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 #
 # z = 0
-# v = -4
+# v = 4
 #
 # while v < 100:
 #     if v == 0:
 #         break
 #     z += 1/v
-#     v = v + 1
+#     v += 1
 # else:
 #     print("Сумма вычислена корретно")
 # print(z)
-#
+
 
 # # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 #
@@ -138,7 +138,7 @@
 #             print(number, "divides by 3 and 5")
 #         elif number % 5 == 0 and number % 7 == 0:
 #             print(number, "divides by 3 and 5 and 7")
-#
+# #
 #
 # number = 0
 # while number < 300:
@@ -185,19 +185,19 @@
 #    for j in range(1, 11):
 #        print(i * j, end='\t')
 #    print('\n')
-floor = 1
-energy = 70
-print(f'Я на {floor} этаже')
-ot = 0
-while floor != 5:
-    step = 0
-    while step != 20:
-        step += 1
-        energy -= 1
-        if energy == 0:
-            print('Я устал, я немного отдохну')
-            ot += 1
-            energy += 70
-    floor += 1
-    print(f'Сейчас я на {floor} этаже')
-print('Я отдыхал', ot)
+# floor = 1
+# energy = 70
+# print(f"Я на {floor} этаже")
+# ot = 0
+# while floor != 5:
+#     step = 0
+#     while step != 20:
+#         step += 1
+#         energy -= 1
+#         if energy == 0:
+#             print("Я устал, я немного отдохну")
+#             ot += 1
+#             energy += 70
+#     floor += 1
+#     print(f"Сейчас я на {floor} этаже")
+# print("Я отдыхал", ot)

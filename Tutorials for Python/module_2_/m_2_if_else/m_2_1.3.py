@@ -1,4 +1,4 @@
-USERNAMES = {'peter', '123', 'progamer'}
+USERNAMES = {"peter", "123", "progamer"}
 
 
 def create_new_user(username, password):
@@ -26,7 +26,7 @@ def register_user():
         print("Username is too long")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     register_user()
 # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 # if len(password) <= 3:
@@ -64,7 +64,7 @@ if __name__ == '__main__':
 #         return
 #
 
-    # create_new_user(username, password)
+# create_new_user(username, password)
 #     # print("New user is created")
 # #
 # # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||

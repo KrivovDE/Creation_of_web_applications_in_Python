@@ -10,6 +10,10 @@
 #     res = "деление на ноль"
 # except ValueError:
 #     res = "одно из введенных значений не число"
+# else:
+#     print("Исключений не произошло")
+
+#
 # print(res)
 # # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 #
@@ -36,35 +40,40 @@
 #     finally:
 #         print("finally выполняется до return")
 #
-# x, y = getValues()
-# print(x, y)
+
 # # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 #
-x = input("x: ")
-y = input("y: ")
-try:
-    x = int(x)
-    y = int(y)
-
-    res = x / y
-except:
-    print("Произошло исключение")
-else:
-    print("Исключений не произошло")
-finally:
-    print("Блок finally выполняется всегда")
-
+# x = input("x: ")
+# y = input("y: ")
+# try:
+#     res = None
+#     x = int(x)
+#     y = int(y)
+#
+#     res = x / y
+# except:
+#     print("Произошло исключение")
+# else:
+#     print("Исключений не произошло")
+# finally:
+#     print("Блок finally выполняется всегда")
 # print(res)
-# # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-print("Куда ты скачешь, гордый конь,")
-print("И где опустишь ты копыта?")
-print("О мощный властелин судьбы!")
-e = ZeroDivisionError("Деление на ноль")
-raise e
-print("Не так ли ты над самой бездной")
-print("На высоте, уздой железной")
-print("Россию поднял на дыбы?")
 
+# Задания для самоподготовки
+# 1. Напишите программу ввода трех чисел, нахождения их среднеарифметического и преобразования этого значения обратно
+# в строку. Реализовать обработку возможных исключений при таком преобразовании.
+
+
+# # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+# print("Куда ты скачешь, гордый конь,")
+# print("И где опустишь ты копыта?")
+# print("О мощный властелин судьбы!")
+# e = ZeroDivisionError("Деление на ноль")
+# raise e
+#
+# print("Не так ли ты над самой бездной")
+# print("На высоте, уздой железной")
+# print("Россию поднял на дыбы?")
 
 
 # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -86,7 +95,7 @@ print("Россию поднял на дыбы?")
 # except ValueError as z:
 #     print(z)
 # # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-
+#
 # def div(a, b):
 #     try:
 #         return a / b
@@ -95,20 +104,24 @@ print("Россию поднял на дыбы?")
 # #
 # #
 # res = None
-#
-# try:
-#     x = int(input())
-#     y = int(input())
-#     res = div(x, y)
-# except (ValueError, NameError) as z:
-#     print("Ошибка ValueError")
-#
-# print(res)
+
+try:
+    x = int(input())
+    y = int(input())
+    res = div(x, y)
+except (ValueError, NameError) as z:
+    print("Ошибка ValueError")
+
+print(res)
 # # # # |||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 #
 class ExceptionPrintSendData(Exception):
     """Класс исключения при отправке данных принтеру"""
+    def send_data(self, data):
+        if not self.send_to_print(data):
+            raise ExceptionPrintSendData("принтер не отвечает")
+
 
 
 class PrintData:
@@ -120,6 +133,5 @@ class PrintData:
         if not self.send_to_print(data):
             raise ExceptionPrintSendData("принтер не отвечает")
 
-#
 
 

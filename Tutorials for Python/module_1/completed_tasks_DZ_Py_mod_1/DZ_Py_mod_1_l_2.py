@@ -108,4 +108,3 @@
 # price = float(input('Enter book\'s price with 2 digit after point: '))
 # rem = (price * 100) % 100
 # print(rem > 50)
-

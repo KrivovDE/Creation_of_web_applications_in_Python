@@ -110,6 +110,7 @@ n: int = int(input())
 #
 # for i in t2:
 #     print(*i)
+
 # -----
 for i in t[:n]:
     print(*i[:n])

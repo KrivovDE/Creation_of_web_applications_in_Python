@@ -5,15 +5,16 @@
 # ■ если она равна True, квадрат заполненный;
 # ■ если False, квадрат пустой.
 
+
 def sqr_symbol(lng: int, sym: str, bools: bool):
     for i in range(lng):
         if (not bools) and i % (lng - 1) != 0:
-            print(sym + ' ' * (lng - 2) + sym)
+            print(sym + " " * (lng - 2) + sym)
         else:
             print(sym * lng)
 
 
-sqr_symbol(5, '-', False)
+sqr_symbol(5, "-", False)
 
 # Задание 2
 # Напишите функцию,которая возвращает произведение чисел в указанном диапазоне.
@@ -65,12 +66,12 @@ print(multiply(4, 1))
 
 # #
 def line_symbol(lng: int, line: str, sym: str):
-    if line == 'hr':                    #hr горизонтальное направление
-        print(*[sym for i in range(lng)], sep='')
-    elif line == 'vr':                  #vr вертикальное направление
-        print(*[sym for i in range(lng)], sep='\n')
+    if line == "hr":  # hr горизонтальное направление
+        print(*[sym for i in range(lng)], sep="")
+    elif line == "vr":  # vr вертикальное направление
+        print(*[sym for i in range(lng)], sep="\n")
     else:
-        print('Проверьте корректность данных')
+        print("Проверьте корректность данных")
 
 
-line_symbol(6, 'vr', '*')
+line_symbol(6, "vr", "*")

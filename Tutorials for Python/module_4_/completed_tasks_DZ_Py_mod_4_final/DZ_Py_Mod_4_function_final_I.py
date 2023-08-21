@@ -1,4 +1,3 @@
-from functools import reduce
 # =============================================================================
 # =============================================================================
 
@@ -9,6 +8,7 @@ from functools import reduce
 # | она должна вести себя так:                                                |
 # \~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/========\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/
 
+
 def matrix(v1=None, v2=None, arg=0):
     if v1 is None and v2 is None:
         v1 = 1
@@ -16,6 +16,8 @@ def matrix(v1=None, v2=None, arg=0):
     elif v2 is None:
         v2 = v1
     return [[arg for _ in range(v2)] for _ in range(v1)]
+
+
 #
 #
 # print(matrix())               # матрица 1 × 1 из 0

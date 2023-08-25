@@ -1,15 +1,15 @@
-import time
-
-def test_time(fn):
-    def wrapper(*args, **kwargs):
-        st = time.time()
-        fn(*args, **kwargs)
-        dt = time.time() - st
-        print(f"Время работы рекурсии: {dt} сек")
-    return wrapper
-
-
-# @test_time
+# import time
+#
+# def test_time(fn):
+#     def wrapper(*args, **kwargs):
+#         st = time.time()
+#         fn(*args, **kwargs)
+#         dt = time.time() - st
+#         print(f"Время работы рекурсии: {dt} сек")
+#     return wrapper
+#
+#
+# # @test_time
 # def func_2(a, b):
 #     return a ** b
 #
@@ -71,23 +71,23 @@ def test_time(fn):
 # ---------------------------------------------------
 # Подвиг 1.
 #
-n = int(input())
+# n = int(input())
 
 
-def fact_rec(n):
-    if n > 1:
-        return n * fact_rec(n - 1)
-    return 1
-
-
-print(fact_rec(n))
-
-
-def fact_rec_2(n):
-    return n * fact_rec_2(n - 1) if n else 1
-
-
-print(f" -------{fact_rec_2(n)}")
+# def fact_rec(n):
+#     if n > 1:
+#         return n * fact_rec(n - 1)
+#     return 1
+#
+#
+# print(fact_rec(n))
+#
+#
+# def fact_rec_2(n):
+#     return n * fact_rec_2(n - 1) if n else 1
+#
+#
+# print(f" -------{fact_rec_2(n)}")
 # ---------------------------------------------------
 # Подвиг 2.
 
@@ -179,3 +179,75 @@ print(f" -------{fact_rec_2(n)}")
 #     print("outer:", x)
 # outer()
 # print("global:", x)
+
+# def func_rec(x, n):
+#     if n == 0:
+#         return 1
+#     else:
+#         print( x * func_rec(x, n-1))
+
+
+# func_rec(2, 3)
+
+
+
+
+
+
+
+# def func_num(num):
+#
+#     if num == 1:
+#         print(1)
+#     else:
+#         print(num)
+#         num -= 1
+#         func_num(num)
+#
+#
+# func_num(10)
+#
+
+
+
+def set_solving(sp_1, sp_2, sp_3):
+
+    x = set(sp_1).intersection(sp_2, sp_3)
+    y = set(sp_1) - set(sp_2).union(sp_3)
+
+    return x, y
+
+
+    # return (set(sp_1).intersection(sp_2, sp_3), set(sp_1) - set(sp_2).union(sp_3))
+
+
+# def no_set(sp_1, sp_2, sp_3):
+#     dict_len_sp = ({len(sp_1): sp_1, len(sp_2): sp_2, len(sp_3): sp_3})
+#     sp_2_3 = sp_2 + sp_3
+#     result_sp_1 = [num for num in dict_len_sp[min(dict_len_sp)] if num in sp_2 and num in sp_3]
+#     result_sp_2 = [num for num in sp_1 if num not in sp_2_3]
+#     return result_sp_1, result_sp_2
+#
+array_1 = [1, 2, 3, 4]
+array_2 = [2, 4]
+array_3 = [2, 3]
+
+print(set_solving(array_1, array_2, array_3))
+
+#
+# for num in range(2):
+#     print(f'Задача {num + 1}:')
+#     print('Решение без множеств:', *(no_set(array_1, array_2, array_3)[num]))
+#     print('Решение с множествами:', *(set_solving(array_1, array_2, array_3)[num]))
+#
+
+
+
+
+
+
+
+
+
+
+

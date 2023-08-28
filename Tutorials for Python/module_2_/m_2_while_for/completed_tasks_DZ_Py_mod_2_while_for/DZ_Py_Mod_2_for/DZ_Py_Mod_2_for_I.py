@@ -158,7 +158,7 @@
 # ---***---***---***---***
 # ---***---***---***---***
 
-x = int(input('--> '))
+x = int(input("--> "))
 
 # print('Вариант 1\n')
 # for i in range(3):
@@ -176,17 +176,17 @@ x = int(input('--> '))
 #             print('*' * x, end='')
 #     print()
 
-print('\n\nВариант 2\n')
+print("\n\nВариант 2\n")
 for i in range(3):
     for j in range(8):
         if j % 2 == 0:
-            print('*' * x, end='')
+            print("*" * x, end="")
         else:
-            print('-' * x, end='')
+            print("-" * x, end="")
     print()
     for j in range(8):
         if j % 2 == 0:
-            print('-' * x, end='')
+            print("-" * x, end="")
         else:
-            print('*' * x, end='')
+            print("*" * x, end="")
     print()

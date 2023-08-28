@@ -22,21 +22,21 @@
 # удовлетворяющую условию задачи. Пробелы между символами выводить не нужно.
 # Если расставить машины согласно условию задачи невозможно, выведите строку “Нет решения”.
 
-red_car = int(input('Enter number of red car: '))
-white_car = int(input('Enter number of white car: '))
+red_car = int(input("Enter number of red car: "))
+white_car = int(input("Enter number of white car: "))
 
 if red_car / white_car > 2 or red_car / white_car < 0.5:
-    res = 'Mission impossible!'
+    res = "Mission impossible!"
 else:
     if red_car > white_car:
-        color_more = 'R'
-        color_less = 'W'
+        color_more = "R"
+        color_less = "W"
     else:
-        color_more = 'W'
-        color_less = 'R'
+        color_more = "W"
+        color_less = "R"
         red_car, white_car = white_car, red_car
 
-    res = ''
+    res = ""
 
     while red_car - white_car > 1:
         res += color_more + color_less + color_more
@@ -71,9 +71,12 @@ ans = 1
 ans_quan = 0
 right_ans = 0
 
-print('Start game!',
-      f'Level: {level}',
-      'Enter answer "0" for finish', sep='\n')
+print(
+    "Start game!",
+    f"Level: {level}",
+    'Enter answer "0" for finish',
+    sep="\n",
+)
 
 while ans != 0:
 
@@ -87,32 +90,41 @@ while ans != 0:
         num1 = random.randint(11, 30)
         num2 = random.randint(11, 33)
 
-    ans = int(input(f'{num1} * {num2} = '))
+    ans = int(input(f"{num1} * {num2} = "))
 
     right_ans += 1 if ans == num1 * num2 else 0
     ans_quan += 1
 
     if ans_quan % 5 == 0 and level == 3:
-        print('It was a maximum level')
+        print("It was a maximum level")
         break
     elif ans_quan % 5 == 0:
-        ans = int(input(f'Enter "0" for FINISH. Enter "1" if you want LEVEL UP. Another key for continue.'))
+        ans = int(
+            input(
+                f'Enter "0" for FINISH. Enter "1" if you want LEVEL UP. Another key for continue.'
+            )
+        )
         if ans == 1:
             level += 1
-            print('Continue game!',
-                  f'Level: {level}', sep='\n')
+            print(
+                "Continue game!",
+                f"Level: {level}",
+                sep="\n",
+            )
 
 if 1 >= right_ans / ans_quan >= 0.8:
-    res = '5'
+    res = "5"
 elif 0.8 > right_ans / ans_quan >= 0.6:
-    res = '4'
+    res = "4"
 elif 0.6 > right_ans / ans_quan >= 0.4:
-    res = '3'
+    res = "3"
 else:
-    res = '2'
+    res = "2"
 
-print(f'Total {ans_quan} answers',
-      f'Right answers is {right_ans}',
-      f'Your mark: {res}',
-      f'Try again!', sep='\n')
-
+print(
+    f"Total {ans_quan} answers",
+    f"Right answers is {right_ans}",
+    f"Your mark: {res}",
+    f"Try again!",
+    sep="\n",
+)

@@ -101,8 +101,8 @@ while ans != 0:
     elif ans_quan % 5 == 0:
         ans = int(
             input(
-                f'Enter "0" for FINISH. Enter "1" if you want LEVEL UP. Another key for continue.'
-            )
+                f'Enter "0" for FINISH. Enter "1" if you want LEVEL UP. Another key for continue.',
+            ),
         )
         if ans == 1:
             level += 1

@@ -109,7 +109,7 @@ try:
     x = int(input())
     y = int(input())
     res = div(x, y)
-except (ValueError, NameError) as z:
+except (ValueError, NameError):
     print("Ошибка ValueError")
 
 print(res)
@@ -118,10 +118,10 @@ print(res)
 #
 class ExceptionPrintSendData(Exception):
     """Класс исключения при отправке данных принтеру"""
+
     def send_data(self, data):
         if not self.send_to_print(data):
             raise ExceptionPrintSendData("принтер не отвечает")
-
 
 
 class PrintData:
@@ -132,6 +132,3 @@ class PrintData:
     def send_data(self, data):
         if not self.send_to_print(data):
             raise ExceptionPrintSendData("принтер не отвечает")
-
-
-

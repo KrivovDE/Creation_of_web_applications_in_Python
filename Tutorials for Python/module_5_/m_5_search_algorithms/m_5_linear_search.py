@@ -1,6 +1,3 @@
-from typing import List
-
-
 def linear_search(_list: list[int], _key: int) -> int:
     for i in range(len(_list)):
         if _list[i] == _key:

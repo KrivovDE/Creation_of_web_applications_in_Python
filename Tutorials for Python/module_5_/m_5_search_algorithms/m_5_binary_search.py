@@ -1,6 +1,3 @@
-from typing import List
-
-
 def binary_search(lst: list[int], val: int) -> int:
     first: int = 0
     last: int = len(lst) - 1

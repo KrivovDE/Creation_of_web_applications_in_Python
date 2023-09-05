@@ -190,11 +190,6 @@
 # func_rec(2, 3)
 
 
-
-
-
-
-
 # def func_num(num):
 #
 #     if num == 1:
@@ -209,14 +204,12 @@
 #
 
 
-
 def set_solving(sp_1, sp_2, sp_3):
 
     x = set(sp_1).intersection(sp_2, sp_3)
     y = set(sp_1) - set(sp_2).union(sp_3)
 
     return x, y
-
 
     # return (set(sp_1).intersection(sp_2, sp_3), set(sp_1) - set(sp_2).union(sp_3))
 
@@ -240,14 +233,3 @@ print(set_solving(array_1, array_2, array_3))
 #     print('Решение без множеств:', *(no_set(array_1, array_2, array_3)[num]))
 #     print('Решение с множествами:', *(set_solving(array_1, array_2, array_3)[num]))
 #
-
-
-
-
-
-
-
-
-
-
-

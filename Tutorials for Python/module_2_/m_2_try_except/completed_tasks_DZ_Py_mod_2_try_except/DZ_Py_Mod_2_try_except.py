@@ -24,10 +24,9 @@ try:
     if a * b > 0:
         c = (a * b) ** 0.5
     else:
-        raise ValueError('Вы ввели отрицательное число')
-    print(f'Среднее геометрическое = {c}')
+        raise ValueError("Вы ввели отрицательное число")
+    print(f"Среднее геометрическое = {c}")
 except ValueError as value:
     print(value)
 except Exception as Except:
     print(Except)
-

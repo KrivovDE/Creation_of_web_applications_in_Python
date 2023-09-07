@@ -13,16 +13,16 @@
 # Пользователь вводит с клавиатуры два числа. Необходимо найти сумму чисел, разницу чисел, произведение.
 # Результат вычислений вывести на экран.
 
-first = int(input('Введите первое число: '))
-second = int(input('Введите второе число: '))
+first = int(input("Введите первое число: "))
+second = int(input("Введите второе число: "))
 
-print('сумма чисел: '+ str(first+second))
+print("сумма чисел: " + str(first + second))
 
 subtraction = first - second
 subtraction_str = str(subtraction)
-print('разница чисел: ' + subtraction_str)
+print("разница чисел: " + subtraction_str)
 
-print('произведение чисел: ', first*second)
+print("произведение чисел: ", first * second)
 
 
 #####################################################

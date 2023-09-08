@@ -163,7 +163,10 @@ def func_game(field):
         while i != 9:
             step_parity = check_parity(i)
             current_player = check_current_player(
-                step_parity, player1, player2, round_number
+                step_parity,
+                player1,
+                player2,
+                round_number,
             )
             step_pos, step_sym = input_step(step_parity, current_player)
 

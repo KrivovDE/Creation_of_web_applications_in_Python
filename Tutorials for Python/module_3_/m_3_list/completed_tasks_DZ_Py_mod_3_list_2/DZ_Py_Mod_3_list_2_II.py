@@ -136,7 +136,7 @@ try:
             choice in films and choice not in lst_films
         ):  # БЫЛО БЫ УДОБНЕЕ (choice in films and not lst_films)
             lst_films.append(
-                choice
+                choice,
             )  # но почему то не получается так возможно записать?
         elif choice in lst_films:
             print(f"Фильм {choice} уже есть в вашем списке")

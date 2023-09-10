@@ -1,5 +1,4 @@
 from random import choice
-from typing import List
 
 player_1: str
 player_2: str

@@ -65,7 +65,7 @@ for i in range(len(lst_full)):
         lst_piece_for3 *= lst_full[i]
 
 lst_piece_min_max = min(lst_full) * max(
-    lst_full
+    lst_full,
 )  # между минимальным и максимальным элементом
 lst_between_positive = lst_full[index[0] + 1 : index[-1]]  # между первым и последним
 

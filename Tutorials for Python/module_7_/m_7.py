@@ -129,12 +129,12 @@
 # except FileNotFoundError:
 #     print("Невозможно открыть файл")
 
-
-list_ = [1, 2, 3, 4, 5, 6]
-str = "str(list_)"
-
-for i in list_:
-    print(id(i))
-
-print()
-print(id(list_))
+#
+# list_ = [1, 2, 3, 4, 5, 6]
+# str = "str(list_)"
+#
+# for i in list_:
+#     print(id(i))
+#
+# print()
+# print(id(list_))

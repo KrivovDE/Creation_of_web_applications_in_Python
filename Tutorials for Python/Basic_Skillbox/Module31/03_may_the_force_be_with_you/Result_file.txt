@@ -1,0 +1,31 @@
+{
+    "name": "Millennium Falcon",
+    "max_atmosphering_speed": "1050",
+    "starship_class": "Light freighter",
+    "pilots": {
+        "Chewbacca": [
+            "228",
+            "112",
+            "Kashyyyk",
+            "https://swapi.dev/api/planets/14/"
+        ],
+        "Han Solo": [
+            "180",
+            "80",
+            "Corellia",
+            "https://swapi.dev/api/planets/22/"
+        ],
+        "Lando Calrissian": [
+            "177",
+            "79",
+            "Socorro",
+            "https://swapi.dev/api/planets/30/"
+        ],
+        "Nien Nunb": [
+            "160",
+            "68",
+            "Sullust",
+            "https://swapi.dev/api/planets/33/"
+        ]
+    }
+}

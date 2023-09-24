@@ -41,7 +41,7 @@ class Ground:
             return Dirt()
         else:
             raise ValueError('Сочетание невозможно.')
-
+  
 class Storm:
     pass
 class Steam:

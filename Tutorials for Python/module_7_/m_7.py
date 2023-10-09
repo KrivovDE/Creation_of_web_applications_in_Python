@@ -138,3 +138,32 @@
 #
 # print()
 # print(id(list_))
+
+
+class X:
+    def var(self, lif):
+        return lif - 2
+
+
+class A(X):
+    x = 100
+
+class B(X):
+    x = 10
+
+a = A()
+d = a.x
+b = B()
+
+print(a.var(a.x))
+
+
+
+
+
+
+
+
+
+
+

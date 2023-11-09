@@ -2,6 +2,7 @@
 # abs_path = os.path.abspath('my_file')
 # print(abs_path)
 # print(type(abs_path))
+import time
 
 # file = open('/Users/ШАГ/Course creating web applications with Python/Tutorials for Python/module_7_/my_file.txt')
 
@@ -140,25 +141,27 @@
 # print(id(list_))
 
 
-class X:
-    def var(self, lif):
-        return lif - 2
-
-
-class A(X):
-    x = 100
-
-class B(X):
-    x = 10
-
-a = A()
-d = a.x
-b = B()
-
-print(a.var(a.x))
-
-
-
+# class X:
+#     def var(self, lif):
+#         return lif - 2
+#
+#
+# class A(X):
+#     x = 100
+#
+# class B(X):
+#     x = 10
+#
+# a = A()
+# d = a.x
+# b = B()
+#
+# print(a.var(a.x))
+#
+#
+print ("111111")
+time.sleep(4)
+print ("dsfgsdfg")
 
 
 

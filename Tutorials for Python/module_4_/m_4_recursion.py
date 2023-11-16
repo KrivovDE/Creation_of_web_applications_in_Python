@@ -41,15 +41,15 @@
 # ---------------------------------------------------
 
 
-# N = int(input())
-#
-#
-# def get_rec_N(N):
-#     if N > 1:
-#         get_rec_N(N-1)
-#     print(N)
-#
-# get_rec_N(N)
+N = int(input())
+
+
+def get_rec_N(N):
+    if N > 1:
+        get_rec_N(N-1)
+    print(N)
+
+get_rec_N(N)
 # ---------------------------------------------------
 
 
@@ -204,28 +204,28 @@
 #
 
 
-def set_solving(sp_1, sp_2, sp_3):
-
-    x = set(sp_1).intersection(sp_2, sp_3)
-    y = set(sp_1) - set(sp_2).union(sp_3)
-
-    return x, y
-
-    # return (set(sp_1).intersection(sp_2, sp_3), set(sp_1) - set(sp_2).union(sp_3))
-
-
-# def no_set(sp_1, sp_2, sp_3):
-#     dict_len_sp = ({len(sp_1): sp_1, len(sp_2): sp_2, len(sp_3): sp_3})
-#     sp_2_3 = sp_2 + sp_3
-#     result_sp_1 = [num for num in dict_len_sp[min(dict_len_sp)] if num in sp_2 and num in sp_3]
-#     result_sp_2 = [num for num in sp_1 if num not in sp_2_3]
-#     return result_sp_1, result_sp_2
+# def set_solving(sp_1, sp_2, sp_3):
 #
-array_1 = [1, 2, 3, 4]
-array_2 = [2, 4]
-array_3 = [2, 3]
-
-print(set_solving(array_1, array_2, array_3))
+#     x = set(sp_1).intersection(sp_2, sp_3)
+#     y = set(sp_1) - set(sp_2).union(sp_3)
+#
+#     return x, y
+#
+#     # return (set(sp_1).intersection(sp_2, sp_3), set(sp_1) - set(sp_2).union(sp_3))
+#
+#
+# # def no_set(sp_1, sp_2, sp_3):
+# #     dict_len_sp = ({len(sp_1): sp_1, len(sp_2): sp_2, len(sp_3): sp_3})
+# #     sp_2_3 = sp_2 + sp_3
+# #     result_sp_1 = [num for num in dict_len_sp[min(dict_len_sp)] if num in sp_2 and num in sp_3]
+# #     result_sp_2 = [num for num in sp_1 if num not in sp_2_3]
+# #     return result_sp_1, result_sp_2
+# #
+# array_1 = [1, 2, 3, 4]
+# array_2 = [2, 4]
+# array_3 = [2, 3]
+#
+# print(set_solving(array_1, array_2, array_3))
 
 #
 # for num in range(2):
@@ -233,3 +233,24 @@ print(set_solving(array_1, array_2, array_3))
 #     print('Решение без множеств:', *(no_set(array_1, array_2, array_3)[num]))
 #     print('Решение с множествами:', *(set_solving(array_1, array_2, array_3)[num]))
 #
+# def sum_of_values(a, b, c):
+#     return a + b + c
+#
+# values = [1, 2, 3]
+# result = sum_of_values(*values)
+# print(result)
+
+# def sum_of_values2(*args):
+#     return sum(args)
+#
+# values2 = [1, 2, 3, 5]
+# result = sum_of_values2(*values2)
+# print(result)
+
+# def print_details(name, age):
+#     print(f"Name: {name}")
+#     print(f"Age: {age}")
+#
+# details = {"name": "John", "age": 30}
+# print_details(**details)
+

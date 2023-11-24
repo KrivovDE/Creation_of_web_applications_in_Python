@@ -159,14 +159,123 @@ import time
 # print(a.var(a.x))
 #
 #
-print ("111111")
-time.sleep(4)
-print ("dsfgsdfg")
+
+# def say_name(name):
+#     def say_goodbye():
+#         print("Don't say me goodbye, " + name + "!")
+#
+#     say_goodbye()
+#
+# say_name("Sergey")
 
 
+def outer():  # внешняя функция
+    n = 5  # лексическое окружение - локальная переменная
+
+    def inner():  # локальная функция
+        nonlocal n
+        n += 1  # операции с лексическим окружением
+        print(n)
+
+    return inner
 
 
+outer()  # fn = inner, так как функция outer возвращает функцию inner
+outer()  # fn = inner, так как функция outer возвращает функцию inner
+outer()  # fn = inner, так как функция outer возвращает функцию inner
+# вызываем внутреннюю функцию inner
+# fn()  # 6
+# fn()  # 7
+# fn()  # 8
 
-
-
-
+# def mergeSort(alist):
+#     print("Splitting ",alist)
+#     if len(alist)>1:
+#         mid = len(alist)//2
+#         lefthalf = alist[:mid]
+#         righthalf = alist[mid:]
+#
+#         mergeSort(lefthalf)
+#         mergeSort(righthalf)
+#
+#         i=0
+#         j=0
+#         k=0
+#         while i<len(lefthalf) and j<len(righthalf):
+#             if lefthalf[i]<righthalf[j]:
+#                 alist[k]=lefthalf[i]
+#                 i=i+1
+#             else:
+#                 alist[k]=righthalf[j]
+#                 j=j+1
+#             k=k+1
+#
+#         while i<len(lefthalf):
+#             alist[k]=lefthalf[i]
+#             i=i+1
+#             k=k+1
+#
+#         while j<len(righthalf):
+#             alist[k]=righthalf[j]
+#             j=j+1
+#             k=k+1
+#     print("Merging ",alist)
+#
+# alist = [54,26,93,17,77,31,44,55,20]
+# mergeSort(alist)
+# print(alist)
+#
+# def merge(left_list, right_list):
+#     sorted_list = []
+#     left_list_index = right_list_index = 0
+#
+#     # Т. к. длина списков применяется часто, создадим для удобства переменные
+#     left_list_length, right_list_length = len(left_list), len(right_list)
+#
+#     for _ in range(left_list_length + right_list_length):
+#         if left_list_index < left_list_length and right_list_index < right_list_length:
+#             # Сравниваем первые элементы в начале каждого списка
+#             # Если 1-й элемент левого подсписка меньше, добавляем его
+#             # в сортированный массив
+#             if left_list[left_list_index] <= right_list[right_list_index]:
+#                 sorted_list.append(left_list[left_list_index])
+#                 left_list_index += 1
+#             # Если 1-й элемент правого подсписка меньше, добавляем его
+#             # в сортированный массив
+#             else:
+#                 sorted_list.append(right_list[right_list_index])
+#                 right_list_index += 1
+#
+#         # Когда достигнут конец левого списка, добавляем элементы правого списка
+#         # в конец результирующего списка
+#         elif left_list_index == left_list_length:
+#             sorted_list.append(right_list[right_list_index])
+#             right_list_index += 1
+#         # Когда достигнут конец правого списка, добавляем элементы левого списка
+#         # в сортированный массив
+#         elif right_list_index == right_list_length:
+#             sorted_list.append(left_list[left_list_index])
+#             left_list_index += 1
+#
+#     return sorted_list
+#
+# def merge_sort(nums):
+#     # Возвращаем список, когда он состоит из одного элемента
+#     if len(nums) <= 1:
+#         return nums
+#
+#     # Чтобы найти середину списка, применяем деление без остатка
+#     # Индексы должны быть integer
+#     mid = len(nums) // 2
+#
+#     # Сортируем и объединяем подсписки
+#     left_list = merge_sort(nums[:mid])
+#     right_list = merge_sort(nums[mid:])
+#
+#     # Объединяем сортированные списки в результирующий
+#     return merge(left_list, right_list)
+#
+# # Проверяем, что всё работает
+# random_list_of_nums = [120, 45, 68, 250, 176]
+# random_list_of_nums = merge_sort(random_list_of_nums)
+# print(random_list_of_nums)

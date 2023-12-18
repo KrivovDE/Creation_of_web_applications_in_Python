@@ -1,6 +1,3 @@
-
-from random import randint
-
 class Hero:
     # Базовый класс, который не подлежит изменению
     # У каждого наследника будут атрибуты:
@@ -50,7 +47,14 @@ class Hero:
     def take_damage(self, damage):
         # Каждый наследник будет получать урон согласно правилам своего класса
         # При этом у всех наследников есть общая логика, которая определяет жив ли объект.
-        print("\t", self.name, "Получил удар с силой равной = ", round(damage), ". Осталось здоровья - ", round(self.get_hp()))
+        print(
+            "\t",
+            self.name,
+            "Получил удар с силой равной = ",
+            round(damage),
+            ". Осталось здоровья - ",
+            round(self.get_hp()),
+        )
         # Дополнительные принты помогут вам внимательнее следить за боем и изменять стратегию, чтобы улучшить выживаемость героев
         if self.get_hp() <= 0:
             self.__is_alive = False
@@ -80,13 +84,16 @@ class Healer(Hero):
         self.magic_power = super().get_power() * 3
 
     def __str__(self):
-        return 'Я - {name} ({class_type}), уровень здоровья - {hp}, ' \
-               'уровень сил - {power}'.format(
-            name = self.name,
-            class_type = self.__class__.__name__,
-            hp = round(self.get_hp(), 2),
-            power = round(self.get_power(), 2)
+        return (
+            "Я - {name} ({class_type}), уровень здоровья - {hp}, "
+            "уровень сил - {power}".format(
+                name=self.name,
+                class_type=self.__class__.__name__,
+                hp=round(self.get_hp(), 2),
+                power=round(self.get_power(), 2),
+            )
         )
+
     def attack(self, target):
         target.take_damage(round(self.get_power() / 2, 2))
 
@@ -96,8 +103,14 @@ class Healer(Hero):
 
     def take_heal(self, heal):
         self.set_hp(self.get_hp() + heal)
-        print("\t", self.name, "Получил лечение равное = ", round(heal),
-              ". Уровень здоровья - ", round(self.get_hp()))
+        print(
+            "\t",
+            self.name,
+            "Получил лечение равное = ",
+            round(heal),
+            ". Уровень здоровья - ",
+            round(self.get_hp()),
+        )
 
     def healing(self, target):
         target.take_heal(self.magic_power)
@@ -133,16 +146,20 @@ class Tank(Hero):
         self.shield_up = False
 
     def __str__(self):
-        return 'Я - {name} ({class_type}), уровень здоровья - {hp}, ' \
-               'уровень сил - {power}, щит поднят {shield}'.format(
-            name = self.name,
-            class_type = self.__class__.__name__,
-            hp = round(self.get_hp(), 2),
-            power = round(self.get_power(), 2),
-            shield = self.shield_up
+        return (
+            "Я - {name} ({class_type}), уровень здоровья - {hp}, "
+            "уровень сил - {power}, щит поднят {shield}".format(
+                name=self.name,
+                class_type=self.__class__.__name__,
+                hp=round(self.get_hp(), 2),
+                power=round(self.get_power(), 2),
+                shield=self.shield_up,
+            )
         )
+
     def get_defense(self):
         return self.__defense
+
     def set_defense(self, new_def):
         self.__defense = new_def
 
@@ -150,38 +167,45 @@ class Tank(Hero):
         target.take_damage(round(self.get_power() / 2, 2))
 
     def take_damage(self, damage):
-        self.set_hp(self.get_hp() - round(damage/self.get_defense(), 2))
+        self.set_hp(self.get_hp() - round(damage / self.get_defense(), 2))
         super().take_damage(damage)
 
     def raise_shield(self):
         if self.shield_up == False:
             self.set_defense(self.get_defense() * 2)
-            self.set_power(round(self.get_power()/2, 2))
+            self.set_power(round(self.get_power() / 2, 2))
             self.shield_up = True
+
     def lower_shield(self):
         if self.shield_up == True:
             self.set_defense(round(self.get_defense() / 2, 2))
-            self.set_power(self.get_power()*2)
+            self.set_power(self.get_power() * 2)
             self.shield_up = False
+
     def take_heal(self, heal):
         self.set_hp(self.get_hp() + heal)
-        print("\t", self.name, "Получил лечение равное = ", round(heal),
-              ". Уровень здоровья - ", round(self.get_hp()))
+        print(
+            "\t",
+            self.name,
+            "Получил лечение равное = ",
+            round(heal),
+            ". Уровень здоровья - ",
+            round(self.get_hp()),
+        )
 
     def make_a_move(self, friends: list, enemies: list):
         enemies_hp = [enemy.get_hp() for enemy in enemies]
 
         if self.get_hp() > 100 and self.shield_up:
             self.lower_shield()
-            print('Опускаю Щит')
+            print("Опускаю Щит")
         elif self.get_hp() < 70 and not (self.shield_up):
             self.raise_shield()
-            print('Поднимаю Щит')
+            print("Поднимаю Щит")
         else:
             target = enemies[enemies_hp.index(min(enemies_hp))]
             self.attack(target)
         super().make_a_move(friends, enemies)
-
 
 
 class Attacker(Hero):
@@ -201,37 +225,58 @@ class Attacker(Hero):
     def __init__(self, name):
         super().__init__(name)
         self.__power_multiply = 1
+
     def __str__(self):
-        return 'Я - {name} ({class_type}), уровень здоровья - {hp}, ' \
-               'уровень сил - {power}'.format(
-            name = self.name,
-            class_type = self.__class__.__name__,
-            hp = round(self.get_hp(), 2),
-            power = round(self.get_power(), 2)
+        return (
+            "Я - {name} ({class_type}), уровень здоровья - {hp}, "
+            "уровень сил - {power}".format(
+                name=self.name,
+                class_type=self.__class__.__name__,
+                hp=round(self.get_hp(), 2),
+                power=round(self.get_power(), 2),
+            )
         )
+
     def get_multiply(self):
         return self.__power_multiply
+
     def set_multiply(self, new_multy):
         self.__power_multiply = new_multy
 
     def attack(self, target):
         target.take_damage(self.get_power() * self.get_multiply())
         self.power_down()
+
     def power_up(self):
         self.set_multiply(self.get_multiply() * 2)
-        print('\tКоэффициент усиления увеличен вдвое = {}'.format(
-            self.get_multiply()))
+        print(
+            "\tКоэффициент усиления увеличен вдвое = {}".format(
+                self.get_multiply(),
+            ),
+        )
+
     def power_down(self):
         self.set_multiply(round(self.get_multiply() / 2, 2))
-        print('\tКоэффициент усиления уменьшен вдвое = {}'.format(
-            self.get_multiply()))
+        print(
+            "\tКоэффициент усиления уменьшен вдвое = {}".format(
+                self.get_multiply(),
+            ),
+        )
+
     def take_damage(self, damage):
         self.set_hp(self.get_hp() - damage * (round(self.__power_multiply / 2, 2)))
         super().take_damage(damage)
+
     def take_heal(self, heal):
         self.set_hp(self.get_hp() + heal)
-        print("\t", self.name, "Получил лечение равное = ", round(heal),
-              ". Уровень здоровья - ", round(self.get_hp()))
+        print(
+            "\t",
+            self.name,
+            "Получил лечение равное = ",
+            round(heal),
+            ". Уровень здоровья - ",
+            round(self.get_hp()),
+        )
 
     def make_a_move(self, friends: list, enemies: list):
         enemies_hp = [enemy.get_hp() for enemy in enemies]

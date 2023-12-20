@@ -4,17 +4,17 @@
 skates = []
 counter = 0
 
-amount_skates = int(input('Кол-во коньков: '))
+amount_skates = int(input("Кол-во коньков: "))
 
 for i in range(amount_skates):
-    print(f'Размер {i + 1}-й пары:', end=' ')
+    print(f"Размер {i + 1}-й пары:", end=" ")
     size = int(input())
     skates.append(size)
 
-amount_feet = int(input('\nКол-во человек: '))
+amount_feet = int(input("\nКол-во человек: "))
 
 for i in range(amount_feet):
-    print(f'Размер ноги {i + 1}-го человека:', end=' ')
+    print(f"Размер ноги {i + 1}-го человека:", end=" ")
     foot_size = int(input())
     for i_skates in range(len(skates)):
         if skates[i_skates] == foot_size:
@@ -22,6 +22,6 @@ for i in range(amount_feet):
             skates.remove(foot_size)
             break
 
-print('Наибольшее кол-во людей, которые могут взять ролики:', counter)
+print("Наибольшее кол-во людей, которые могут взять ролики:", counter)
 
 # зачтено

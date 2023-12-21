@@ -124,7 +124,7 @@
 
 a = ["Москва", 15000, "Уфа", 1200, "Самара", 1090, "Казань", 1300]
 
-lst = [[a[i], int(a[i+1])]*1 for i in range(0, len(a), 2)]
+lst = [[a[i], int(a[i + 1])] * 1 for i in range(0, len(a), 2)]
 #
 # print(lst)
 
@@ -132,7 +132,7 @@ lst = [[a[i], int(a[i+1])]*1 for i in range(0, len(a), 2)]
 ls = []
 lss = []
 for i in range(len(a)):
-    #ls.append(a[i])
+    # ls.append(a[i])
     if i % 2 != 0:
         ls.append(int(a[i]))
     else:

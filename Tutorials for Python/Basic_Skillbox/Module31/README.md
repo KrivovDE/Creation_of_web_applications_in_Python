@@ -17,10 +17,10 @@
 Для макетов веб-страниц часто используется какой-нибудь текст-рыба — это условный, зачастую бессмысленный текст-заполнитель. Пусть дан следующий сгенерированный текст:
 
 ```python
-text = """ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, 
-nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
-Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate 
+text = """ Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
+nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate
 """
 ```
 Напишите программу, которая обрабатывает этот текст и выводит список слов, состоящих ровно из четырёх букв.
@@ -89,7 +89,7 @@ Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, v
 
 ## Задача 4. Телефонные номера
 ### Что нужно сделать
-В одной организации перед записью телефонного номера в базу данных его проверяют на соответствие следующим критериям: 
+В одной организации перед записью телефонного номера в базу данных его проверяют на соответствие следующим критериям:
 
 - Длина номера — ровно 10 знаков.
 - Номер начинается с цифры 8 или с цифры 9.
@@ -142,7 +142,7 @@ Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, v
 ### Что нужно сделать
 Найдите различия между двумя JSON-файлами. Если различающиеся параметры входят в diff_list, выведите различие. Иными словами, вам нужно отловить изменение определённых параметров и вывести значение: что изменилось и на что. Набор ключей в обоих файлах идентичный, различаются лишь значения.
 
-#### Напишите программу, которая: 
+#### Напишите программу, которая:
 
 1) загружает данные из двух предложенных JSON-файлов (находятся в репозитории);
 2) выполняет сравнение параметров, указанных в diff_list;
@@ -192,4 +192,3 @@ Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, v
 Чтобы выполнить практическую работу, обновите репозиторий python_basic на своём компьютере при помощи IDE PyCharm. Задачи находятся в папке Module31.
 
 Сдайте практические работы этого модуля через систему контроля версий Git сервиса Skillbox GitLab. В материалах с практической работой напишите «Сделано» и прикрепите ссылку на репозиторий. Ссылки на реплит оставлять не нужно.
-

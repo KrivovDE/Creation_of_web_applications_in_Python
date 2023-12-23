@@ -2,7 +2,6 @@
 # abs_path = os.path.abspath('my_file')
 # print(abs_path)
 # print(type(abs_path))
-import time
 
 # file = open('/Users/ШАГ/Course creating web applications with Python/Tutorials for Python/module_7_/my_file.txt')
 

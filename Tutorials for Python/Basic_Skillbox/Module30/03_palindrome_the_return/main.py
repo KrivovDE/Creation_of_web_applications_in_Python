@@ -14,7 +14,7 @@ def can_be_poly(data: str) -> bool:
     return True
 
 
-print(can_be_poly('abcba'))
-print(can_be_poly('abbbc'))
+print(can_be_poly("abcba"))
+print(can_be_poly("abbbc"))
 
 # зачтено

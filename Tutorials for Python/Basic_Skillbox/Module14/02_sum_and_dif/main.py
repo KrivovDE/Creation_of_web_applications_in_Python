@@ -1,5 +1,6 @@
 # TODO здесь писать код
 
+
 def number_summ(N):
     result_summ = 0
     while N > 0:
@@ -16,9 +17,12 @@ def number_count(N):
     return counter
 
 
-user_number = int(input('Введите число: '))
-print('Сумма чисел:', number_summ(user_number))
-print('Количество цифр в числе:', number_count(user_number))
-print('Разность суммы и количества цифр:', number_summ(user_number) - number_count(user_number))
+user_number = int(input("Введите число: "))
+print("Сумма чисел:", number_summ(user_number))
+print("Количество цифр в числе:", number_count(user_number))
+print(
+    "Разность суммы и количества цифр:",
+    number_summ(user_number) - number_count(user_number),
+)
 
 # зачтено

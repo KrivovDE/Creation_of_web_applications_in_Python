@@ -1,5 +1,6 @@
 # TODO здесь писать код
 
+
 def year_search(start_year, finish_year):
     for year in range(start_year, finish_year + 1):
         rank_4 = year // 1000
@@ -22,10 +23,10 @@ def year_search(start_year, finish_year):
             print(year)
 
 
-start_year = int(input('Введите первый год: '))
-finish_year = int(input('Введите второй год: '))
+start_year = int(input("Введите первый год: "))
+finish_year = int(input("Введите второй год: "))
 
-print(f'Годы от {start_year} до {finish_year} с тремя одинаковыми цифрами:')
+print(f"Годы от {start_year} до {finish_year} с тремя одинаковыми цифрами:")
 year_search(start_year, finish_year)
 
 # зачтено

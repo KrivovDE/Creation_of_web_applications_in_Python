@@ -9,8 +9,8 @@ def list_create(N):
 
 
 result_list = []
-number_N = int(input('Введите число N: '))
+number_N = int(input("Введите число N: "))
 
-print('Список из нечётных чисел от одного до N:', list_create(number_N))
+print("Список из нечётных чисел от одного до N:", list_create(number_N))
 
 # зачтено

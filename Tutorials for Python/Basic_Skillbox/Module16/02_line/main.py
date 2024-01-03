@@ -16,8 +16,11 @@ common_group.extend(group_2)
 for level_1 in range(len(common_group) - 1):
     for level_2 in range(level_1 + 1, len(common_group)):
         if common_group[level_2] < common_group[level_1]:
-            common_group[level_1], common_group[level_2] = common_group[level_2], common_group[level_1]
+            common_group[level_1], common_group[level_2] = (
+                common_group[level_2],
+                common_group[level_1],
+            )
 
-print('Отсортированный список учеников:', common_group)
+print("Отсортированный список учеников:", common_group)
 
 # зачтено

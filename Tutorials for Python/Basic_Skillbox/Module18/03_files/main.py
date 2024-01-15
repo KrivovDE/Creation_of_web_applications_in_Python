@@ -2,7 +2,7 @@
 
 
 def start_check(text):
-    special_sign = '@№$%^&\*()'
+    special_sign = r"@№$%^&\*()"
     for sign in special_sign:
         if text.startswith(sign):
             return True
@@ -10,13 +10,13 @@ def start_check(text):
         return False
 
 
-text = input('Название файла: ')
+text = input("Название файла: ")
 
 if start_check(text):
-    print('Ошибка: название начинается на один из специальных символов.')
-elif not (text.endswith('.txt') or text.endswith('.docx')):
-    print('Ошибка: неверное расширение файла. Ожидалось .txt или .docx.')
+    print("Ошибка: название начинается на один из специальных символов.")
+elif not (text.endswith(".txt") or text.endswith(".docx")):
+    print("Ошибка: неверное расширение файла. Ожидалось .txt или .docx.")
 else:
-    print('Файл назван верно.')
+    print("Файл назван верно.")
 
 # зачтено

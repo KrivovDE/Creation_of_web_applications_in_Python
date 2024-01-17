@@ -44,7 +44,7 @@
 N = int(input())
 
 
-def get_rec_N(N):
+def get_rec_N(N: int):
     if N > 1:
         get_rec_N(N - 1)
     print(N)

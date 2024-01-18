@@ -71,42 +71,42 @@
 # в днях между этими датами. Для решения этой задачи необходимо также написать функцию, которая определяет,
 # является ли год високосным.
 
-# date1 = list(map(int, input("Введите первую дату (более раннюю) в формате дд.мм.гг: ").split('.')))
-# date2 = list(map(int, input("Введите вторую дату (более позднюю) в формате дд.мм.гг: ").split('.')))
-# day_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-#
-#
-# # високосный или нет год
-# def leap_year(y):
-#     if y % 400 == 0:
-#         return True
-#     elif y % 4 == 0 and y % 100 != 0:
-#         return True
-#     else:
-#         return False
-#
-#
-# # считает дни прошедшие с начала года
-# def day_gone_by(d, m, y):
-#     count = d
-#     count += sum(day_in_month[:m - 1])
-#     if leap_year(y) and m > 2:
-#         count += 1
-#     return count
-#
-#
-# def count_days(dd1, mm1, yy1, dd2, mm2, yy2):
-#     dif = 0
-#     # считаем дни в целых годах между датами
-#     if yy2 - yy1 > 1:
-#         for i in range(yy1 + 1, yy2):
-#             dif += 366 if leap_year(i) else 365
-#     # считаем разницы между днями без учета полных лет между ними
-#     if yy2 - yy1 == 1:
-#         dif += 365 - day_gone_by(dd1, mm1, yy1) + day_gone_by(dd2, mm2, yy2)
-#     elif yy2 == yy1:
-#         dif += day_gone_by(dd2, mm2, yy2) - day_gone_by(dd1, mm1, yy1)
-#     return dif
-#
-#
-# print(count_days(date1[0], date1[1], date1[2], date2[0], date2[1], date2[2]))
+date1 = list(map(int, input("Введите первую дату (более раннюю) в формате дд.мм.гг: ").split('.')))
+date2 = list(map(int, input("Введите вторую дату (более позднюю) в формате дд.мм.гг: ").split('.')))
+day_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+
+# високосный или нет год
+def leap_year(y):
+    if y % 400 == 0:
+        return True
+    elif y % 4 == 0 and y % 100 != 0:
+        return True
+    else:
+        return False
+
+
+# считает дни прошедшие с начала года
+def day_gone_by(d, m, y):
+    count = d
+    count += sum(day_in_month[:m - 1])
+    if leap_year(y) and m > 2:
+        count += 1
+    return count
+
+
+def count_days(dd1, mm1, yy1, dd2, mm2, yy2):
+    dif = 0
+    # считаем дни в целых годах между датами
+    if yy2 - yy1 > 1:
+        for i in range(yy1 + 1, yy2):
+            dif += 366 if leap_year(i) else 365
+    # считаем разницы между днями без учета полных лет между ними
+    if yy2 - yy1 == 1:
+        dif += 365 - day_gone_by(dd1, mm1, yy1) + day_gone_by(dd2, mm2, yy2)
+    elif yy2 == yy1:
+        dif += day_gone_by(dd2, mm2, yy2) - day_gone_by(dd1, mm1, yy1)
+    return dif
+
+
+print(count_days(date1[0], date1[1], date1[2], date2[0], date2[1], date2[2]))

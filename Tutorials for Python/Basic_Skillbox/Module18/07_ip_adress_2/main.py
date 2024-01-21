@@ -1,5 +1,6 @@
 # TODO здесь писать код
 
+
 def num_check(ip_list):
     for num in ip_list:
         if not (num.isdigit()):
@@ -10,17 +11,17 @@ def num_check(ip_list):
         return False
 
 
-ip_address = input('Введите IP: ')
-num_list = ip_address.split('.')
+ip_address = input("Введите IP: ")
+num_list = ip_address.split(".")
 result_check = num_check(num_list)
 
 if not result_check:
-    print('IP-адрес корректен.')
-elif ip_address.count('.') < 3:
-    print('Адрес — это четыре числа, разделённые точками.')
+    print("IP-адрес корректен.")
+elif ip_address.count(".") < 3:
+    print("Адрес — это четыре числа, разделённые точками.")
 elif not (result_check.isdigit()):
-    print(result_check, '— это не целое число.')
+    print(result_check, "— это не целое число.")
 elif result_check:
-    print(f'{result_check} выходит за допустимый диапазон [0 255]')
+    print(f"{result_check} выходит за допустимый диапазон [0 255]")
 
 # зачтено

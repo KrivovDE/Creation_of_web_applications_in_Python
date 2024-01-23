@@ -3,7 +3,7 @@ data = {
     "ETH": {
         "balance": 444,
         "total_in": 444,
-        "total_out": 4
+        "total_out": 4,
     },
     "count_txs": 2,
     "tokens": [
@@ -18,11 +18,11 @@ data = {
                 "last_updated": 1519022607901,
                 "issuances_count": 0,
                 "holders_count": 137528,
-                "price": False
+                "price": False,
             },
             "balance": 5000,
             "totalIn": 0,
-            "total_out": 0
+            "total_out": 0,
         },
         {
             "sec_token_info": {
@@ -35,25 +35,27 @@ data = {
                 "last_updated": 1520452201,
                 "issuances_count": 0,
                 "holders_count": 20707,
-                "price": False
+                "price": False,
             },
             "balance": 500,
             "totalIn": 0,
-            "total_out": 0
-        }
-    ]
+            "total_out": 0,
+        },
+    ],
 }
 
 # TODO здесь писать код
 
-print('Список ключей -', data.keys())
-print('Список значений -', data.values())
+print("Список ключей -", data.keys())
+print("Список значений -", data.values())
 
-data['ETH']['total_diff'] = 100
-data['tokens'][0]['fst_token_info']["name"] = 'doge'
-total_out_summ = data['tokens'][0].pop('total_out')
-total_out_summ += data['tokens'][1].pop('total_out')
-data['ETH']['total_out'] = total_out_summ
-data['tokens'][1]['sec_token_info']['total_price'] = data['tokens'][1]['sec_token_info'].pop('price')
+data["ETH"]["total_diff"] = 100
+data["tokens"][0]["fst_token_info"]["name"] = "doge"
+total_out_summ = data["tokens"][0].pop("total_out")
+total_out_summ += data["tokens"][1].pop("total_out")
+data["ETH"]["total_out"] = total_out_summ
+data["tokens"][1]["sec_token_info"]["total_price"] = data["tokens"][1][
+    "sec_token_info"
+].pop("price")
 
 # зачтено

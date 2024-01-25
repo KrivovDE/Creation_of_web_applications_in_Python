@@ -19,16 +19,16 @@ def dict_invert(in_dict):
     return inverted_dict
 
 
-text = input('Введите текст: ')
+text = input("Введите текст: ")
 sign_dict = sign_count(text)
 inverted_dict = dict_invert(sign_dict)
 
-print('Оригинальный словарь частот:')
+print("Оригинальный словарь частот:")
 for pair in sorted(sign_dict):
-    print(pair, ':', sign_dict[pair])
+    print(pair, ":", sign_dict[pair])
 
-print('\nИнвертированный словарь частот:')
+print("\nИнвертированный словарь частот:")
 for pair in inverted_dict.keys():
-    print(pair, ':', inverted_dict[pair])
+    print(pair, ":", inverted_dict[pair])
 
 # зачтено

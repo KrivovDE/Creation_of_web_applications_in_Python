@@ -1,5 +1,6 @@
 # TODO здесь писать код
 
+
 def common_search(list_1, list_2):
     common_num = []
     for i_num in list_1:
@@ -32,12 +33,12 @@ plenty_1 = set(array_1)
 plenty_2 = set(array_2)
 plenty_3 = set(array_3)
 
-print('Задача 1:')
-print('Решение без множеств:', common_search(array_1, common_search(array_2, array_3)))
-print('Решение с множествами:', plenty_1 & (plenty_2 & plenty_3))
+print("Задача 1:")
+print("Решение без множеств:", common_search(array_1, common_search(array_2, array_3)))
+print("Решение с множествами:", plenty_1 & (plenty_2 & plenty_3))
 
-print('Задача 2:')
-print('Решение без множеств:', unique_search(array_1, array_4))
-print('Решение с множествами:', plenty_1 - plenty_2 - plenty_3)
+print("Задача 2:")
+print("Решение без множеств:", unique_search(array_1, array_4))
+print("Решение с множествами:", plenty_1 - plenty_2 - plenty_3)
 
 # зачтено

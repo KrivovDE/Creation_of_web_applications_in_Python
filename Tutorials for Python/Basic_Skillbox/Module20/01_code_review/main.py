@@ -1,22 +1,22 @@
 students = {
     1: {
-        'name': 'Bob',
-        'surname': 'Vazovski',
-        'age': 23,
-        'interests': ['biology, swimming']
+        "name": "Bob",
+        "surname": "Vazovski",
+        "age": 23,
+        "interests": ["biology, swimming"],
     },
     2: {
-        'name': 'Rob',
-        'surname': 'Stepanov',
-        'age': 24,
-        'interests': ['math', 'computer games', 'running']
+        "name": "Rob",
+        "surname": "Stepanov",
+        "age": 24,
+        "interests": ["math", "computer games", "running"],
     },
     3: {
-        'name': 'Alexander',
-        'surname': 'Krug',
-        'age': 22,
-        'interests': ['languages', 'health food']
-    }
+        "name": "Alexander",
+        "surname": "Krug",
+        "age": 22,
+        "interests": ["languages", "health food"],
+    },
 }
 
 
@@ -41,15 +41,22 @@ students = {
 
 # TODO исправить код
 
+
 def interests_surname_extract(user_dict):
-    surname_summ = ''
+    surname_summ = ""
     interests_list = []
     for id in user_dict:
-        surname_summ += user_dict[id]['surname'] if isinstance(user_dict[id].get('surname'), str) else ''
-        if user_dict[id].get('interests') != None:
-            interests_list.extend(user_dict[id]['interests'])
+        surname_summ += (
+            user_dict[id]["surname"]
+            if isinstance(user_dict[id].get("surname"), str)
+            else ""
+        )
+        if user_dict[id].get("interests") != None:
+            interests_list.extend(user_dict[id]["interests"])
         else:
-            print('Для {0} нет данных по ключу- "interests"'.format(user_dict[id]['name']))
+            print(
+                'Для {} нет данных по ключу- "interests"'.format(user_dict[id]["name"])
+            )
     else:
         interests_set = set(interests_list)
     return len(surname_summ), interests_set
@@ -57,8 +64,8 @@ def interests_surname_extract(user_dict):
 
 id_age_list = []
 for id, in_dict in students.items():
-    if in_dict.get('age') != None:
-        id_age_list.append((id, in_dict['age']))
+    if in_dict.get("age") != None:
+        id_age_list.append((id, in_dict["age"]))
     else:
         print('В списке нет ключа - "age"')
         break
@@ -66,7 +73,7 @@ for id, in_dict in students.items():
 common_surname_len, all_interests = interests_surname_extract(students)
 
 print('Список пар "ID студента — возраст":', id_age_list)
-print('Полный список интересов всех студентов:', all_interests)
-print('Общая длина всех фамилий студентов:', common_surname_len)
+print("Полный список интересов всех студентов:", all_interests)
+print("Общая длина всех фамилий студентов:", common_surname_len)
 
 # зачтено

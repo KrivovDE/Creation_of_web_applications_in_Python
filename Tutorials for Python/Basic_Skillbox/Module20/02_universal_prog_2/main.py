@@ -1,5 +1,6 @@
 # TODO здесь писать код
 
+
 def is_prime(index):
     if index == 0 or index == 1:
         return False
@@ -16,6 +17,6 @@ def crypto(data):
 
 
 print(crypto([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
-print(crypto('О Дивный Новый мир!'))
+print(crypto("О Дивный Новый мир!"))
 
 # зачтено

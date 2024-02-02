@@ -13,7 +13,9 @@ def split_by_two(input_list):
 
 
 orig_list = [random.randint(0, 100) for _ in range(10)]
-new_list = [(orig_list[i_num], orig_list[i_num + 1]) for i_num in range(0, len(orig_list), 2)]
+new_list = [
+    (orig_list[i_num], orig_list[i_num + 1]) for i_num in range(0, len(orig_list), 2)
+]
 new_list_2 = []
 
 split_by_two(orig_list)

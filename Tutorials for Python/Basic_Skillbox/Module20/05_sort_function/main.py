@@ -1,5 +1,6 @@
 # TODO здесь писать код
 
+
 def tpl_sort(in_tuple):
     sort_list = list(in_tuple)
     for i_index_1, i_value in enumerate(in_tuple):
@@ -8,7 +9,10 @@ def tpl_sort(in_tuple):
         else:
             for i_index_2 in range(i_index_1 + 1, len(in_tuple)):
                 if sort_list[i_index_1] > sort_list[i_index_2]:
-                    sort_list[i_index_1], sort_list[i_index_2] = sort_list[i_index_2], sort_list[i_index_1]
+                    sort_list[i_index_1], sort_list[i_index_2] = (
+                        sort_list[i_index_2],
+                        sort_list[i_index_1],
+                    )
     else:
         return tuple(sort_list)
 

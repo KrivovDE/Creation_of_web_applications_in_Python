@@ -1,5 +1,6 @@
 # TODO здесь писать код
 
+
 def search_value(orig_dict, key, deep=None):
     deep = deep_control(deep)
     if deep is None or deep:
@@ -31,43 +32,42 @@ def deep_control(depth):
 
 
 site = {
-    'html': {
-        'head': {
-            'title': 'Мой сайт'
+    "html": {
+        "head": {
+            "title": "Мой сайт",
         },
-        'body': {
-            'h2': 'Здесь будет мой заголовок',
-            'div': 'Тут, наверное, какой-то блок',
-            'p': 'А вот здесь новый абзац'
-        }
-    }
+        "body": {
+            "h2": "Здесь будет мой заголовок",
+            "div": "Тут, наверное, какой-то блок",
+            "p": "А вот здесь новый абзац",
+        },
+    },
 }
 
-searched_key = input('Введите искомый ключ: ')
+searched_key = input("Введите искомый ключ: ")
 search_depth = None
 
 while True:
-    set_deep = input('Хотите ввести максимальную глубину? Y/N: ').upper()
-    if set_deep == 'Y':
-        search_depth = int(input('Введите максимальную глубину: '))
+    set_deep = input("Хотите ввести максимальную глубину? Y/N: ").upper()
+    if set_deep == "Y":
+        search_depth = int(input("Введите максимальную глубину: "))
         result = search_value(site, searched_key, search_depth + 1)
         break
-    elif set_deep == 'N':
+    elif set_deep == "N":
         result = search_value(site, searched_key)
         break
     else:
-        print('Введён не верный параметр, повторите ввод.')
+        print("Введён не верный параметр, повторите ввод.")
 
 if result:
     print(result)
 else:
-    print('Значение для указанного ключа не найдено.')
+    print("Значение для указанного ключа не найдено.")
 
 # зачтено
 
 
 def search_value2(orig_dict, key):
-
 
     if key in orig_dict:
         return orig_dict[key]

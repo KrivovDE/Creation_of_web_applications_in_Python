@@ -8,6 +8,6 @@ def chain_of_num(max_num):
     return max_num
 
 
-print(chain_of_num(int(input('Введите num: '))))
+print(chain_of_num(int(input("Введите num: "))))
 
 # зачтено

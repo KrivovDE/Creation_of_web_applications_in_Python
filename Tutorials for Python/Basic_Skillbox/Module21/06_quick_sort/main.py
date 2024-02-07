@@ -1,7 +1,8 @@
 # TODO здесь писать код
 
+
 def khoar_sort(data_list):
-    base_num = data_list[-1]
+    data_list[-1]
     less, equal, bigger = less_equal_more(data_list)
     if len(less) != 0:
         result_3 = khoar_sort(less)

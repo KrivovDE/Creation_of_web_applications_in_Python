@@ -1,7 +1,7 @@
 # TODO здесь писать код
 
-in_data = open('numbers.txt', 'r')
-out_data = open('answer.txt', 'w')
+in_data = open("numbers.txt")
+out_data = open("answer.txt", "w")
 result = 0
 
 for i_str in in_data:

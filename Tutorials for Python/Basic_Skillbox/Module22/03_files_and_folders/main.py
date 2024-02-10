@@ -2,6 +2,7 @@
 
 import os
 
+
 def dir_size(dir_path):
     size, sub_dir, sub_file = 0, 0, 0
     for i_elem in os.listdir(dir_path):
@@ -16,12 +17,15 @@ def dir_size(dir_path):
     else:
         return size, sub_dir, sub_file
 
+
 # user_path = input('Введите путь относительно \PycharmProjects: ')
 # user_path = 'Python_Basic\Module14'
-user_path = 'Python_Basic'
+user_path = "Python_Basic"
 
-size, sub_dir, sub_file = dir_size(os.path.abspath(os.path.join('..', '..', '..', user_path)))
+size, sub_dir, sub_file = dir_size(
+    os.path.abspath(os.path.join("..", "..", "..", user_path))
+)
 
-print('Размер каталога (в Кб):', size)
-print('Количество подкаталогов:', sub_dir)
-print('Количество файлов:', sub_file)
+print("Размер каталога (в Кб):", size)
+print("Количество подкаталогов:", sub_dir)
+print("Количество файлов:", sub_file)

@@ -10,18 +10,18 @@ def error_chance():
 
 common_num, new_num = 0, 0
 
-with open('out_file.txt', 'w', encoding='utf-8') as out_file:
+with open("out_file.txt", "w", encoding="utf-8") as out_file:
     try:
         while common_num < 777:
-            new_num = int(input('Введите число: '))
+            new_num = int(input("Введите число: "))
             common_num += new_num
             if error_chance():
                 raise TypeError
             else:
-                out_file.write('{}\n'.format(new_num))
+                out_file.write(f"{new_num}\n")
         else:
-            print('Вы успешно выполнили условие для выхода из порочного цикла!')
+            print("Вы успешно выполнили условие для выхода из порочного цикла!")
     except TypeError:
-        print('Вас постигла неудача!')
+        print("Вас постигла неудача!")
 
 # зачтено

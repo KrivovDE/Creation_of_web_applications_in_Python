@@ -1,5 +1,6 @@
 # TODO здесь писать код
 
+
 class Water:
     def __add__(self, other):
         if isinstance(other, Air):
@@ -9,9 +10,10 @@ class Water:
         elif isinstance(other, Ground):
             return Dirt()
         else:
-            raise ValueError('Сочетание невозможно.')
-class Air:
+            raise ValueError("Сочетание невозможно.")
 
+
+class Air:
     def __add__(self, other):
         if isinstance(other, Water):
             return Storm()
@@ -20,7 +22,9 @@ class Air:
         elif isinstance(other, Ground):
             return Dust()
         else:
-            raise ValueError('Сочетание невозможно.')
+            raise ValueError("Сочетание невозможно.")
+
+
 class Fire:
     def __add__(self, other):
         if isinstance(other, Air):
@@ -30,7 +34,9 @@ class Fire:
         elif isinstance(other, Ground):
             return Lava()
         else:
-            raise ValueError('Сочетание невозможно.')
+            raise ValueError("Сочетание невозможно.")
+
+
 class Ground:
     def __add__(self, other):
         if isinstance(other, Air):
@@ -40,20 +46,32 @@ class Ground:
         elif isinstance(other, Water):
             return Dirt()
         else:
-            raise ValueError('Сочетание невозможно.')
-  
+            raise ValueError("Сочетание невозможно.")
+
+
 class Storm:
     pass
+
+
 class Steam:
     pass
+
+
 class Dirt:
     pass
+
+
 class Lightning:
     pass
+
+
 class Dust:
     pass
+
+
 class Lava:
     pass
+
 
 print(type(Air() + Water()))
 print(type(Ground() + Fire()))

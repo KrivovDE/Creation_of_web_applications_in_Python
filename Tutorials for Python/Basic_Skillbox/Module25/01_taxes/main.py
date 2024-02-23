@@ -1,5 +1,6 @@
 # TODO здесь писать код
 
+
 class Property:
     """
     Базовый класс, описывающий имущество
@@ -101,8 +102,9 @@ class CountryHouse(Property):
         return round(self.get_worth() / 500, 2)
 
 
-request = input('Введите текущий Баланс и '
-                'стоимости квартиры, машины, дачи через пробел: ').split(' ')
+request = input(
+    "Введите текущий Баланс и " "стоимости квартиры, машины, дачи через пробел: ",
+).split(" ")
 
 if len(request) == 4 and all([parm.isdigit() for parm in request]):
     balance = float(request[0])
@@ -110,17 +112,21 @@ if len(request) == 4 and all([parm.isdigit() for parm in request]):
     car_tax = Car(float(request[2])).tax()
     country_house_tax = CountryHouse(float(request[3])).tax()
     common_tax = apartment_tax + car_tax + country_house_tax
-    print('Налог на квартиру - {}\n'
-          'Налог на машину - {}\n'
-          'Налог на дачу - {}\n'.format(
-        apartment_tax, car_tax, country_house_tax
-    ))
+    print(
+        "Налог на квартиру - {}\n"
+        "Налог на машину - {}\n"
+        "Налог на дачу - {}\n".format(
+            apartment_tax,
+            car_tax,
+            country_house_tax,
+        ),
+    )
     credit = balance - common_tax
     if credit < 0.01:
-        print('Налогов слишком много, нехватает -', credit * -1)
+        print("Налогов слишком много, нехватает -", credit * -1)
     else:
-        print('Денег достаточно, налоги заплачены.')
+        print("Денег достаточно, налоги заплачены.")
 else:
-    print('Введённые параметры некорректны.')
+    print("Введённые параметры некорректны.")
 
 # зачтено

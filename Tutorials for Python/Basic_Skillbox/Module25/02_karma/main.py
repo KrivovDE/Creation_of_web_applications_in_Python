@@ -4,28 +4,23 @@ from random import randint
 
 
 class KillError(Exception):
-    """ Класс нового исключения. Родитель: Exception """
-    pass
+    """Класс нового исключения. Родитель: Exception"""
 
 
 class DrunkError(Exception):
-    """ Класс нового исключения. Родитель: Exception """
-    pass
+    """Класс нового исключения. Родитель: Exception"""
 
 
 class CarCrashError(Exception):
-    """ Класс нового исключения. Родитель: Exception """
-    pass
+    """Класс нового исключения. Родитель: Exception"""
 
 
 class GluttonyError(Exception):
-    """ Класс нового исключения. Родитель: Exception """
-    pass
+    """Класс нового исключения. Родитель: Exception"""
 
 
 class DepressionError(Exception):
-    """ Класс нового исключения. Родитель: Exception """
-    pass
+    """Класс нового исключения. Родитель: Exception"""
 
 
 class SimLive:
@@ -47,7 +42,7 @@ class SimLive:
         2: DrunkError(),
         3: CarCrashError(),
         4: GluttonyError(),
-        5: DepressionError()
+        5: DepressionError(),
     }
 
     def __init__(self, karma: int = 0):
@@ -78,27 +73,27 @@ class SimLive:
         """
         Выводит на экран текущий уровень кармы.
         """
-        print('Текущий уровень кармы {}'.format(self.__karma))
+        print(f"Текущий уровень кармы {self.__karma}")
 
 
 sim_1 = SimLive()
 
-with open('karma.log', 'w', encoding='utf-8') as log_file:
+with open("karma.log", "w", encoding="utf-8") as log_file:
     while sim_1.enlightenment_check():
         try:
             sim_1.one_day()
         except KillError:
-            log_file.write('KillError\n')
+            log_file.write("KillError\n")
         except DrunkError:
-            log_file.write('DrunkError\n')
+            log_file.write("DrunkError\n")
         except CarCrashError:
-            log_file.write('CarCrashError\n')
+            log_file.write("CarCrashError\n")
         except GluttonyError:
-            log_file.write('GluttonyError\n')
+            log_file.write("GluttonyError\n")
         except DepressionError:
-            log_file.write('DepressionError\n')
+            log_file.write("DepressionError\n")
     else:
         sim_1.show_karma()
-        print('Вы достигли просветления!')
+        print("Вы достигли просветления!")
 
 # зачтено

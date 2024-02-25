@@ -11,7 +11,7 @@ class Steck:
         self.__steck = [data]
 
     def __str__(self):
-        return '; '.join(self.__steck)
+        return "; ".join(self.__steck)
 
     def add(self, data: str):
         """
@@ -52,9 +52,9 @@ class TaskManager:
     __task = {}
 
     def __str__(self):
-        result = ''
+        result = ""
         for i_key in sorted(self.__task.keys()):
-            result += f'{i_key}) {self.__task[i_key]}\n'
+            result += f"{i_key}) {self.__task[i_key]}\n"
         else:
             return result
 

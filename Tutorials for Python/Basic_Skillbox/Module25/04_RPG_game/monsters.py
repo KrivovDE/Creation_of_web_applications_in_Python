@@ -30,7 +30,14 @@ class Monster:
         return self.__is_alive
 
     def take_damage(self, damage):
-        print("\t", self.name, "Получил удар с силой равной = ", round(damage), ". Осталось здоровья - ", round(self.get_hp()))
+        print(
+            "\t",
+            self.name,
+            "Получил удар с силой равной = ",
+            round(damage),
+            ". Осталось здоровья - ",
+            round(self.get_hp()),
+        )
         if self.get_hp() <= 0:
             self.__is_alive = False
 
@@ -38,11 +45,10 @@ class Monster:
         pass
 
     def __str__(self):
-        return 'Name: {0} | HP: {1}'.format(self.name, self.get_hp())
+        return f"Name: {self.name} | HP: {self.get_hp()}"
 
 
 class MonsterBerserk(Monster):
-
     def __init__(self, name):
         super().__init__(name)
         self.madness = 1
@@ -58,7 +64,7 @@ class MonsterBerserk(Monster):
         super().take_damage(power)
 
     def make_a_move(self, friends, enemies):
-        print(self.name, end=' ')
+        print(self.name, end=" ")
         self.madness = min(self.madness, 4)
         if not enemies:
             return
@@ -67,14 +73,18 @@ class MonsterBerserk(Monster):
             self.attack(enemies[0])
         else:
             target = random.choice(enemies)
-            print("BERSERK MODE!!! Уровень безумия - " + str(self.madness) + " Случайно атакую -", target.name)
+            print(
+                "BERSERK MODE!!! Уровень безумия - "
+                + str(self.madness)
+                + " Случайно атакую -",
+                target.name,
+            )
             print()
             self.attack(target)
-        print('\n')
+        print("\n")
 
 
 class MonsterHunter(Monster):
-
     def __init__(self, name):
         super().__init__(name)
         self.potions = 10
@@ -93,7 +103,7 @@ class MonsterHunter(Monster):
         target.set_hp(target.get_hp() + self.get_power())
 
     def make_a_move(self, friends, enemies):
-        print(self.name, end=' ')
+        print(self.name, end=" ")
         target_of_potion = friends[0]
         min_health = target_of_potion.get_hp()
         for friend in friends:
@@ -109,4 +119,4 @@ class MonsterHunter(Monster):
                 return
             print("Атакую ближнего -", enemies[0].name)
             self.attack(enemies[0])
-        print('\n')
+        print("\n")

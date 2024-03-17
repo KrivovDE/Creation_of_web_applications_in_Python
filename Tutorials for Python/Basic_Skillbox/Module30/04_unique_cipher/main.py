@@ -4,7 +4,11 @@ from collections import Counter
 
 
 def count_unique_characters(mess: str) -> int:
-    return len(list(filter(lambda y: y[1] == 1, map(lambda x: x, Counter(mess.lower()).items()))))
+    return len(
+        list(
+            filter(lambda y: y[1] == 1, map(lambda x: x, Counter(mess.lower()).items()))
+        )
+    )
 
 
 # Пример использования:

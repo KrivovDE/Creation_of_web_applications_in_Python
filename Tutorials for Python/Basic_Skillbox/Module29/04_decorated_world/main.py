@@ -18,13 +18,13 @@ def decorator_with_args_for_any_decorator(basic_dec: Callable) -> Callable:
 def decorated_decorator(func: Callable, *dec_args, **dec_kwargs):
     @wraps(func)
     def wrapper(*args, **kwargs) -> Callable:
-        print('Переданные Args и Kwargs:', dec_args, dec_kwargs)
+        print("Переданные Args и Kwargs:", dec_args, dec_kwargs)
         return func(*args, **kwargs)
 
     return wrapper
 
 
-@decorated_decorator(100, 'рублей', 200, 'друзей')
+@decorated_decorator(100, "рублей", 200, "друзей")
 def decorated_function(text: str, num: int) -> None:
     print("Привет", text, num)
 

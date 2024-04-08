@@ -30,15 +30,19 @@ def timer(cls, func, date_format):
         format = date_format
         for sign in format:
             if sign.isalpha():
-                format = format.replace(sign, '%' + sign)
+                format = format.replace(sign, "%" + sign)
 
-        print(f"Запускается '{cls.__name__}.{func.__name__}'. "
-              f"Дата и время запуска: {datetime.now().strftime(format)}")
+        print(
+            f"Запускается '{cls.__name__}.{func.__name__}'. "
+            f"Дата и время запуска: {datetime.now().strftime(format)}",
+        )
         start = time.time()
         result = func(*args, **kwargs)
         end = time.time()
-        print(f"Завершение '{cls.__name__}.{func.__name__}', "
-              f"время работы = {round(end - start, 3)} сек.")
+        print(
+            f"Завершение '{cls.__name__}.{func.__name__}', "
+            f"время работы = {round(end - start, 3)} сек.",
+        )
         return result
 
     return wrapped
@@ -47,7 +51,7 @@ def timer(cls, func, date_format):
 def log_methods(date_format):
     def decorate(cls):
         for method in dir(cls):
-            if not method.startswith('__'):
+            if not method.startswith("__"):
                 current_method = getattr(cls, method)
                 decorated_method = timer(cls, current_method, date_format)
                 setattr(cls, method, decorated_method)
@@ -59,11 +63,11 @@ def log_methods(date_format):
 @log_methods("b d Y - H:M:S")
 class A:
     def test_sum_1(self) -> int:
-        print('test sum 1')
+        print("test sum 1")
         number = 100
         result = 0
         for _ in range(number + 1):
-            result += sum([i_num ** 2 for i_num in range(10000)])
+            result += sum([i_num**2 for i_num in range(10000)])
         return result
 
 
@@ -78,7 +82,7 @@ class B(A):
         number = 200
         result = 0
         for _ in range(number + 1):
-            result += sum([i_num ** 2 for i_num in range(10000)])
+            result += sum([i_num**2 for i_num in range(10000)])
         return result
 
 

@@ -1,6 +1,6 @@
 ## Задача 2. Криптовалюта
 ### Что нужно сделать
-При работе с API (application programming interface) 
+При работе с API (application programming interface)
 сайта биржи по криптовалюте вы получили вот такие данные в виде словаря:
 
 ```python

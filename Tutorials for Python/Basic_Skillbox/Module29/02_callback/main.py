@@ -7,7 +7,7 @@ app = dict()
 
 
 def CallBack(route: str) -> Callable:
-    """ Декоратор функции обратного вызова """
+    """Декоратор функции обратного вызова"""
 
     def out_wrapper(func: Callable) -> Callable:
         app[route] = func
@@ -21,17 +21,17 @@ def CallBack(route: str) -> Callable:
     return out_wrapper
 
 
-@CallBack('//')
+@CallBack("//")
 def example():
-    print('Пример функции, которая возвращает ответ сервера')
-    return 'OK'
+    print("Пример функции, которая возвращает ответ сервера")
+    return "OK"
 
 
-route = app.get('//')
+route = app.get("//")
 if route:
     response = route()
-    print('Ответ:', response)
+    print("Ответ:", response)
 else:
-    print('Такого пути нет')
+    print("Такого пути нет")
 
 # зачтено

@@ -14,7 +14,7 @@ def delay(func: Callable) -> Callable:
 
     @wraps(func)
     def wrapped_func(*args, **kwargs):
-        print('ща ща ща')
+        print("ща ща ща")
         sleep(5)
         return func(*args, **kwargs)
 
@@ -23,9 +23,9 @@ def delay(func: Callable) -> Callable:
 
 @delay
 def say_hi(name: str):
-    print('Привет {name}!'.format(name=name))
+    print(f"Привет {name}!")
 
 
-say_hi('Иван')
+say_hi("Иван")
 
 # зачтено

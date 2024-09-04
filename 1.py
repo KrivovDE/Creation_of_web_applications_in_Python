@@ -1,10 +1,3 @@
-import time
-import timeit
-from copy import deepcopy, copy
-from timeit import Timer
-from functools import partial
-
-
 # def decor_times(fuu):
 #     def wrap(*args, **kwargs):
 #         start = time.time()

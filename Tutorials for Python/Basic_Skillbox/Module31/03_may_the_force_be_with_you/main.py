@@ -34,7 +34,7 @@ result_dict["pilots"] = {
         json.loads(requests.get(i_pilots).text)["height"],
         json.loads(requests.get(i_pilots).text)["mass"],
         json.loads(
-            requests.get(json.loads(requests.get(i_pilots).text)["homeworld"]).text
+            requests.get(json.loads(requests.get(i_pilots).text)["homeworld"]).text,
         )["name"],
         json.loads(requests.get(i_pilots).text)["homeworld"],
     ]

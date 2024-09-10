@@ -97,7 +97,7 @@ class Game:
                         for x in range(
                             len(self.board_list[y]),
                         )
-                    ]
+                    ],
                 )
                 for y in range(len(self.board_list))
             ]
@@ -107,10 +107,10 @@ class Game:
                         [
                             self.board_list[x][y].busy
                             for x in range(len(self.board_list[y]))
-                        ]
+                        ],
                     )
                     for y in range(len(self.board_list))
-                ]
+                ],
             )
             combination.extend(
                 [
@@ -119,16 +119,16 @@ class Game:
                             self.board_list[0][0].busy,
                             self.board_list[1][1].busy,
                             self.board_list[2][2].busy,
-                        ]
+                        ],
                     ),
                     "".join(
                         [
                             self.board_list[2][0].busy,
                             self.board_list[1][1].busy,
                             self.board_list[0][2].busy,
-                        ]
+                        ],
                     ),
-                ]
+                ],
             )
 
             for i_comb in combination:

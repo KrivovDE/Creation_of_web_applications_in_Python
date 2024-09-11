@@ -14,7 +14,9 @@ def age_check(age: int) -> bool:
 
 
 with open("registrations.txt", encoding="utf-8") as reg_file, open(
-    "registrations_bad.log", "w", encoding="utf-8"
+    "registrations_bad.log",
+    "w",
+    encoding="utf-8",
 ) as bad_file, open("registrations_good.log", "w", encoding="utf-8") as good_file:
     for i_info in reg_file:
         i_info = i_info[:-1] if i_info.endswith("\n") else i_info

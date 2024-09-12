@@ -5,7 +5,9 @@ common_long = 0
 line = 0
 
 with open("people.txt", encoding="utf8") as people_file, open(
-    "errors.log", "w", encoding="utf8"
+    "errors.log",
+    "w",
+    encoding="utf8",
 ) as error_file:
     for man in people_file:
         line += 1

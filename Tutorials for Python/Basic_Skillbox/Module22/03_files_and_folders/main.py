@@ -23,7 +23,7 @@ def dir_size(dir_path):
 user_path = "Python_Basic"
 
 size, sub_dir, sub_file = dir_size(
-    os.path.abspath(os.path.join("..", "..", "..", user_path))
+    os.path.abspath(os.path.join("..", "..", "..", user_path)),
 )
 
 print("Размер каталога (в Кб):", size)

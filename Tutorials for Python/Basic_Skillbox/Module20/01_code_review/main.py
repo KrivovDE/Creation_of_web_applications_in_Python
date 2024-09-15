@@ -55,7 +55,7 @@ def interests_surname_extract(user_dict):
             interests_list.extend(user_dict[id]["interests"])
         else:
             print(
-                'Для {} нет данных по ключу- "interests"'.format(user_dict[id]["name"])
+                'Для {} нет данных по ключу- "interests"'.format(user_dict[id]["name"]),
             )
     else:
         interests_set = set(interests_list)

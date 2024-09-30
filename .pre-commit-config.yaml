@@ -48,5 +48,4 @@ ci:
   autoupdate_schedule: weekly
   skip: []
   submodules: false
-
 #pre-commit run -a

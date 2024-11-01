@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 //1. Запросите у пользователя его имя и выведите в ответ:
 //«Привет, его имя!».
 
@@ -79,6 +79,6 @@
 //четное число или нет. В задании используйте логические
 //операторы. В задании не надо использовать if или switch.
 
-var x = +prompt('Enter whole number');
+var x = +prompt("Enter whole number");
 x = x % 2 == 0;
-alert(x + '  *: true - chetnoe, false - nechetnoe');
+alert(x + "  *: true - chetnoe, false - nechetnoe");

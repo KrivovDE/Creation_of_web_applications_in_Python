@@ -1,225 +1,263 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <style>
-    *{
-    box-sizing: border-box;
-    }
-    #wait, #valid, #invalid{
-    height: 30px;
-    margin: 8px -2px 38px 0;
-    font-size: 11px;
-    padding-left: 18px;
-    border-radius: 4px;
-    border: 1px solid #808080;
-    background-repeat: no-repeat;
-    background-position: 95% 50%;
-    }
-    #valid{
-    border: 1px solid #3fae47;
-    background-image: url("/Korotky_DZ_ HTML_Mod_8_Forms/img/valid.png/");
-    background-size: 15px 15px;
-    color: #3fae47;
-    }
-    input#valid::-webkit-input-placeholder{
-    color: #3fae47;
-    }
-    #invalid{
-    border: 1px solid #e53e61;
-    background-image: url("/Korotky_DZ_ HTML_Mod_8_Forms/img/invalid.png/");
-    background-size: 15px 20px;
-    color: #e53e61;
-    }
-    input#invalid::-webkit-input-placeholder{
-    color: #e53e61;
-    }
-    #subscribe_1, #subscribe_2{
-    display: none;
-    }
-    .checkbox{
-    display: inline-flex;
-    position: relative;
-    height: 18px;
-    width: 110px;
-    margin: 8px 2px 38px 0;
-    }
-    .slider_1, .slider_2{
-    position: absolute;
-    border: 1px solid #3fae47;
-    border-radius: 4px;
-    top: 0;
-    left: 0;
-    right: 67%;
-    bottom: 0;
-    background: FFFFF;
-    }
-    .slider_2{
-    border: 1px solid #e53e61;
-    }
-    .slider_1::before, .slider_2::before{
-    content: "";
-    background: #3fae47;
-    border-radius: 4px;
-    position: absolute;
-    top: 5%;
-    left: 2%;
-    right: 45%;
-    bottom: 5%;
-    }
-    .slider_2::before{
-    background: #e53e61;
-    }
-    #subscribe_1:checked + .slider_1::before, #subscribe_2:checked + .slider_2::before{
-    transform: translateX(80%);
-    }
-    #sub_1, #sub_2{
-    margin-left: 38px;
-    }
-    .radio{
-    position: relative;
-    display: inline-block;
-    height: 25px;
-    width: 25px;
-    margin: 6px 38px 38px 0;
-    padding-top: 2px;
-    border-radius: 50%;
-    }
-    #radio_1, #radio_2{
-    display: none;
-    }
-    #radio_button_1, #radio_button_2{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #FFFFFF;
-    border: 1px solid #3fae47;
-    border-radius: 50%;
-    }
-    #radio_button_1{
-    }
-    #radio_button_1::before, #radio_button_2::before{
-    content: "";
-    position: absolute;
-    top: 10%;
-    bottom: 10%;
-    left: 10%;
-    right: 10%;
-    background: #3fae47;
-    border-radius: 50%;
-    z-index: -1;
-    }
-    #radio_1:checked + #radio_button_1::before, #radio_2:checked + #radio_button_2::before{
-    z-index: auto;
-    }
-    #male, #female{
-    padding-left: 30px;
-    }
-    #button_1, #button_2, #button_3, #button_4, #button_5, #button_6, #button_7{
-    height: 35px;
-    padding: 0 20px 0 20px;
-    border: 0px;
-    border-radius: 4px;
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: 600;
-    margin: 8px 6px 30px 0;
-    }
-    #button_1{
-    background: #3fae47;
-    margin-left: 0
-    }
-    #button_2{
-    background: #28782d;
-    }
-    #button_3{
-    background: #e53e61;
-    }
-    #button_4{
-    background: #98243d;
-    }
-    #button_5{
-    background: #818181;
-    }
-    #button_6{
-    background: #3fae47;
-    border-radius: 50%;
-    width: 35px;
-    padding: 0;
-    }
-    #button_7{
-    background: #e53e61;
-    border-radius: 50%;
-    width: 35px;
-    padding: 0;
-    }
-    #textarea{
-    height: 100px;
-    width: 400px;
-    padding: 10px 0 0 20px;
-    border: 1px solid #808080;
-    border-radius: 4px;
-    }
-  </style>
-</head>
-<body>
-  <form>
-    <div>
-      <label>
-        <span><b>Inputs</b></span><br>
-        <input type="text" id="wait" name="wait_text" placeholder="Enter some text">
-        <input type="text" id="valid" name="valid_text" placeholder="valid text">
-        <input type="text" id="invalid" name="invalid_text" placeholder="invalid text"><br>
-      </label>
-    </div>
-    <div>
-      <span id="check"><b>Check Boxes</b></span><br>
-      <label class="checkbox">
-        <input type="checkbox" id="subscribe_1" name="subscribe_1">
-        <span class="slider_1"></span>
-        <span id="sub_1">Subscribe</span>
-      </label>
-      <label class="checkbox">
-        <input type="checkbox" id="subscribe_2" name="subscribe_2">
-        <span class="slider_2"></span>
-        <span id="sub_2">Subscribe</span>
-      </label><br>
-    </div>
-    <div>
-      <span><b>Radio buttons</b></span><br>
-      <span>Gender:</span>
-      <label class="radio">
-        <input type="radio" id="radio_1" name="radio">
-        <span id="radio_button_1"></span>
-        <span id="male">Male</span>
-      </label>
-      <label class="radio">
-        <input type="radio" id="radio_2" name="radio">
-        <span id="radio_button_2"></span>
-        <span id="female">Female</span>
-      </label>
-    </div>
-    <div>
-      <span><b>Buttons</b></span><br>
-      <label>
-        <input type="button" id="button_1" name="button_1" value="Active">
-        <input type="button" id="button_2" name="button_2" value="Hover">
-        <input type="button" id="button_3" name="button_3" value="Danger">
-        <input type="button" id="button_4" name="button_4" value="Hover">
-        <input type="button" id="button_5" name="button_5" value="Disabled">
-        <input type="button" id="button_6" name="button_6" value="+">
-        <input type="button" id="button_7" name="button_7" value="-">
-      </label>
-    </div>
-    <div>
-      <span><b>Text area</b></span><br>
-      <label>
-        <textarea id="textarea" placeholder="Enter some text"></textarea>
-      </label>
-    </div>
-  </form>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      #wait,
+      #valid,
+      #invalid {
+        height: 30px;
+        margin: 8px -2px 38px 0;
+        font-size: 11px;
+        padding-left: 18px;
+        border-radius: 4px;
+        border: 1px solid #808080;
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+      }
+      #valid {
+        border: 1px solid #3fae47;
+        background-image: url("/Korotky_DZ_ HTML_Mod_8_Forms/img/valid.png/");
+        background-size: 15px 15px;
+        color: #3fae47;
+      }
+      input#valid::-webkit-input-placeholder {
+        color: #3fae47;
+      }
+      #invalid {
+        border: 1px solid #e53e61;
+        background-image: url("/Korotky_DZ_ HTML_Mod_8_Forms/img/invalid.png/");
+        background-size: 15px 20px;
+        color: #e53e61;
+      }
+      input#invalid::-webkit-input-placeholder {
+        color: #e53e61;
+      }
+      #subscribe_1,
+      #subscribe_2 {
+        display: none;
+      }
+      .checkbox {
+        display: inline-flex;
+        position: relative;
+        height: 18px;
+        width: 110px;
+        margin: 8px 2px 38px 0;
+      }
+      .slider_1,
+      .slider_2 {
+        position: absolute;
+        border: 1px solid #3fae47;
+        border-radius: 4px;
+        top: 0;
+        left: 0;
+        right: 67%;
+        bottom: 0;
+        background: FFFFF;
+      }
+      .slider_2 {
+        border: 1px solid #e53e61;
+      }
+      .slider_1::before,
+      .slider_2::before {
+        content: "";
+        background: #3fae47;
+        border-radius: 4px;
+        position: absolute;
+        top: 5%;
+        left: 2%;
+        right: 45%;
+        bottom: 5%;
+      }
+      .slider_2::before {
+        background: #e53e61;
+      }
+      #subscribe_1:checked + .slider_1::before,
+      #subscribe_2:checked + .slider_2::before {
+        transform: translateX(80%);
+      }
+      #sub_1,
+      #sub_2 {
+        margin-left: 38px;
+      }
+      .radio {
+        position: relative;
+        display: inline-block;
+        height: 25px;
+        width: 25px;
+        margin: 6px 38px 38px 0;
+        padding-top: 2px;
+        border-radius: 50%;
+      }
+      #radio_1,
+      #radio_2 {
+        display: none;
+      }
+      #radio_button_1,
+      #radio_button_2 {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        border: 1px solid #3fae47;
+        border-radius: 50%;
+      }
+      #radio_button_1 {
+      }
+      #radio_button_1::before,
+      #radio_button_2::before {
+        content: "";
+        position: absolute;
+        top: 10%;
+        bottom: 10%;
+        left: 10%;
+        right: 10%;
+        background: #3fae47;
+        border-radius: 50%;
+        z-index: -1;
+      }
+      #radio_1:checked + #radio_button_1::before,
+      #radio_2:checked + #radio_button_2::before {
+        z-index: auto;
+      }
+      #male,
+      #female {
+        padding-left: 30px;
+      }
+      #button_1,
+      #button_2,
+      #button_3,
+      #button_4,
+      #button_5,
+      #button_6,
+      #button_7 {
+        height: 35px;
+        padding: 0 20px 0 20px;
+        border: 0px;
+        border-radius: 4px;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 600;
+        margin: 8px 6px 30px 0;
+      }
+      #button_1 {
+        background: #3fae47;
+        margin-left: 0;
+      }
+      #button_2 {
+        background: #28782d;
+      }
+      #button_3 {
+        background: #e53e61;
+      }
+      #button_4 {
+        background: #98243d;
+      }
+      #button_5 {
+        background: #818181;
+      }
+      #button_6 {
+        background: #3fae47;
+        border-radius: 50%;
+        width: 35px;
+        padding: 0;
+      }
+      #button_7 {
+        background: #e53e61;
+        border-radius: 50%;
+        width: 35px;
+        padding: 0;
+      }
+      #textarea {
+        height: 100px;
+        width: 400px;
+        padding: 10px 0 0 20px;
+        border: 1px solid #808080;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label>
+          <span><b>Inputs</b></span
+          ><br />
+          <input
+            type="text"
+            id="wait"
+            name="wait_text"
+            placeholder="Enter some text"
+          />
+          <input
+            type="text"
+            id="valid"
+            name="valid_text"
+            placeholder="valid text"
+          />
+          <input
+            type="text"
+            id="invalid"
+            name="invalid_text"
+            placeholder="invalid text"
+          /><br />
+        </label>
+      </div>
+      <div>
+        <span id="check"><b>Check Boxes</b></span
+        ><br />
+        <label class="checkbox">
+          <input type="checkbox" id="subscribe_1" name="subscribe_1" />
+          <span class="slider_1"></span>
+          <span id="sub_1">Subscribe</span>
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" id="subscribe_2" name="subscribe_2" />
+          <span class="slider_2"></span>
+          <span id="sub_2">Subscribe</span> </label
+        ><br />
+      </div>
+      <div>
+        <span><b>Radio buttons</b></span
+        ><br />
+        <span>Gender:</span>
+        <label class="radio">
+          <input type="radio" id="radio_1" name="radio" />
+          <span id="radio_button_1"></span>
+          <span id="male">Male</span>
+        </label>
+        <label class="radio">
+          <input type="radio" id="radio_2" name="radio" />
+          <span id="radio_button_2"></span>
+          <span id="female">Female</span>
+        </label>
+      </div>
+      <div>
+        <span><b>Buttons</b></span
+        ><br />
+        <label>
+          <input type="button" id="button_1" name="button_1" value="Active" />
+          <input type="button" id="button_2" name="button_2" value="Hover" />
+          <input type="button" id="button_3" name="button_3" value="Danger" />
+          <input type="button" id="button_4" name="button_4" value="Hover" />
+          <input type="button" id="button_5" name="button_5" value="Disabled" />
+          <input type="button" id="button_6" name="button_6" value="+" />
+          <input type="button" id="button_7" name="button_7" value="-" />
+        </label>
+      </div>
+      <div>
+        <span><b>Text area</b></span
+        ><br />
+        <label>
+          <textarea id="textarea" placeholder="Enter some text"></textarea>
+        </label>
+      </div>
+    </form>
+  </body>
 </html>

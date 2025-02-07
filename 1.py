@@ -6,9 +6,9 @@ import smtplib
 from validate_email_address import validate_email
 import openpyxl
 
-# pattern = "^[-\w\.]+@([-\w]+\.)+[-\w]{2,4}$"
-# pattern_2 = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
-# pattern_3 = "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$"
+pattern = "^[-\w\.]+@([-\w]+\.)+[-\w]{2,4}$"
+pattern_2 = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+pattern_3 = "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$"
 
 
 def checking_mail_syntax(list_email: list) -> tuple[list[Any], list[Any]]:

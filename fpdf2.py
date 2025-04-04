@@ -19,7 +19,7 @@ font_dir = '/Library/Fonts'
 # шрифт FreeSerif
 pdf.add_font("Serif", style="", fname=f"{font_dir}/FreeSerif/FreeSerif.ttf", uni=True)
 pdf.add_font("Serif", style="B", fname=f"{font_dir}/FreeSerif/FreeSerifBold.ttf", uni=True)
-pdf.add_font("Serif", style="I", fname=f"{font_dir}/FreeSerif/FreeSerifItalic.ttf", uni=True)
+pdf.add_font("Serif", style="I", fname=f"ю {font_dir}/FreeSerif/FreeSerifItalic.ttf", uni=True)
 pdf.add_font("Serif", style="BI", fname=f"{font_dir}/FreeSerif/FreeSerifBoldItalic.ttf", uni=True)
 # шрифт FreeSans
 pdf.add_font("Sans", style="", fname=f"{font_dir}/FreeSans/FreeSans.ttf", uni=True)
